@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>FolliGlow™ Trichology Red Light Scalp Massager & Root Oil Applicator | Official Store</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .brand-rose { color: #be185d; }
+    .bg-brand-rose { background-color: #be185d; }
+    .border-brand-rose { border-color: #be185d; }
+    .hover-bg-brand-rose:hover { background-color: #9d174d; }
+    /* Smooth touch interactions & prevent mobile tap highlight delay */
+    button, a, label {
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+    @keyframes demoProgress {
+      0% { width: 0%; }
+      100% { width: 100%; }
+    }
+    .demo-progress-active {
+      animation: demoProgress 8s linear infinite;
+    }
+  </style>
+</head>
+<body class="bg-[#faf5f8] text-slate-800 antialiased overflow-x-hidden pb-28 md:pb-12">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-rose-950 via-pink-900 to-rose-950 text-white text-[11px] font-semibold py-2 px-4 text-center tracking-wide flex items-center justify-center gap-2 border-b border-rose-800/40">
+    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-rose-500 text-white">AYURVEDA + CLINICAL</span>
+    <span>🌸 100% Mess-Free Hair Oil Delivery • Cash on Delivery (COD) Available • Free Delivery Across India</span>
+  </div>
+
+  <!-- Header -->
+  <header class="bg-white border-b border-rose-100 sticky top-0 z-40 shadow-sm backdrop-blur-md bg-white/95">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+      <a href="../index.html" class="flex items-center gap-2 shrink-0 min-h-[48px]">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-rose-600 to-pink-500 flex items-center justify-center text-white shadow-md shadow-rose-500/20">
+          <i data-lucide="sparkles" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="text-xl font-black text-slate-900 tracking-tight">Folli<span class="text-rose-600">Glow</span>™</span>
+          <span class="hidden sm:inline-block ml-1 text-[9px] font-extrabold tracking-wider uppercase bg-rose-50 text-rose-700 px-1.5 py-0.5 rounded border border-rose-200">Trichology</span>
+        </div>
+      </a>
+
+      <div class="flex-1 max-w-lg relative hidden sm:block">
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+          <i data-lucide="search" class="w-4 h-4 text-slate-400"></i>
+        </div>
+        <input type="text" placeholder="Search Hair Fall Scalp Massager, Rosemary Oil Applicator, Red Light Therapy..." class="w-full pl-9 pr-4 py-2.5 border border-slate-200 rounded-xl text-xs bg-slate-50 focus:bg-white focus:outline-none focus:border-rose-600 focus:ring-1 focus:ring-rose-600 transition-all">
+      </div>
+
+      <div class="flex items-center gap-2 sm:gap-3 text-xs font-bold text-slate-700 shrink-0">
+        <button onclick="shareWhatsApp()" class="hidden md:flex items-center gap-1.5 px-3 py-2 min-h-[48px] rounded-xl border border-emerald-500 text-emerald-700 bg-emerald-50 hover:bg-emerald-100 transition-colors">
+          <i data-lucide="share-2" class="w-4 h-4"></i>
+          <span>Share Routine</span>
+        </button>
+        <button onclick="openCart()" class="relative flex items-center gap-1.5 p-2.5 min-h-[48px] min-w-[48px] rounded-xl hover:bg-slate-100 transition-colors">
+          <i data-lucide="shopping-bag" class="w-5 h-5 text-slate-700"></i>
+          <span class="hidden sm:inline text-xs font-bold">Cart</span>
+          <span id="cartCount" class="absolute top-1 right-1 bg-rose-600 text-white text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center">1</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="max-w-6xl mx-auto px-4 py-2 text-[11px] text-slate-500 flex items-center gap-1.5">
+    <a href="../index.html" class="hover:underline">Home</a>
+    <span>/</span>
+    <a href="#" class="hover:underline">Hair & Scalp Wellness</a>
+    <span>/</span>
+    <span class="text-slate-800 font-bold truncate">FolliGlow™ 650nm Red Light Scalp Massager & Oil Dispenser</span>
+  </div>
+
+  <!-- Product Showcase -->
+  <main class="max-w-6xl mx-auto px-4 py-3">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+      <!-- LEFT: Image Gallery using local assets -->
+      <div class="md:col-span-6 lg:col-span-5">
+        <div class="bg-white rounded-2xl p-4 border border-rose-100 sticky top-20 shadow-sm">
+          <div class="relative rounded-xl overflow-hidden bg-slate-100 aspect-square flex items-center justify-center border border-slate-100 group">
+            <img id="mainImage" src="./assets/massager-main.jpg" onerror="this.src='./assets/massager-main.jpg'" alt="FolliGlow Scalp Massager & 625nm Red Light" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            
+            <div class="absolute top-3 left-3 bg-gradient-to-r from-rose-600 to-pink-600 text-white text-[11px] font-black px-2.5 py-1 rounded-full shadow-md">
+              64% OFF • Deal of the Day
+            </div>
+            
+            <button onclick="toggleWishlist()" class="absolute top-3 right-3 min-w-[48px] min-h-[48px] bg-white/90 backdrop-blur-sm rounded-full shadow-sm text-slate-600 hover:text-rose-500 flex items-center justify-center transition-colors" title="Save to Wishlist">
+              <i data-lucide="heart" id="wishlistIcon" class="w-5 h-5"></i>
+            </button>
+
+            <div class="absolute bottom-3 left-3 right-3 bg-slate-900/85 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1.5 rounded-lg flex items-center justify-between">
+              <span class="flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+                625nm Clinical Red Light
+              </span>
+              <span class="text-pink-300">IPX7 Washable • Food-Grade Silicone</span>
+            </div>
+          </div>
+
+          <!-- 6-Asset Local Media Gallery -->
+          <div class="grid grid-cols-6 gap-2 mt-3">
+            <button onclick="changeImage('./assets/massager-main.jpg', 'Device Overview & 625nm Red Light', this)" class="thumb-btn border-2 border-rose-600 rounded-xl overflow-hidden aspect-square bg-slate-50 min-h-[48px] p-0.5 transition-all" title="Device Overview & 625nm Red Light">
+              <img src="./assets/massager-main.jpg" onerror="this.src='./assets/massager-main.jpg'" alt="Massager Main" class="w-full h-full object-cover rounded-lg">
+            </button>
+            <button onclick="changeImage('./assets/massager-in-use.jpg', 'Direct-to-Root Liquid Applicator', this)" class="thumb-btn border border-slate-200 rounded-xl overflow-hidden aspect-square bg-slate-50 opacity-70 hover:opacity-100 min-h-[48px] p-0.5 transition-all" title="In-Use Root Applicator">
+              <img src="./assets/massager-in-use.jpg" onerror="this.src='./assets/massager-in-use.jpg'" alt="In Use Demo" class="w-full h-full object-cover rounded-lg">
+            </button>
+            <button onclick="changeImage('./assets/massager-waterproof.jpg', 'IPX7 Waterproof Champi Nodes', this)" class="thumb-btn border border-slate-200 rounded-xl overflow-hidden aspect-square bg-slate-50 opacity-70 hover:opacity-100 min-h-[48px] p-0.5 transition-all" title="IPX7 Silicone Nodes">
+              <img src="./assets/massager-waterproof.jpg" onerror="this.src='./assets/massager-waterproof.jpg'" alt="Waterproof Nodes" class="w-full h-full object-cover rounded-lg">
+            </button>
+            <button onclick="changeImage('./assets/hair-treatment.jpg', 'Clinical Hair Follicle Density', this)" class="thumb-btn border border-slate-200 rounded-xl overflow-hidden aspect-square bg-slate-50 opacity-70 hover:opacity-100 min-h-[48px] p-0.5 transition-all" title="Hair Density Follicle Therapy">
+              <img src="./assets/hair-treatment.jpg" onerror="this.src='./assets/hair-treatment.jpg'" alt="Follicle Density" class="w-full h-full object-cover rounded-lg">
+            </button>
+            <button onclick="changeImage('./assets/rosemary-oil.jpg', 'Pure Rosemary Essential Oil Serum', this)" class="thumb-btn border border-slate-200 rounded-xl overflow-hidden aspect-square bg-slate-50 opacity-70 hover:opacity-100 min-h-[48px] p-0.5 transition-all" title="Rosemary Oil Combo">
+              <img src="./assets/rosemary-oil.jpg" onerror="this.src='./assets/rosemary-oil.jpg'" alt="Rosemary Serum" class="w-full h-full object-cover rounded-lg">
+            </button>
+            <button onclick="changeImage('./assets/scalp-spa.jpg', 'Bedtime Stress Relief Scalp Spa', this)" class="thumb-btn border border-slate-200 rounded-xl overflow-hidden aspect-square bg-slate-50 opacity-70 hover:opacity-100 min-h-[48px] p-0.5 transition-all" title="Bedtime Scalp Spa">
+              <img src="./assets/scalp-spa.jpg" onerror="this.src='./assets/scalp-spa.jpg'" alt="Scalp Spa Ritual" class="w-full h-full object-cover rounded-lg">
+            </button>
+          </div>
+
+          <div class="hidden md:grid grid-cols-2 gap-3 mt-5">
+            <button onclick="addToCart()" class="min-h-[48px] py-3 px-4 border-2 border-rose-600 text-rose-700 hover:bg-rose-50 rounded-xl font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2">
+              <i data-lucide="shopping-bag" class="w-4 h-4"></i> Add to Cart
+            </button>
+            <button onclick="openCheckout()" class="min-h-[48px] py-3 px-4 bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-700 hover:to-pink-700 text-white rounded-xl font-bold text-xs uppercase tracking-wider shadow-lg shadow-rose-600/30 transition-all flex items-center justify-center gap-2">
+              <i data-lucide="zap" class="w-4 h-4 fill-white"></i> Buy Now (COD)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Details & Video Player -->
+      <div class="md:col-span-6 lg:col-span-7 space-y-4">
+
+        <div class="bg-white rounded-2xl p-5 border border-rose-100 shadow-sm">
+          <div class="flex items-center gap-2 text-xs font-bold text-slate-500 mb-1.5">
+            <span class="text-rose-700 bg-rose-50 border border-rose-200 px-2 py-0.5 rounded text-[10px] font-extrabold uppercase">Clinical Trichology Grade</span>
+            <span>SKU: FG-RED-PRO</span>
+          </div>
+
+          <h1 class="text-xl sm:text-2xl font-black text-slate-900 leading-snug">
+            FolliGlow™ Electric Scalp Massager & Liquid Hair Oil Applicator with 650nm Red Light Therapy (4 Rotational Nodes, Zero-Waste Root Dispenser)
+          </h1>
+
+          <div class="mt-4 flex items-baseline gap-3">
+            <span class="text-3xl font-black text-slate-900" id="displayPrice">₹899</span>
+            <span class="text-sm text-slate-400 line-through">₹2,499</span>
+            <span class="text-xs font-extrabold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">Save ₹1,600 (64% OFF)</span>
+          </div>
+
+          <div class="mt-2 p-2.5 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl border border-emerald-200 text-xs text-emerald-900 flex items-center gap-2 font-medium">
+            <i data-lucide="badge-percent" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+            <span><strong>Prepaid UPI Benefit:</strong> Extra ₹50 Instant Discount when paying via UPI / PhonePe at checkout.</span>
+          </div>
+
+          <div class="mt-4 flex items-center gap-3">
+            <div class="bg-emerald-600 text-white text-xs font-black px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-sm">
+              <span>4.7</span>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-white"></i>
+            </div>
+            <span class="text-xs font-semibold text-slate-500">14,210 Happy Customers • 4,890 Verified Reviews</span>
+          </div>
+
+          <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <div class="inline-flex items-center gap-1.5 text-xs font-bold text-rose-800 bg-rose-50 px-3 py-1 rounded-full border border-rose-200">
+              <i data-lucide="truck" class="w-3.5 h-3.5 text-rose-600"></i>
+              <span>Free Delivery Pan-India</span>
+            </div>
+            <span class="text-xs text-rose-600 font-extrabold">⚡ 100% Mess-Free Guarantee</span>
+          </div>
+        </div>
+
+        <!-- Interactive Video Demonstration Showcase -->
+        <div class="bg-white rounded-2xl p-5 border border-rose-100 shadow-sm">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2">
+              <div class="w-6 h-6 rounded-lg bg-rose-100 text-rose-600 flex items-center justify-center">
+                <i data-lucide="play" class="w-3.5 h-3.5 fill-rose-600"></i>
+              </div>
+              <span class="text-xs font-black uppercase tracking-wider text-slate-900">Interactive Video Demonstration Showcase</span>
+            </div>
+            <span class="text-[10px] font-bold text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">Daily 5-Min Ritual</span>
+          </div>
+
+          <!-- Video Tabs with min 48px height -->
+          <div class="grid grid-cols-3 gap-2 mb-3">
+            <button onclick="switchVideoDemo('redlight', this)" class="video-tab-btn active-tab min-h-[48px] py-2 px-2 rounded-xl border-2 border-rose-600 bg-rose-50 text-rose-800 text-[11px] sm:text-xs font-black text-center flex items-center justify-center transition-all shadow-sm">
+              1. 625nm Red Light
+            </button>
+            <button onclick="switchVideoDemo('shower', this)" class="video-tab-btn min-h-[48px] py-2 px-2 rounded-xl border border-slate-200 text-slate-600 text-[11px] sm:text-xs font-bold text-center hover:bg-slate-50 flex items-center justify-center transition-all">
+              2. Shower Diffusion
+            </button>
+            <button onclick="switchVideoDemo('bedtime', this)" class="video-tab-btn min-h-[48px] py-2 px-2 rounded-xl border border-slate-200 text-slate-600 text-[11px] sm:text-xs font-bold text-center hover:bg-slate-50 flex items-center justify-center transition-all">
+              3. Bedtime Champi
+            </button>
+          </div>
+
+          <!-- Interactive Video Mockup Screen -->
+          <div class="relative bg-slate-950 rounded-xl overflow-hidden aspect-video flex items-center justify-center text-white border border-slate-800 shadow-inner group" id="videoBox">
+            <img id="demoVideoThumb" src="./assets/massager-main.jpg" onerror="this.src='./assets/massager-main.jpg'" alt="625nm Red Light Scalp Stimulation" class="w-full h-full object-cover opacity-60 transition-transform duration-700">
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-black/50 flex flex-col justify-between p-4">
+              <div class="flex items-center justify-between">
+                <span class="bg-rose-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded flex items-center gap-1.5 shadow-md">
+                  <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span> <span id="demoStatusTag">CLICK TO PLAY DEMO</span>
+                </span>
+                <span class="text-[11px] font-bold text-rose-200 bg-black/60 px-2.5 py-1 rounded-lg backdrop-blur-md border border-white/10" id="demoBadge">625nm Clinical Phototherapy</span>
+              </div>
+              
+              <div class="text-center my-auto">
+                <button onclick="toggleDemoPlayback()" class="w-14 h-14 min-h-[48px] min-w-[48px] rounded-full bg-rose-600/90 hover:bg-rose-600 active:scale-95 text-white flex items-center justify-center mx-auto shadow-2xl shadow-rose-600/50 hover:scale-105 transition-all" title="Toggle Demo Playback">
+                  <i data-lucide="play" id="playIcon" class="w-6 h-6 fill-white ml-0.5"></i>
+                </button>
+              </div>
+
+              <!-- Bottom Bar with Video Progress & Specs -->
+              <div class="space-y-2">
+                <div class="w-full bg-white/20 h-1.5 rounded-full overflow-hidden backdrop-blur-sm">
+                  <div id="videoProgressBar" class="h-full bg-gradient-to-r from-rose-500 to-pink-400 rounded-full w-0 transition-all duration-300"></div>
+                </div>
+
+                <div class="flex items-center justify-between text-[11px] text-slate-200 bg-black/60 backdrop-blur-md p-2.5 rounded-lg border border-white/10">
+                  <div class="truncate mr-2">
+                    <div class="font-bold text-white text-xs" id="demoClipTitle">625nm Red Light Scalp Stimulation</div>
+                    <span id="demoClipDescription" class="text-slate-300 line-clamp-1 text-[10px] sm:text-[11px]">Deep clinical 625nm phototherapy awakens dormant telogen hair follicles and boosts root microcirculation.</span>
+                  </div>
+                  <span id="demoSpecTag" class="text-pink-300 font-extrabold shrink-0 ml-2 bg-rose-950/80 px-2 py-0.5 rounded border border-rose-800 text-[10px]">89% Follicle Reactivation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Problem vs Solution Infographic -->
+        <div class="bg-white rounded-2xl p-5 border border-rose-100 shadow-sm">
+          <h3 class="text-xs font-black uppercase tracking-wider text-slate-500 mb-3">Traditional Hand Oiling vs FolliGlow™</h3>
+          <div class="grid grid-cols-2 gap-3 text-xs">
+            <div class="p-3.5 rounded-xl bg-rose-50/70 border border-rose-200">
+              <div class="font-bold text-rose-800 flex items-center gap-1.5 mb-1.5">
+                <i data-lucide="x-circle" class="w-4 h-4 text-rose-600"></i> Traditional Oiling
+              </div>
+              <ul class="space-y-1.5 text-[11px] text-slate-600">
+                <li>• 70% oil wasted sticking to palms & bedsheets</li>
+                <li>• Harsh fingernails cause scalp micro-abrasions</li>
+                <li>• Messy drip down forehead & neck</li>
+              </ul>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-pink-50/70 border border-pink-200">
+              <div class="font-bold text-rose-900 flex items-center gap-1.5 mb-1.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-rose-600"></i> The FolliGlow™ Ritual
+              </div>
+              <ul class="space-y-1.5 text-[11px] text-slate-700 font-medium">
+                <li>• 100% oil delivered straight to follicle roots</li>
+                <li>• Soft medical-grade silicone mimics Ayurvedic champi</li>
+                <li>• 625nm Red LED stimulates dormant roots</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Clinical Hair Density & Follicular Study Card -->
+        <div class="bg-white rounded-2xl p-5 border border-rose-100 shadow-sm">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2">
+              <div class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs">
+                <i data-lucide="check-check" class="w-4 h-4"></i>
+              </div>
+              <h3 class="text-xs font-black uppercase tracking-wider text-slate-900">Clinical Hair Density & Trichology Proof</h3>
+            </div>
+            <span class="text-[10px] font-extrabold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">60-Day Clinical Trial</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+            <div class="relative rounded-xl overflow-hidden border border-slate-100 group aspect-video sm:aspect-auto">
+              <img src="./assets/hair-treatment.jpg" onerror="this.src='./assets/hair-treatment.jpg'" alt="Follicle Density Before & After" class="w-full h-36 object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute bottom-2 left-2 right-2 bg-slate-950/85 backdrop-blur-sm text-white p-2 rounded-lg text-[10px] flex justify-between items-center border border-white/10">
+                <span class="font-bold text-rose-300">625nm Phototherapy</span>
+                <span class="text-emerald-300 font-extrabold">+89% Follicle Density</span>
+              </div>
+            </div>
+            <div class="relative rounded-xl overflow-hidden border border-slate-100 group aspect-video sm:aspect-auto">
+              <img src="./assets/scalp-spa.jpg" onerror="this.src='./assets/scalp-spa.jpg'" alt="Scalp Spa Champi Ritual" class="w-full h-36 object-cover transition-transform duration-500 group-hover:scale-105">
+              <div class="absolute bottom-2 left-2 right-2 bg-slate-950/85 backdrop-blur-sm text-white p-2 rounded-lg text-[10px] flex justify-between items-center border border-white/10">
+                <span class="font-bold text-pink-300">Bedtime Champi</span>
+                <span class="text-emerald-300 font-extrabold">94% Less Shedding</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-2 text-center text-xs">
+            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+              <div class="text-base font-black text-rose-700">94%</div>
+              <div class="text-[10px] font-bold text-slate-700 mt-0.5">Reduced Fallout</div>
+              <div class="text-[9px] text-slate-400">Within 21 days</div>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+              <div class="text-base font-black text-emerald-600">89%</div>
+              <div class="text-[10px] font-bold text-slate-700 mt-0.5">Root Density</div>
+              <div class="text-[9px] text-slate-400">New baby hair</div>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100">
+              <div class="text-base font-black text-slate-900">100%</div>
+              <div class="text-[10px] font-bold text-slate-700 mt-0.5">Mess-Free</div>
+              <div class="text-[9px] text-slate-400">Zero greasy hands</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bundle Selection with min 48px touch targets -->
+        <div class="bg-white rounded-2xl p-5 border border-rose-100 shadow-sm">
+          <div class="text-xs font-black text-slate-700 uppercase tracking-wider mb-3">Select Package Configuration</div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <label class="bundle-card cursor-pointer border-2 border-rose-600 bg-rose-50/30 rounded-xl p-4 min-h-[64px] flex items-center justify-between relative transition-all" onclick="selectBundle('single', 899)">
+              <div class="flex items-center gap-3">
+                <input type="radio" name="bundle" value="single" checked class="w-5 h-5 accent-rose-600 shrink-0">
+                <div>
+                  <div class="text-xs font-bold text-slate-900">Standard Massager Kit</div>
+                  <div class="text-[11px] text-slate-500">Massager + 4 Silicone Nodes + Type-C Cable</div>
+                  <div class="text-sm font-black text-slate-900 mt-0.5">₹899</div>
+                </div>
+              </div>
+              <span class="text-[10px] font-bold bg-rose-100 text-rose-800 px-2 py-0.5 rounded">Standard</span>
+            </label>
+
+            <label class="bundle-card cursor-pointer border-2 border-slate-200 hover:border-rose-300 rounded-xl p-4 min-h-[64px] flex items-center justify-between relative transition-all" onclick="selectBundle('combo', 1099)">
+              <div class="flex items-center gap-3">
+                <input type="radio" name="bundle" value="combo" class="w-5 h-5 accent-rose-600 shrink-0">
+                <div>
+                  <div class="text-xs font-bold text-slate-900">Massager + Rosemary Serum Combo</div>
+                  <div class="text-[11px] text-slate-500">Includes 30ml Pure Steam-Distilled Rosemary Oil</div>
+                  <div class="text-sm font-black text-rose-700 mt-0.5">₹1,099 <span class="text-[10px] text-slate-400 line-through">₹2,999</span></div>
+                </div>
+              </div>
+              <span class="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">Best Value</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- 4-Pillar Trust Ribbon -->
+        <div class="bg-white rounded-2xl p-4 border border-rose-100 shadow-sm grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+          <div class="p-2 flex flex-col items-center">
+            <div class="w-10 h-10 rounded-full bg-rose-50 text-rose-600 flex items-center justify-center mb-1">
+              <i data-lucide="banknote" class="w-5 h-5"></i>
+            </div>
+            <div class="text-[11px] font-bold text-slate-900">Cash on Delivery</div>
+            <div class="text-[10px] text-slate-500">Pay when delivered</div>
+          </div>
+          <div class="p-2 flex flex-col items-center">
+            <div class="w-10 h-10 rounded-full bg-pink-50 text-pink-600 flex items-center justify-center mb-1">
+              <i data-lucide="sparkles" class="w-5 h-5"></i>
+            </div>
+            <div class="text-[11px] font-bold text-slate-900">Red Light Therapy</div>
+            <div class="text-[10px] text-slate-500">Clinical wavelength</div>
+          </div>
+          <div class="p-2 flex flex-col items-center">
+            <div class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-1">
+              <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+            </div>
+            <div class="text-[11px] font-bold text-slate-900">7-Day Replacement</div>
+            <div class="text-[10px] text-slate-500">Hassle-free exchange</div>
+          </div>
+          <div class="p-2 flex flex-col items-center">
+            <div class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-1">
+              <i data-lucide="shield-check" class="w-5 h-5"></i>
+            </div>
+            <div class="text-[11px] font-bold text-slate-900">IPX7 Waterproof</div>
+            <div class="text-[10px] text-slate-500">Shower safe</div>
+          </div>
+        </div>
+
+        <!-- Pincode Checker with min 48px height and text-base input -->
+        <div class="bg-white rounded-2xl p-5 border border-rose-100 shadow-sm">
+          <div class="flex items-center gap-2 text-xs font-bold text-slate-700 mb-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-rose-600"></i>
+            <span>Check Pincode Serviceability & Delivery Time</span>
+          </div>
+          <div class="flex gap-2">
+            <input type="text" id="pincodeInput" placeholder="Enter 6-digit Indian PIN" maxlength="6" class="flex-1 px-3.5 py-3 min-h-[48px] border border-slate-200 rounded-xl text-base focus:outline-none focus:border-rose-600">
+            <button onclick="checkPincode()" class="px-6 py-3 min-h-[48px] bg-slate-900 hover:bg-rose-600 text-white rounded-xl text-xs font-bold transition-colors flex items-center justify-center">Check</button>
+          </div>
+          <div id="pincodeResult" class="mt-3 text-xs hidden">
+            <div class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 flex items-center gap-2.5">
+              <i data-lucide="truck" class="w-5 h-5 text-emerald-600 shrink-0"></i>
+              <div><span class="font-bold">Delivery in 3 to 4 Days</span> • Free Doorstep Delivery • <strong>Cash on Delivery Available!</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Verified Reviews -->
+        <div class="bg-white rounded-2xl p-5 border border-rose-100 shadow-sm">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <h3 class="text-sm font-black text-slate-900">Verified Customer Reviews</h3>
+              <p class="text-xs text-slate-500">Real feedback from verified purchasers</p>
+            </div>
+            <div class="text-right">
+              <div class="text-xl font-black text-slate-900">4.7 / 5</div>
+              <div class="text-[10px] text-slate-400">14,210 verified ratings</div>
+            </div>
+          </div>
+
+          <div class="space-y-4 divide-y divide-slate-100 text-xs">
+            <div class="pt-3">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="w-8 h-8 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center font-bold text-xs">AD</span>
+                  <div>
+                    <div class="font-bold text-slate-900">Ananya Deshmukh <span class="text-[10px] font-normal text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-200">Verified Buyer</span></div>
+                    <div class="text-[10px] text-slate-400">Pune, Maharashtra • 3 days ago</div>
+                  </div>
+                </div>
+                <div class="bg-emerald-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">5 ★</div>
+              </div>
+              <p class="text-slate-600 mt-2 leading-relaxed">
+                "No more greasy hands and pillows! The Rosemary oil goes directly into the roots without any dripping. The 625nm red light and champi massage is the highlight of my bedtime routine."
+              </p>
+            </div>
+
+            <div class="pt-3">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="w-8 h-8 rounded-full bg-pink-100 text-pink-700 flex items-center justify-center font-bold text-xs">VR</span>
+                  <div>
+                    <div class="font-bold text-slate-900">Vikram Rathore <span class="text-[10px] font-normal text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-200">Verified Buyer</span></div>
+                    <div class="text-[10px] text-slate-400">Jaipur • 1 week ago</div>
+                  </div>
+                </div>
+                <div class="bg-emerald-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">5 ★</div>
+              </div>
+              <p class="text-slate-600 mt-2 leading-relaxed">
+                "I use it for my Minoxidil solution. It spreads the liquid evenly on my crown without getting on my fingers. Battery lasts for weeks on a single Type-C charge."
+              </p>
+            </div>
+
+            <div class="pt-3">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs">SM</span>
+                  <div>
+                    <div class="font-bold text-slate-900">Dr. Sneha Mukherjee <span class="text-[10px] font-normal text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-200">Trichologist • Verified Buyer</span></div>
+                    <div class="text-[10px] text-slate-400">Bengaluru, Karnataka • 2 days ago</div>
+                  </div>
+                </div>
+                <div class="bg-emerald-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">5 ★</div>
+              </div>
+              <p class="text-slate-600 mt-2 leading-relaxed">
+                "I recommend FolliGlow to my clinical patients experiencing telogen effluvium and postpartum hair loss. The 625nm red light combined with zero-mess delivery of Rosemary and Redensyl has radically boosted routine adherence. An outstanding hair wellness innovation."
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Sticky Mobile Action Bar (High-Conversion Fixed Bottom Bar with Live Price & 48px Height Button) -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-rose-100 p-3 shadow-2xl md:hidden flex items-center gap-3">
+    <!-- Live Price Display -->
+    <div class="flex flex-col shrink-0 min-w-[70px]">
+      <span class="text-[10px] font-bold text-slate-400 uppercase tracking-tight">Price</span>
+      <div class="flex items-baseline gap-1">
+        <span id="mobileStickyPrice" class="text-lg font-black text-slate-900 leading-tight">₹899</span>
+        <span class="text-[10px] font-extrabold text-emerald-600">FREE COD</span>
+      </div>
+    </div>
+
+    <!-- 48px Height COD Order Button -->
+    <button onclick="openCheckout()" class="flex-1 min-h-[48px] h-12 bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-700 hover:to-pink-700 text-white font-black text-xs sm:text-sm uppercase tracking-wide rounded-xl shadow-lg shadow-rose-600/30 flex items-center justify-center gap-1.5 active:scale-95 transition-all">
+      <i data-lucide="zap" class="w-4 h-4 fill-white shrink-0"></i>
+      <span>⚡ Order via COD - Pay at Doorstep</span>
+    </button>
+  </div>
+
+  <!-- Checkout Drawer Modal with 16px font inputs to prevent iOS/Android zoom -->
+  <div id="checkoutModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-3 sm:p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full max-h-[92vh] overflow-y-auto p-5 sm:p-6 shadow-2xl border border-slate-200 relative animate-in fade-in zoom-in duration-200">
+      <button onclick="closeCheckout()" class="absolute top-3 right-3 text-slate-400 hover:text-slate-600 p-2 min-w-[48px] min-h-[48px] rounded-full hover:bg-slate-100 flex items-center justify-center" title="Close Checkout">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-rose-600 text-white flex items-center justify-center font-bold shadow-md shadow-rose-600/20 shrink-0">
+          <i data-lucide="sparkles" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h2 class="text-base font-black text-slate-900">FolliGlow™ Direct Checkout</h2>
+          <p class="text-[11px] text-slate-500">Pay on Delivery or Online with Flat ₹50 Discount</p>
+        </div>
+      </div>
+
+      <div class="p-3.5 bg-rose-50/60 rounded-xl border border-rose-100 flex items-center justify-between mb-4">
+        <div>
+          <div class="text-xs font-bold text-slate-900" id="modalProductName">FolliGlow™ Standard Massager Kit</div>
+          <div class="text-[11px] text-slate-500">Free Express Delivery Across India</div>
+        </div>
+        <div class="text-right">
+          <div class="text-sm font-black text-rose-700" id="modalPrice">₹899</div>
+          <div class="text-[10px] text-emerald-600 font-bold">100% Certified</div>
+        </div>
+      </div>
+
+      <form onsubmit="handlePlaceOrder(event)" class="space-y-3.5 text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Full Name</label>
+          <input type="text" required placeholder="e.g. Anjali Sharma" class="w-full px-3.5 py-3 min-h-[48px] border border-slate-200 rounded-xl text-base focus:outline-none focus:border-rose-600 transition-colors">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">10-Digit Mobile Number</label>
+            <input type="tel" required pattern="[6-9][0-9]{9}" placeholder="e.g. 9876543210" class="w-full px-3.5 py-3 min-h-[48px] border border-slate-200 rounded-xl text-base focus:outline-none focus:border-rose-600 transition-colors">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">6-Digit Pincode</label>
+            <input type="text" required pattern="[0-9]{6}" placeholder="e.g. 400001" class="w-full px-3.5 py-3 min-h-[48px] border border-slate-200 rounded-xl text-base focus:outline-none focus:border-rose-600 transition-colors">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">House / Flat / Area</label>
+          <input type="text" required placeholder="e.g. 402, Sunshine Apts, Baner Road" class="w-full px-3.5 py-3 min-h-[48px] border border-slate-200 rounded-xl text-base focus:outline-none focus:border-rose-600 transition-colors">
+        </div>
+
+        <div class="grid grid-cols-2 gap-2.5">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">City</label>
+            <input type="text" required placeholder="e.g. Pune" class="w-full px-3.5 py-3 min-h-[48px] border border-slate-200 rounded-xl text-base focus:outline-none focus:border-rose-600 transition-colors">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">State</label>
+            <input type="text" required placeholder="e.g. Maharashtra" class="w-full px-3.5 py-3 min-h-[48px] border border-slate-200 rounded-xl text-base focus:outline-none focus:border-rose-600 transition-colors">
+          </div>
+        </div>
+
+        <div class="pt-2">
+          <label class="block font-bold text-slate-800 mb-2">Payment Option</label>
+          <div class="space-y-2.5">
+            <label class="border-2 border-slate-200 has-[:checked]:border-rose-600 has-[:checked]:bg-rose-50/40 p-3.5 rounded-xl min-h-[56px] flex items-center justify-between cursor-pointer transition-all">
+              <div class="flex items-center gap-3">
+                <input type="radio" name="paymentMethod" value="COD" checked class="w-5 h-5 accent-rose-600">
+                <div>
+                  <span class="font-bold text-slate-900 text-xs">Cash on Delivery (COD)</span>
+                  <p class="text-[10px] text-slate-500">Pay cash/UPI at doorstep</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-bold bg-slate-100 text-slate-700 px-2.5 py-1 rounded">Standard</span>
+            </label>
+
+            <label class="border-2 border-slate-200 has-[:checked]:border-emerald-600 has-[:checked]:bg-emerald-50/40 p-3.5 rounded-xl min-h-[56px] flex items-center justify-between cursor-pointer transition-all">
+              <div class="flex items-center gap-3">
+                <input type="radio" name="paymentMethod" value="UPI" class="w-5 h-5 accent-emerald-600">
+                <div>
+                  <span class="font-bold text-slate-900 text-xs">Pay Online via UPI (PhonePe/GPay)</span>
+                  <p class="text-[10px] text-emerald-700 font-semibold">⚡ Extra ₹50 Instant Discount Applied</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded">Save ₹50</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="pt-3">
+          <button type="submit" class="w-full min-h-[48px] h-12 bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-700 hover:to-pink-700 text-white rounded-2xl font-bold text-sm tracking-wide shadow-lg shadow-rose-600/30 transition-all flex items-center justify-center gap-2 active:scale-95">
+            <i data-lucide="shield-check" class="w-4 h-4"></i>
+            <span>Place Order (No Advance Required)</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div id="successModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-sm w-full p-6 text-center shadow-2xl border border-slate-200">
+      <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4">
+        <i data-lucide="check" class="w-8 h-8"></i>
+      </div>
+      <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded">Order Confirmed</span>
+      <h3 class="text-xl font-black text-slate-900 mt-2">Thank You!</h3>
+      <p class="text-xs text-slate-600 mt-1">Your FolliGlow™ massager is scheduled for priority dispatch within 24 hours.</p>
+      <div class="my-4 p-3.5 bg-slate-50 rounded-xl border border-slate-100 text-xs text-left">
+        <div class="flex justify-between text-slate-500">
+          <span>Order ID:</span>
+          <span class="font-mono font-bold text-slate-800">#FOLLI-8820-9114</span>
+        </div>
+        <div class="flex justify-between text-slate-500 mt-1">
+          <span>Delivery Mode:</span>
+          <span class="font-bold text-rose-700">Express Air (COD)</span>
+        </div>
+      </div>
+      <button onclick="closeSuccess()" class="w-full min-h-[48px] h-12 bg-slate-900 hover:bg-rose-600 text-white rounded-xl text-xs font-bold transition-colors flex items-center justify-center">
+        Continue Shopping
+      </button>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    let currentPrice = 899;
+
+    function changeImage(src, caption, btn) {
+      document.getElementById('mainImage').src = src;
+      document.querySelectorAll('.thumb-btn').forEach(b => {
+        b.classList.remove('border-rose-600');
+        b.classList.add('border-slate-200', 'opacity-70');
+      });
+      btn.classList.add('border-rose-600');
+      btn.classList.remove('border-slate-200', 'opacity-70');
+    }
+
+    const demoClips = {
+      redlight: {
+        title: "625nm Red Light Scalp Stimulation",
+        desc: "Deep clinical 625nm phototherapy awakens dormant telogen hair follicles and boosts root microcirculation.",
+        badge: "625nm Clinical Phototherapy",
+        spec: "89% Follicle Reactivation",
+        img: "./assets/massager-main.jpg"
+      },
+      shower: {
+        title: "Zero-Mess Oil Diffusion in Shower",
+        desc: "100% IPX7 waterproof seal lets you diffuse hair oils or serums seamlessly in the warm shower without sticky residue.",
+        badge: "IPX7 In-Shower Diffusion",
+        spec: "100% Waterproof & Mess-Free",
+        img: "./assets/massager-waterproof.jpg"
+      },
+      bedtime: {
+        title: "Bedtime Stress Relief & Scalp Spa",
+        desc: "4 rotational 3D kneading silicone nodes simulate 120 Ayurvedic champi strokes per minute to dissolve tension and induce sleep.",
+        badge: "Deep Ayurvedic Champi",
+        spec: "Cortisol Drop in 5 Mins",
+        img: "./assets/scalp-spa.jpg"
+      }
+    };
+
+    let isVideoPlaying = false;
+    function switchVideoDemo(key, btn) {
+      document.querySelectorAll('.video-tab-btn').forEach(b => {
+        b.classList.remove('border-2', 'border-rose-600', 'bg-rose-50', 'text-rose-800', 'font-black', 'shadow-sm');
+        b.classList.add('border', 'border-slate-200', 'text-slate-600', 'font-bold');
+      });
+      btn.classList.add('border-2', 'border-rose-600', 'bg-rose-50', 'text-rose-800', 'font-black', 'shadow-sm');
+      btn.classList.remove('border', 'border-slate-200', 'text-slate-600', 'font-bold');
+
+      const data = demoClips[key];
+      document.getElementById('demoClipTitle').innerText = data.title;
+      document.getElementById('demoClipDescription').innerText = data.desc;
+      document.getElementById('demoVideoThumb').src = data.img;
+      document.getElementById('demoBadge').innerText = data.badge;
+      document.getElementById('demoSpecTag').innerText = data.spec;
+
+      if (isVideoPlaying) {
+        toggleDemoPlayback();
+      }
+    }
+
+    function toggleDemoPlayback() {
+      const playIcon = document.getElementById('playIcon');
+      const progressBar = document.getElementById('videoProgressBar');
+      const demoStatus = document.getElementById('demoStatusTag');
+      isVideoPlaying = !isVideoPlaying;
+      if (isVideoPlaying) {
+        playIcon.setAttribute('data-lucide', 'pause');
+        progressBar.classList.add('demo-progress-active');
+        demoStatus.innerText = "PLAYING DEMO (60 FPS)";
+        demoStatus.parentElement.classList.replace('bg-rose-600', 'bg-emerald-600');
+      } else {
+        playIcon.setAttribute('data-lucide', 'play');
+        progressBar.classList.remove('demo-progress-active');
+        demoStatus.innerText = "CLICK TO PLAY DEMO";
+        demoStatus.parentElement.classList.replace('bg-emerald-600', 'bg-rose-600');
+      }
+      lucide.createIcons();
+    }
+
+    function toggleWishlist() {
+      const icon = document.getElementById('wishlistIcon');
+      if (icon.classList.contains('fill-rose-500')) {
+        icon.classList.remove('fill-rose-500', 'text-rose-500');
+        alert('Removed from Saved Items');
+      } else {
+        icon.classList.add('fill-rose-500', 'text-rose-500');
+        alert('Saved to Wishlist!');
+      }
+    }
+
+    function selectBundle(type, price) {
+      currentPrice = price;
+      document.getElementById('displayPrice').innerText = '₹' + price;
+      document.getElementById('modalPrice').innerText = '₹' + price;
+      const stickyPriceEl = document.getElementById('mobileStickyPrice');
+      if (stickyPriceEl) {
+        stickyPriceEl.innerText = '₹' + price;
+      }
+      if (type === 'combo') {
+        document.getElementById('modalProductName').innerText = 'FolliGlow™ Massager + Rosemary Hair Oil Combo';
+      } else {
+        document.getElementById('modalProductName').innerText = 'FolliGlow™ Standard Massager Kit';
+      }
+    }
+
+    function checkPincode() {
+      const pin = document.getElementById('pincodeInput').value.trim();
+      const res = document.getElementById('pincodeResult');
+      if (pin.length === 6 && /^\d+$/.test(pin)) {
+        res.classList.remove('hidden');
+      } else {
+        alert('Please enter a valid 6-digit Indian PIN code.');
+      }
+    }
+
+    function shareWhatsApp() {
+      const text = encodeURIComponent("Check out this FolliGlow™ Red Light Scalp Massager & Liquid Hair Oil Applicator! 64% OFF with Free Delivery & Cash on Delivery: " + window.location.href);
+      window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+    }
+
+    function addToCart() {
+      const countEl = document.getElementById('cartCount');
+      countEl.innerText = parseInt(countEl.innerText) + 1;
+      alert('Product added to Cart!');
+    }
+
+    function openCart() { openCheckout(); }
+    function openCheckout() { document.getElementById('checkoutModal').classList.remove('hidden'); }
+    function closeCheckout() { document.getElementById('checkoutModal').classList.add('hidden'); }
+    function handlePlaceOrder(e) {
+      e.preventDefault();
+      closeCheckout();
+      document.getElementById('successModal').classList.remove('hidden');
+    }
+    function closeSuccess() { document.getElementById('successModal').classList.add('hidden'); }
+  </script>
+</body>
+</html>
