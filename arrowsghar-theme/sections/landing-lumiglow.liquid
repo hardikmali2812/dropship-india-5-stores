@@ -1,0 +1,850 @@
+
+{% schema %}
+{
+  "name": "LumiGlow Smart Living",
+  "settings": []
+}
+{% endschema %}
+
+<!-- TailWind & Lucide CDN for Standalone Dropship Section -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<div class="shopify-dropship-landing" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>LumiGlow™ Magnetic Motion Sensor LED Strip Light | Official Smart Living Store</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .brand-amber { color: #d97706; }
+    .bg-brand-amber { background-color: #d97706; }
+    .border-brand-amber { border-color: #d97706; }
+    .hover-bg-brand-amber:hover { background-color: #b45309; }
+  </style>
+</head>
+<body class="bg-[#fcfaf7] text-slate-800 antialiased overflow-x-hidden pb-28 md:pb-12">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-amber-950 via-slate-900 to-amber-950 text-white text-[11px] font-semibold py-2 px-4 text-center tracking-wide flex items-center justify-center gap-2 border-b border-amber-800/40">
+    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-amber-500 text-slate-950">SMART HOME UPGRADE</span>
+    <span>💡 Zero Wiring • Zero Wall Drilling • Cash on Delivery (COD) Available • Free Shipping Across India</span>
+  </div>
+
+  <!-- Header -->
+  <header class="bg-white border-b border-amber-100 sticky top-0 z-40 shadow-sm backdrop-blur-md bg-white/95">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+      <a href="../index.html" class="flex items-center gap-2 shrink-0">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 to-yellow-400 flex items-center justify-center text-slate-950 shadow-md shadow-amber-500/20">
+          <i data-lucide="sun" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="text-xl font-black text-slate-900 tracking-tight">Lumi<span class="text-amber-600">Glow</span>™</span>
+          <span class="hidden sm:inline-block ml-1 text-[9px] font-extrabold tracking-wider uppercase bg-amber-50 text-amber-800 px-1.5 py-0.5 rounded border border-amber-200">Smart Living</span>
+        </div>
+      </a>
+
+      <div class="flex-1 max-w-lg relative hidden sm:block">
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+          <i data-lucide="search" class="w-4 h-4 text-slate-400"></i>
+        </div>
+        <input type="text" placeholder="Search Wireless Sensor Light, Wardrobe Almirah Light, Kitchen Cabinet Strip..." class="w-full pl-9 pr-4 py-2 border border-slate-200 rounded-xl text-xs bg-slate-50 focus:bg-white focus:outline-none focus:border-amber-600 focus:ring-1 focus:ring-amber-600 transition-all">
+      </div>
+
+      <div class="flex items-center gap-3 text-xs font-bold text-slate-700 shrink-0">
+        <button onclick="shareWhatsApp()" class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-emerald-500 text-emerald-700 bg-emerald-50 hover:bg-emerald-100 transition-colors">
+          <i data-lucide="share-2" class="w-3.5 h-3.5"></i>
+          <span>Share Deal</span>
+        </button>
+        <button onclick="openCart()" class="relative flex items-center gap-1.5 p-2 rounded-xl hover:bg-slate-100 transition-colors">
+          <i data-lucide="shopping-bag" class="w-5 h-5 text-slate-700"></i>
+          <span class="hidden sm:inline text-xs font-bold">Cart</span>
+          <span id="cartCount" class="absolute -top-1 -right-1 bg-amber-600 text-white text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center">1</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <div class="max-w-6xl mx-auto px-4 py-2 text-[11px] text-slate-500 flex items-center gap-1.5">
+    <a href="../index.html" class="hover:underline">Home</a>
+    <span>/</span>
+    <a href="#" class="hover:underline">Smart Home & Lighting</a>
+    <span>/</span>
+    <span class="text-slate-800 font-bold truncate">LumiGlow™ Wireless Magnetic Motion Sensor LED Strip Light</span>
+  </div>
+
+  <!-- Product Showcase -->
+  <main class="max-w-6xl mx-auto px-4 py-3">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+      <!-- LEFT: Image Gallery using local assets -->
+      <div class="md:col-span-6 lg:col-span-5">
+        <div class="bg-white rounded-2xl p-4 border border-amber-100 sticky top-20 shadow-sm">
+          <div class="relative rounded-xl overflow-hidden bg-slate-100 aspect-square flex items-center justify-center border border-slate-100 group">
+            <img id="mainImage" src="{{ 'gallery-1.jpg' | asset_url }}" onerror="this.src='https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80'" alt="LumiGlow Motion Light" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            
+            <div class="absolute top-3 left-3 bg-gradient-to-r from-amber-600 to-yellow-500 text-slate-950 text-[11px] font-black px-2.5 py-1 rounded-full shadow-md">
+              64% OFF • Pack Deal
+            </div>
+            
+            <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-sm text-slate-600 hover:text-rose-500 cursor-pointer transition-colors" onclick="toggleWishlist()">
+              <i data-lucide="heart" id="wishlistIcon" class="w-4 h-4"></i>
+            </div>
+
+            <div class="absolute bottom-3 left-3 right-3 bg-slate-900/85 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1.5 rounded-lg flex items-center justify-between">
+              <span class="flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                PIR Auto Motion Detect
+              </span>
+              <span class="text-amber-300">Magnetic Peel & Stick • 3 Colors</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-5 gap-2 mt-3">
+            <button onclick="changeImage('./images/gallery-1.jpg', 'Kitchen Under-Cabinet Magnetic Snap', this)" class="thumb-btn border-2 border-amber-600 rounded-xl overflow-hidden aspect-square bg-slate-50 relative group">
+              <img src="{{ 'gallery-1.jpg' | asset_url }}" onerror="this.src='https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=200&q=80'" alt="Kitchen Counter Undermount" class="w-full h-full object-cover">
+              <span class="absolute bottom-0 inset-x-0 bg-black/60 text-[8px] text-white text-center py-0.5 truncate hidden sm:block">Kitchen</span>
+            </button>
+            <button onclick="changeImage('./images/gallery-2.jpg', 'Wardrobe Auto-On Sensor', this)" class="thumb-btn border border-slate-200 rounded-xl overflow-hidden aspect-square bg-slate-50 opacity-70 hover:opacity-100 relative group">
+              <img src="{{ 'gallery-2.jpg' | asset_url }}" onerror="this.src='https://images.unsplash.com/photo-1565538810643-b5bdb714032a?auto=format&fit=crop&w=200&q=80'" alt="Wardrobe Auto Sensor" class="w-full h-full object-cover">
+              <span class="absolute bottom-0 inset-x-0 bg-black/60 text-[8px] text-white text-center py-0.5 truncate hidden sm:block">Wardrobe</span>
+            </button>
+            <button onclick="changeImage('./images/gallery-3.jpg', 'Bedside & Staircase Night Safety', this)" class="thumb-btn border border-slate-200 rounded-xl overflow-hidden aspect-square bg-slate-50 opacity-70 hover:opacity-100 relative group">
+              <img src="{{ 'gallery-3.jpg' | asset_url }}" onerror="this.src='https://images.unsplash.com/photo-1540518614846-7ede433c4570?auto=format&fit=crop&w=200&q=80'" alt="Bedside Night Safety" class="w-full h-full object-cover">
+              <span class="absolute bottom-0 inset-x-0 bg-black/60 text-[8px] text-white text-center py-0.5 truncate hidden sm:block">Bedside</span>
+            </button>
+            <button onclick="changeImage('./images/gallery-4.jpg', 'USB Type-C Magnetic Charging', this)" class="thumb-btn border border-slate-200 rounded-xl overflow-hidden aspect-square bg-slate-50 opacity-70 hover:opacity-100 relative group">
+              <img src="{{ 'gallery-4.jpg' | asset_url }}" onerror="this.src='https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=200&q=80'" alt="USB Type-C Charging & Magnet" class="w-full h-full object-cover">
+              <span class="absolute bottom-0 inset-x-0 bg-black/60 text-[8px] text-white text-center py-0.5 truncate hidden sm:block">USB-C</span>
+            </button>
+            <button onclick="changeImage('./images/review-1.jpg', 'Real Customer Kitchen Setup Photo', this)" class="thumb-btn border border-slate-200 rounded-xl overflow-hidden aspect-square bg-slate-50 opacity-70 hover:opacity-100 relative group">
+              <img src="{{ 'review-1.jpg' | asset_url }}" onerror="this.src='https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=200&q=80'" alt="Real Customer Photo" class="w-full h-full object-cover">
+              <span class="absolute bottom-0 inset-x-0 bg-emerald-800/80 text-[8px] text-white text-center py-0.5 truncate hidden sm:block font-bold">Buyer</span>
+            </button>
+          </div>
+
+          <div class="hidden md:grid grid-cols-2 gap-3 mt-5">
+            <button onclick="addToCart()" class="py-3 px-4 border-2 border-amber-600 text-amber-700 hover:bg-amber-50 rounded-xl font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2">
+              <i data-lucide="shopping-bag" class="w-4 h-4"></i> Add to Cart
+            </button>
+            <button onclick="openCheckout()" class="py-3 px-4 bg-gradient-to-r from-amber-600 to-yellow-500 hover:from-amber-700 hover:to-yellow-600 text-slate-950 rounded-xl font-black text-xs uppercase tracking-wider shadow-lg shadow-amber-600/30 transition-all flex items-center justify-center gap-2">
+              <i data-lucide="zap" class="w-4 h-4 fill-slate-950"></i> Buy Now (COD)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Details & Video Player -->
+      <div class="md:col-span-6 lg:col-span-7 space-y-4">
+
+        <div class="bg-white rounded-2xl p-5 border border-amber-100 shadow-sm">
+          <div class="flex items-center gap-2 text-xs font-bold text-slate-500 mb-1.5">
+            <span class="text-amber-800 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded text-[10px] font-extrabold uppercase">Renters & Homeowners Choice</span>
+            <span>SKU: LG-PIR-30CM</span>
+          </div>
+
+          <h1 class="text-xl sm:text-2xl font-black text-slate-900 leading-snug">
+            LumiGlow™ Wireless Motion Sensor Magnetic LED Strip Light (USB-C Fast Recharge, 3 Light Temperatures, Ultra-Thin 9mm, Peel & Stick Magnet)
+          </h1>
+
+          <div class="mt-4 flex items-baseline gap-3">
+            <span class="text-3xl font-black text-slate-900" id="displayPrice">₹649</span>
+            <span class="text-sm text-slate-400 line-through">₹1,799</span>
+            <span class="text-xs font-extrabold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">Save ₹1,150 (64% OFF)</span>
+          </div>
+
+          <div class="mt-2 p-2.5 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl border border-emerald-200 text-xs text-emerald-900 flex items-center gap-2 font-medium">
+            <i data-lucide="badge-percent" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+            <span><strong>Prepaid UPI Benefit:</strong> Flat ₹50 Instant Discount when paying via UPI / PhonePe at checkout.</span>
+          </div>
+
+          <div class="mt-4 flex items-center gap-3">
+            <div class="bg-emerald-600 text-white text-xs font-black px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-sm">
+              <span>4.6</span>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-white"></i>
+            </div>
+            <span class="text-xs font-semibold text-slate-500">19,840 Verified Homes • 6,110 Customer Reviews</span>
+          </div>
+
+          <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <div class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
+              <i data-lucide="truck" class="w-3.5 h-3.5 text-amber-600"></i>
+              <span>Free Delivery Pan-India</span>
+            </div>
+            <span class="text-xs text-amber-700 font-extrabold">⚡ 100% Landlord Friendly</span>
+          </div>
+        </div>
+
+        <!-- NEW: Interactive Creative Demonstration Video Player -->
+        <div class="bg-white rounded-2xl p-5 border border-amber-100 shadow-sm">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2">
+              <div class="w-6 h-6 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center">
+                <i data-lucide="play" class="w-3.5 h-3.5 fill-amber-600"></i>
+              </div>
+              <span class="text-xs font-black uppercase tracking-wider text-slate-900">Watch LumiGlow™ in Action</span>
+            </div>
+            <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded">Hands-Free Sensor</span>
+          </div>
+
+          <div class="grid grid-cols-3 gap-2 mb-3">
+            <button onclick="switchVideoDemo('wardrobe', this)" id="tab-wardrobe" class="video-tab-btn active-tab py-2.5 px-2 rounded-xl border border-amber-600 bg-amber-50 text-amber-900 text-[11px] font-bold text-center transition-all flex flex-col sm:flex-row items-center justify-center gap-1.5 shadow-sm">
+              <i data-lucide="door-closed" class="w-3.5 h-3.5 text-amber-700 shrink-0"></i>
+              <span class="truncate">Wardrobe Auto-On Sensor</span>
+            </button>
+            <button onclick="switchVideoDemo('kitchen', this)" id="tab-kitchen" class="video-tab-btn py-2.5 px-2 rounded-xl border border-slate-200 text-slate-600 text-[11px] font-bold text-center hover:bg-slate-50 transition-all flex flex-col sm:flex-row items-center justify-center gap-1.5">
+              <i data-lucide="utensils" class="w-3.5 h-3.5 text-slate-500 shrink-0"></i>
+              <span class="truncate">Kitchen Under-Cabinet Magnetic Snap</span>
+            </button>
+            <button onclick="switchVideoDemo('bedside', this)" id="tab-bedside" class="video-tab-btn py-2.5 px-2 rounded-xl border border-slate-200 text-slate-600 text-[11px] font-bold text-center hover:bg-slate-50 transition-all flex flex-col sm:flex-row items-center justify-center gap-1.5">
+              <i data-lucide="bed-double" class="w-3.5 h-3.5 text-slate-500 shrink-0"></i>
+              <span class="truncate">Bedside Night Safety</span>
+            </button>
+          </div>
+
+          <div class="relative bg-slate-950 rounded-2xl overflow-hidden aspect-video flex items-center justify-center text-white border border-slate-800 shadow-xl group" id="demoVideoContainer">
+            <img id="demoVideoThumb" src="{{ 'gallery-2.jpg' | asset_url }}" onerror="this.src='https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=800&q=80'" alt="Wardrobe Motion Sensor Demo" class="w-full h-full object-cover transition-all duration-700 opacity-70">
+            
+            <!-- Dynamic Warm Illumination Glow Overlay (animates on motion simulation) -->
+            <div id="demoGlowOverlay" class="absolute inset-0 bg-gradient-to-b from-amber-400/25 via-amber-300/10 to-transparent opacity-90 transition-opacity duration-500 pointer-events-none"></div>
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/40 flex flex-col justify-between p-3.5 sm:p-4 pointer-events-none">
+              <!-- Top Header Bar inside Video -->
+              <div class="flex items-center justify-between pointer-events-auto">
+                <span class="bg-amber-500 text-slate-950 text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full flex items-center gap-1.5 shadow-md">
+                  <span id="demoLiveDot" class="w-2 h-2 rounded-full bg-slate-950 animate-ping"></span>
+                  <span id="demoStatusBadge">PIR MOTION SENSOR ACTIVE</span>
+                </span>
+                <span class="text-[10px] font-semibold text-slate-300 bg-black/60 backdrop-blur-md px-2 py-0.5 rounded-full border border-white/10" id="demoClipTitle">
+                  Wardrobe Door Auto-Detect
+                </span>
+              </div>
+              
+              <!-- Center Play / Interactive Motion Trigger -->
+              <div class="text-center my-auto pointer-events-auto">
+                <button onclick="toggleDemoPlayback()" id="playDemoBtn" class="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-amber-500/90 hover:bg-amber-400 text-slate-950 flex items-center justify-center mx-auto shadow-2xl shadow-amber-500/50 hover:scale-110 active:scale-95 transition-all">
+                  <i data-lucide="play" id="playIcon" class="w-6 h-6 fill-slate-950 ml-0.5"></i>
+                </button>
+                <div class="mt-2 text-[11px] font-extrabold text-amber-300 tracking-wide drop-shadow" id="demoTimerText">
+                  Tap to Simulate Hands-Free Motion
+                </div>
+              </div>
+
+              <!-- Bottom Interactive Bar & 3-Color Temp Toggles -->
+              <div class="space-y-1.5 pointer-events-auto">
+                <div class="flex items-center justify-between text-[10px] bg-slate-900/80 backdrop-blur-md p-1.5 px-2.5 rounded-xl border border-slate-700/80">
+                  <span class="text-slate-300 font-bold hidden sm:inline">Color Temperature:</span>
+                  <div class="flex items-center gap-1">
+                    <button onclick="setDemoColorTemp('warm', this)" class="color-temp-btn px-2 py-0.5 rounded-md bg-amber-500 text-slate-950 font-extrabold text-[10px] transition-all">
+                      3000K Warm
+                    </button>
+                    <button onclick="setDemoColorTemp('natural', this)" class="color-temp-btn px-2 py-0.5 rounded-md bg-slate-800 text-slate-300 hover:text-white font-bold text-[10px] transition-all">
+                      4500K Natural
+                    </button>
+                    <button onclick="setDemoColorTemp('cool', this)" class="color-temp-btn px-2 py-0.5 rounded-md bg-slate-800 text-slate-300 hover:text-white font-bold text-[10px] transition-all">
+                      6500K Cool
+                    </button>
+                  </div>
+                  <span class="text-emerald-400 font-bold text-[10px]">Zero Drilling</span>
+                </div>
+
+                <div class="flex items-center justify-between text-[11px] text-slate-200 bg-black/60 backdrop-blur-md p-2 px-3 rounded-xl border border-white/10">
+                  <span id="demoClipDescription" class="truncate font-medium">Turns on automatically the instant you open the wardrobe or closet door.</span>
+                  <span class="text-amber-400 font-bold shrink-0 ml-2">120° Wide Sensor</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Problem vs Solution Comparison -->
+        <div class="bg-white rounded-2xl p-5 border border-amber-100 shadow-sm">
+          <h3 class="text-xs font-black uppercase tracking-wider text-slate-500 mb-3">Hardwired Profile Lights vs LumiGlow™</h3>
+          <div class="grid grid-cols-2 gap-3 text-xs">
+            <div class="p-3 rounded-xl bg-rose-50/70 border border-rose-200">
+              <div class="font-bold text-rose-800 flex items-center gap-1.5 mb-1.5">
+                <i data-lucide="x-circle" class="w-4 h-4 text-rose-600"></i> Hardwired Lighting
+              </div>
+              <ul class="space-y-1.5 text-[11px] text-slate-600">
+                <li>• ₹5,000–₹15,000 electrician quotation</li>
+                <li>• Permanent wall drilling (loss of rental deposit)</li>
+                <li>• Constant electricity draw</li>
+              </ul>
+            </div>
+
+            <div class="p-3 rounded-xl bg-amber-50/70 border border-amber-200">
+              <div class="font-bold text-amber-900 flex items-center gap-1.5 mb-1.5">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-600"></i> The LumiGlow™ Fix
+              </div>
+              <ul class="space-y-1.5 text-[11px] text-slate-700 font-medium">
+                <li>• Starts at just ₹649 for Pack of 2</li>
+                <li>• Magnetic peel & stick in 10 seconds</li>
+                <li>• Recharge via Type-C once a month</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bundle Selection -->
+        <div class="bg-white rounded-2xl p-5 border border-amber-100 shadow-sm">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-black text-slate-700 uppercase tracking-wider">Select Quantity Bundle</span>
+            <span class="text-[11px] font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">Zero Drilling • Magnetic Sets</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+            <label class="bundle-card cursor-pointer border-2 border-amber-600 bg-amber-50/30 rounded-xl p-3.5 min-h-[52px] flex items-center justify-between relative transition-all active:scale-[0.99]" onclick="selectBundle('pack2', 649)">
+              <div class="flex items-center gap-2.5">
+                <input type="radio" name="bundle" value="pack2" checked class="accent-amber-600 w-4 h-4">
+                <div>
+                  <div class="text-xs font-bold text-slate-900 leading-tight">Pack of 2</div>
+                  <div class="text-[10px] text-slate-500 mt-0.5">Kitchen + Wardrobe</div>
+                  <div class="text-sm font-black text-slate-900 mt-0.5">₹649</div>
+                </div>
+              </div>
+              <span class="text-[9px] font-extrabold bg-amber-100 text-amber-900 px-2 py-1 rounded-md uppercase">Standard</span>
+            </label>
+
+            <label class="bundle-card cursor-pointer border-2 border-slate-200 hover:border-amber-300 rounded-xl p-3.5 min-h-[52px] flex items-center justify-between relative transition-all active:scale-[0.99]" onclick="selectBundle('pack4', 1199)">
+              <div class="flex items-center gap-2.5">
+                <input type="radio" name="bundle" value="pack4" class="accent-amber-600 w-4 h-4">
+                <div>
+                  <div class="text-xs font-bold text-slate-900 leading-tight">Pack of 4</div>
+                  <div class="text-[10px] text-slate-500 mt-0.5">Kitchen + 2 Closets + Stairs</div>
+                  <div class="text-sm font-black text-amber-700 mt-0.5">₹1,199 <span class="text-[10px] text-slate-400 line-through">₹3,599</span></div>
+                </div>
+              </div>
+              <span class="text-[9px] font-extrabold bg-emerald-100 text-emerald-800 px-2 py-1 rounded-md uppercase">Save ₹300</span>
+            </label>
+
+            <label class="bundle-card cursor-pointer border-2 border-slate-200 hover:border-amber-300 rounded-xl p-3.5 min-h-[52px] flex items-center justify-between relative transition-all active:scale-[0.99]" onclick="selectBundle('pack6', 1699)">
+              <div class="flex items-center gap-2.5">
+                <input type="radio" name="bundle" value="pack6" class="accent-amber-600 w-4 h-4">
+                <div>
+                  <div class="text-xs font-bold text-slate-900 leading-tight">Pack of 6</div>
+                  <div class="text-[10px] text-slate-500 mt-0.5">Full Home Luxury Set</div>
+                  <div class="text-sm font-black text-emerald-800 mt-0.5">₹1,699 <span class="text-[10px] text-slate-400 line-through">₹5,399</span></div>
+                </div>
+              </div>
+              <span class="text-[9px] font-extrabold bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 px-2 py-1 rounded-md uppercase">Best Value</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="bg-white rounded-2xl p-4 border border-amber-100 shadow-sm grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+          <div class="p-2 flex flex-col items-center">
+            <div class="w-8 h-8 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center mb-1">
+              <i data-lucide="banknote" class="w-4 h-4"></i>
+            </div>
+            <div class="text-[11px] font-bold text-slate-900">Cash on Delivery</div>
+            <div class="text-[10px] text-slate-500">Pay on doorstep</div>
+          </div>
+          <div class="p-2 flex flex-col items-center">
+            <div class="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-1">
+              <i data-lucide="magnet" class="w-4 h-4"></i>
+            </div>
+            <div class="text-[11px] font-bold text-slate-900">Magnetic Mount</div>
+            <div class="text-[10px] text-slate-500">Zero wall damage</div>
+          </div>
+          <div class="p-2 flex flex-col items-center">
+            <div class="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-1">
+              <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+            </div>
+            <div class="text-[11px] font-bold text-slate-900">7-Day Replacement</div>
+            <div class="text-[10px] text-slate-500">Easy exchange</div>
+          </div>
+          <div class="p-2 flex flex-col items-center">
+            <div class="w-8 h-8 rounded-full bg-yellow-50 text-yellow-600 flex items-center justify-center mb-1">
+              <i data-lucide="battery-charging" class="w-4 h-4"></i>
+            </div>
+            <div class="text-[11px] font-bold text-slate-900">Type-C Recharge</div>
+            <div class="text-[10px] text-slate-500">30-day battery</div>
+          </div>
+        </div>
+
+        <!-- Pincode Checker -->
+        <div class="bg-white rounded-2xl p-5 border border-amber-100 shadow-sm">
+          <div class="flex items-center gap-2 text-xs font-bold text-slate-700 mb-2">
+            <i data-lucide="map-pin" class="w-4 h-4 text-amber-600"></i>
+            <span>Check Pincode Serviceability & Delivery Time</span>
+          </div>
+          <div class="flex gap-2">
+            <input type="text" id="pincodeInput" placeholder="Enter 6-digit Indian PIN" maxlength="6" class="flex-1 px-3 py-2.5 border border-slate-200 rounded-xl text-base focus:outline-none focus:border-amber-600">
+            <button onclick="checkPincode()" class="px-5 py-2.5 bg-slate-900 hover:bg-amber-600 text-white rounded-xl text-xs font-bold transition-colors">Check</button>
+          </div>
+          <div id="pincodeResult" class="mt-3 text-xs hidden">
+            <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 flex items-center gap-2">
+              <i data-lucide="truck" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+              <div><span class="font-bold">Estimated Delivery: 3 to 4 Days</span> • Free Doorstep Delivery • <strong>Cash on Delivery Available!</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Verified Reviews -->
+        <div class="bg-white rounded-2xl p-5 border border-amber-100 shadow-sm">
+          <div class="flex items-center justify-between mb-4">
+            <div>
+              <h3 class="text-sm font-black text-slate-900">Verified Customer Reviews</h3>
+              <p class="text-xs text-slate-500">Real feedback from homeowners and tenants</p>
+            </div>
+            <div class="text-right">
+              <div class="text-xl font-black text-slate-900">4.6 / 5</div>
+              <div class="text-[10px] text-slate-400">19,840 verified ratings</div>
+            </div>
+          </div>
+
+          <div class="space-y-4 divide-y divide-slate-100 text-xs">
+            <div class="pt-3">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="w-7 h-7 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-xs">SM</span>
+                  <div>
+                    <div class="font-bold text-slate-900">Sunita Murthy <span class="text-[10px] font-normal text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-200">Verified Buyer</span></div>
+                    <div class="text-[10px] text-slate-400">Hyderabad • 3 days ago</div>
+                  </div>
+                </div>
+                <div class="bg-emerald-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">5 ★</div>
+              </div>
+              <p class="text-slate-600 mt-2">
+                "Kitchen counter looks like a luxury 5-star modular setup now! The magnet is very strong and the sensor triggers instantly when I walk in for late-night water. Highly recommended."
+              </p>
+              <!-- Customer Verified Photo Upload -->
+              <div class="mt-2.5 flex items-center gap-3 bg-amber-50/50 p-2 rounded-xl border border-amber-100">
+                <div class="w-16 h-16 rounded-lg overflow-hidden border border-slate-200 shadow-sm shrink-0 cursor-pointer group relative" onclick="changeImage('./images/review-1.jpg', 'Sunita M. (Hyderabad) Customer Setup', this)">
+                  <img src="{{ 'review-1.jpg' | asset_url }}" alt="Customer Kitchen Setup" class="w-full h-full object-cover group-hover:scale-110 transition-transform">
+                  <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-[9px] font-bold transition-opacity">Zoom</div>
+                </div>
+                <div class="text-[11px] text-slate-600">
+                  <span class="font-bold text-slate-800 flex items-center gap-1">
+                    <i data-lucide="camera" class="w-3.5 h-3.5 text-amber-600"></i> Customer Photo Upload (Hyderabad Apartment)
+                  </span>
+                  <p class="text-[10px] text-slate-500 mt-0.5">Warm White 3000K mounted under spice shelf using peel & stick magnet.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-3">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="w-7 h-7 rounded-full bg-yellow-100 text-yellow-800 flex items-center justify-center font-bold text-xs">RK</span>
+                  <div>
+                    <div class="font-bold text-slate-900">Ravi Kulkarni <span class="text-[10px] font-normal text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-200">Verified Buyer</span></div>
+                    <div class="text-[10px] text-slate-400">Bengaluru • 6 days ago</div>
+                  </div>
+                </div>
+                <div class="bg-emerald-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">5 ★</div>
+              </div>
+              <p class="text-slate-600 mt-2">
+                "I live in a rented flat so wall drilling is forbidden. This is a lifesaver for my Godrej almirah and staircase. Pack of 2 was delivered in 3 days on COD."
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Sticky Mobile Action Bar -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-amber-100 p-3 shadow-2xl md:hidden flex items-center justify-between gap-3">
+    <div class="flex flex-col shrink-0 min-w-[85px]">
+      <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Total (COD)</span>
+      <div class="flex items-baseline gap-1">
+        <span id="mobileStickyPrice" class="text-xl font-black text-slate-900 leading-tight">₹649</span>
+      </div>
+      <span class="text-[9px] text-emerald-700 font-extrabold uppercase">Free Shipping</span>
+    </div>
+    <button onclick="openCheckout()" class="flex-1 h-12 px-3 bg-gradient-to-r from-amber-600 to-yellow-500 hover:from-amber-700 hover:to-yellow-600 text-slate-950 rounded-xl font-black text-xs uppercase tracking-wider shadow-lg shadow-amber-600/30 active:scale-95 transition-all flex items-center justify-center gap-1.5">
+      <i data-lucide="zap" class="w-4 h-4 fill-slate-950 shrink-0"></i>
+      <span class="truncate">⚡ Buy Now - Pay on Delivery (COD)</span>
+    </button>
+  </div>
+
+  <!-- Checkout Drawer -->
+  <div id="checkoutModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto p-6 shadow-2xl border border-slate-200 relative animate-in fade-in zoom-in duration-200">
+      <button onclick="closeCheckout()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1.5 rounded-full hover:bg-slate-100">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center font-bold">
+          <i data-lucide="sun" class="w-4 h-4"></i>
+        </div>
+        <div>
+          <h2 class="text-base font-black text-slate-900">LumiGlow™ Direct Checkout</h2>
+          <p class="text-[11px] text-slate-500">Pay on Delivery (COD) or Online with ₹50 Discount</p>
+        </div>
+      </div>
+
+      <div class="p-3 bg-amber-50/60 rounded-xl border border-amber-100 flex items-center justify-between mb-4">
+        <div>
+          <div class="text-xs font-bold text-slate-900" id="modalProductName">LumiGlow™ Pack of 2 Bars (30cm Each)</div>
+          <div class="text-[11px] text-slate-500">Free Express Delivery Across India</div>
+        </div>
+        <div class="text-right">
+          <div class="text-sm font-black text-amber-700" id="modalPrice">₹649</div>
+          <div class="text-[10px] text-emerald-600 font-bold">100% Quality Assured</div>
+        </div>
+      </div>
+
+      <form onsubmit="handlePlaceOrder(event)" class="space-y-3.5 text-xs">
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">Full Name</label>
+          <input type="text" required placeholder="e.g. Deepak Sharma" class="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-base focus:outline-none focus:border-amber-600 transition-all">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">10-Digit Mobile Number (For Delivery SMS)</label>
+            <input type="tel" required pattern="[6-9][0-9]{9}" maxlength="10" placeholder="e.g. 9876543210" class="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-base focus:outline-none focus:border-amber-600 font-medium transition-all">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">6-Digit Delivery Pincode</label>
+            <input type="text" required pattern="[0-9]{6}" maxlength="6" placeholder="e.g. 560001" class="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-base focus:outline-none focus:border-amber-600 font-medium transition-all">
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold text-slate-700 mb-1">House / Flat No & Street Address</label>
+          <input type="text" required placeholder="e.g. Flat 104, Green Glen Layout, Bellandur" class="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-base focus:outline-none focus:border-amber-600 transition-all">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">City</label>
+            <input type="text" required placeholder="e.g. Bengaluru" class="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-base focus:outline-none focus:border-amber-600 transition-all">
+          </div>
+          <div>
+            <label class="block font-bold text-slate-700 mb-1">State</label>
+            <input type="text" required placeholder="e.g. Karnataka" class="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-base focus:outline-none focus:border-amber-600 transition-all">
+          </div>
+        </div>
+
+        <div class="pt-2">
+          <label class="block font-bold text-slate-800 mb-2">Select Payment Method</label>
+          <div class="space-y-2">
+            <label class="border-2 border-slate-200 has-[:checked]:border-amber-600 has-[:checked]:bg-amber-50/40 p-3 rounded-xl flex items-center justify-between cursor-pointer transition-all">
+              <div class="flex items-center gap-2">
+                <input type="radio" name="paymentMethod" value="COD" checked class="accent-amber-600">
+                <div>
+                  <span class="font-bold text-slate-900">Cash on Delivery (COD)</span>
+                  <p class="text-[10px] text-slate-500">Pay cash/UPI at doorstep</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-bold bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Standard</span>
+            </label>
+
+            <label class="border-2 border-slate-200 has-[:checked]:border-emerald-600 has-[:checked]:bg-emerald-50/40 p-3 rounded-xl flex items-center justify-between cursor-pointer transition-all">
+              <div class="flex items-center gap-2">
+                <input type="radio" name="paymentMethod" value="UPI" class="accent-emerald-600">
+                <div>
+                  <span class="font-bold text-slate-900">Pay Online via UPI (PhonePe/GPay)</span>
+                  <p class="text-[10px] text-emerald-700 font-semibold">⚡ Extra ₹50 Instant Discount Applied</p>
+                </div>
+              </div>
+              <span class="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">Save ₹50</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="pt-3">
+          <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-amber-600 to-yellow-500 hover:from-amber-700 hover:to-yellow-600 text-slate-950 rounded-2xl font-black text-sm tracking-wide shadow-lg shadow-amber-600/30 transition-all flex items-center justify-center gap-2">
+            <i data-lucide="shield-check" class="w-4 h-4"></i> Place Order (No Advance Required)
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div id="successModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-sm w-full p-6 text-center shadow-2xl border border-slate-200">
+      <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4">
+        <i data-lucide="check" class="w-8 h-8"></i>
+      </div>
+      <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Order Confirmed</span>
+      <h3 class="text-xl font-black text-slate-900 mt-2">Thank You!</h3>
+      <p class="text-xs text-slate-600 mt-1">Your LumiGlow™ lights are packed for priority dispatch within 24 hours.</p>
+      <div class="my-4 p-3 bg-slate-50 rounded-xl border border-slate-100 text-xs text-left">
+        <div class="flex justify-between text-slate-500">
+          <span>Order ID:</span>
+          <span class="font-mono font-bold text-slate-800">#LUMI-1940-7741</span>
+        </div>
+        <div class="flex justify-between text-slate-500 mt-1">
+          <span>Delivery Mode:</span>
+          <span class="font-bold text-amber-700">Express Air (COD)</span>
+        </div>
+      </div>
+      <button onclick="closeSuccess()" class="w-full py-2.5 bg-slate-900 hover:bg-amber-600 text-white rounded-xl text-xs font-bold transition-colors">
+        Continue Shopping
+      </button>
+    </div>
+  </div>
+
+  <!-- Modern Non-Intrusive Floating Toast -->
+  <div id="toastNotification" class="fixed top-5 right-5 z-50 flex items-center gap-2.5 px-4 py-3 rounded-2xl bg-slate-900/95 text-amber-300 shadow-2xl border border-amber-500/40 text-xs font-bold transition-all duration-300 -translate-y-12 opacity-0 pointer-events-none backdrop-blur-md">
+    <i data-lucide="info" id="toastIcon" class="w-4 h-4"></i>
+    <span id="toastText">Action completed</span>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    let currentPrice = 649;
+
+    function showToast(message, type = 'info') {
+      const toast = document.getElementById('toastNotification');
+      const text = document.getElementById('toastText');
+      const icon = document.getElementById('toastIcon');
+      if (!toast || !text) return;
+      text.innerText = message;
+      
+      if (type === 'success') {
+        toast.className = 'fixed top-5 right-5 z-50 flex items-center gap-2.5 px-4 py-3 rounded-2xl bg-emerald-950/95 text-emerald-300 shadow-2xl border border-emerald-500/40 text-xs font-bold transition-all duration-300 translate-y-0 opacity-100 backdrop-blur-md';
+        icon.setAttribute('data-lucide', 'check-circle-2');
+      } else if (type === 'heart') {
+        toast.className = 'fixed top-5 right-5 z-50 flex items-center gap-2.5 px-4 py-3 rounded-2xl bg-slate-900/95 text-rose-400 shadow-2xl border border-rose-500/40 text-xs font-bold transition-all duration-300 translate-y-0 opacity-100 backdrop-blur-md';
+        icon.setAttribute('data-lucide', 'heart');
+      } else {
+        toast.className = 'fixed top-5 right-5 z-50 flex items-center gap-2.5 px-4 py-3 rounded-2xl bg-slate-900/95 text-amber-300 shadow-2xl border border-amber-500/40 text-xs font-bold transition-all duration-300 translate-y-0 opacity-100 backdrop-blur-md';
+        icon.setAttribute('data-lucide', 'info');
+      }
+      lucide.createIcons();
+
+      clearTimeout(window.toastTimer);
+      window.toastTimer = setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('-translate-y-12', 'opacity-0');
+      }, 3200);
+    }
+
+    function changeImage(src, caption, btn) {
+      document.getElementById('mainImage').src = src;
+      document.querySelectorAll('.thumb-btn').forEach(b => {
+        b.classList.remove('border-amber-600');
+        b.classList.add('border-slate-200', 'opacity-70');
+      });
+      if (btn) {
+        btn.classList.add('border-amber-600');
+        btn.classList.remove('border-slate-200', 'opacity-70');
+      }
+      if (caption) {
+        showToast(caption, 'info');
+      }
+    }
+
+    const demoClips = {
+      wardrobe: {
+        title: "Wardrobe Auto-On Sensor",
+        desc: "Turns on the instant the almirah door opens. Solves dark closets and Godrej steel cupboards.",
+        img: "./images/gallery-2.jpg",
+        alt: "Wardrobe Auto-On Sensor Demo"
+      },
+      kitchen: {
+        title: "Kitchen Under-Cabinet Magnetic Snap",
+        desc: "Snaps beneath counter cabinets with zero tools. Lights up your chopping countertop instantly.",
+        img: "./images/gallery-1.jpg",
+        alt: "Kitchen Under-Cabinet Magnetic Snap Demo"
+      },
+      bedside: {
+        title: "Bedside Night Safety",
+        desc: "Soft warm guidance prevents midnight tripping for elderly family members and children without harsh glare.",
+        img: "./images/gallery-3.jpg",
+        alt: "Bedside Night Safety Demo"
+      }
+    };
+
+    function switchVideoDemo(key, btn) {
+      document.querySelectorAll('.video-tab-btn').forEach(b => {
+        b.classList.remove('border-amber-600', 'bg-amber-50', 'text-amber-900');
+        b.classList.add('border-slate-200', 'text-slate-600');
+        const icon = b.querySelector('i');
+        if (icon) icon.className = "w-3.5 h-3.5 text-slate-500 shrink-0";
+      });
+      btn.classList.add('border-amber-600', 'bg-amber-50', 'text-amber-900');
+      btn.classList.remove('border-slate-200', 'text-slate-600');
+      const activeIcon = btn.querySelector('i');
+      if (activeIcon) activeIcon.className = "w-3.5 h-3.5 text-amber-700 shrink-0";
+
+      const data = demoClips[key];
+      document.getElementById('demoClipTitle').innerText = data.title;
+      document.getElementById('demoClipDescription').innerText = data.desc;
+      document.getElementById('demoVideoThumb').src = data.img;
+      document.getElementById('demoVideoThumb').alt = data.alt;
+      
+      triggerMotionSimulation(data.title);
+    }
+
+    let isPlaying = false;
+    let demoTimerInterval = null;
+    let demoSeconds = 20;
+
+    function toggleDemoPlayback() {
+      isPlaying = !isPlaying;
+      const playIcon = document.getElementById('playIcon');
+      const glow = document.getElementById('demoGlowOverlay');
+      const badge = document.getElementById('demoStatusBadge');
+      const timerText = document.getElementById('demoTimerText');
+
+      if (isPlaying) {
+        playIcon.setAttribute('data-lucide', 'pause');
+        badge.innerText = "MOTION SENSOR: TRIGGERED (AUTO-ON)";
+        glow.classList.remove('opacity-0');
+        glow.classList.add('opacity-100');
+        showToast("Motion detected! 120° PIR Sensor triggered auto-illumination", "success");
+        startDemoCountdown();
+      } else {
+        playIcon.setAttribute('data-lucide', 'play');
+        badge.innerText = "PIR SENSOR: STANDBY MODE";
+        glow.classList.remove('opacity-100');
+        glow.classList.add('opacity-30');
+        timerText.innerText = "Paused • Tap to trigger motion detection";
+        clearInterval(demoTimerInterval);
+      }
+      lucide.createIcons();
+    }
+
+    function startDemoCountdown() {
+      clearInterval(demoTimerInterval);
+      demoSeconds = 20;
+      const timerText = document.getElementById('demoTimerText');
+      timerText.innerText = `Motion Active • Auto-off in ${demoSeconds}s`;
+
+      demoTimerInterval = setInterval(() => {
+        demoSeconds--;
+        if (demoSeconds > 0) {
+          timerText.innerText = `Motion Active • Auto-off in ${demoSeconds}s`;
+        } else {
+          clearInterval(demoTimerInterval);
+          isPlaying = false;
+          const playIcon = document.getElementById('playIcon');
+          playIcon.setAttribute('data-lucide', 'play');
+          document.getElementById('demoStatusBadge').innerText = "AUTO-OFF COMPLETE (Zero Battery Drain)";
+          document.getElementById('demoGlowOverlay').classList.add('opacity-0');
+          timerText.innerText = "Auto-turned off after 20s. Tap to trigger again";
+          lucide.createIcons();
+        }
+      }, 1000);
+    }
+
+    function triggerMotionSimulation(sceneName) {
+      isPlaying = true;
+      const playIcon = document.getElementById('playIcon');
+      playIcon.setAttribute('data-lucide', 'pause');
+      document.getElementById('demoGlowOverlay').classList.remove('opacity-0');
+      document.getElementById('demoGlowOverlay').classList.add('opacity-100');
+      document.getElementById('demoStatusBadge').innerText = `DETECTED: ${sceneName.toUpperCase()}`;
+      startDemoCountdown();
+      lucide.createIcons();
+    }
+
+    function setDemoColorTemp(mode, btn) {
+      document.querySelectorAll('.color-temp-btn').forEach(b => {
+        b.className = "color-temp-btn px-2 py-0.5 rounded-md bg-slate-800 text-slate-300 hover:text-white font-bold text-[10px] transition-all";
+      });
+      btn.className = "color-temp-btn px-2 py-0.5 rounded-md bg-amber-500 text-slate-950 font-extrabold text-[10px] transition-all shadow-sm";
+
+      const glow = document.getElementById('demoGlowOverlay');
+      if (mode === 'warm') {
+        glow.className = "absolute inset-0 bg-gradient-to-b from-amber-400/35 via-amber-300/15 to-transparent opacity-90 transition-all duration-500 pointer-events-none";
+        showToast("Switched to 3000K Warm Cozy Glow (Almirah / Bedside)", "info");
+      } else if (mode === 'natural') {
+        glow.className = "absolute inset-0 bg-gradient-to-b from-yellow-200/30 via-amber-100/15 to-transparent opacity-90 transition-all duration-500 pointer-events-none";
+        showToast("Switched to 4500K Natural White (Kitchen / Prep Counter)", "info");
+      } else {
+        glow.className = "absolute inset-0 bg-gradient-to-b from-sky-200/30 via-slate-100/15 to-transparent opacity-90 transition-all duration-500 pointer-events-none";
+        showToast("Switched to 6500K Crisp Daylight (Work & Craft)", "info");
+      }
+    }
+
+    function toggleWishlist() {
+      const icon = document.getElementById('wishlistIcon');
+      if (icon.classList.contains('fill-rose-500')) {
+        icon.classList.remove('fill-rose-500', 'text-rose-500');
+        showToast('Removed from Saved Items', 'info');
+      } else {
+        icon.classList.add('fill-rose-500', 'text-rose-500');
+        showToast('Saved to Wishlist!', 'heart');
+      }
+    }
+
+    function selectBundle(type, price) {
+      currentPrice = price;
+      const formatted = price.toLocaleString('en-IN');
+      document.getElementById('displayPrice').innerText = '₹' + formatted;
+      document.getElementById('modalPrice').innerText = '₹' + formatted;
+      const stickyPrice = document.getElementById('mobileStickyPrice');
+      if (stickyPrice) stickyPrice.innerText = '₹' + formatted;
+
+      document.querySelectorAll('.bundle-card').forEach(card => {
+        card.classList.remove('border-amber-600', 'bg-amber-50/30');
+        card.classList.add('border-slate-200');
+      });
+
+      const radio = document.querySelector(`input[name="bundle"][value="${type}"]`);
+      if (radio) {
+        radio.checked = true;
+        const parentCard = radio.closest('.bundle-card');
+        if (parentCard) {
+          parentCard.classList.remove('border-slate-200');
+          parentCard.classList.add('border-amber-600', 'bg-amber-50/30');
+        }
+      }
+
+      if (type === 'pack6') {
+        document.getElementById('modalProductName').innerText = 'LumiGlow™ Pack of 6 Bars (Full Home Luxury Bundle)';
+      } else if (type === 'pack4') {
+        document.getElementById('modalProductName').innerText = 'LumiGlow™ Pack of 4 Bars (Kitchen + Closets + Stairs)';
+      } else if (type === 'pack3') {
+        document.getElementById('modalProductName').innerText = 'LumiGlow™ Pack of 3 Bars (Whole Home Set)';
+      } else {
+        document.getElementById('modalProductName').innerText = 'LumiGlow™ Pack of 2 Bars (30cm Each)';
+      }
+      showToast(`Selected: ${type === 'pack3' ? 'Pack of 3 Bars (₹899)' : 'Pack of 2 Bars (₹649)'}`, 'info');
+    }
+
+    function checkPincode() {
+      const pin = document.getElementById('pincodeInput').value.trim();
+      const res = document.getElementById('pincodeResult');
+      if (pin.length === 6 && /^\d+$/.test(pin)) {
+        res.classList.remove('hidden');
+        showToast(`PIN ${pin}: Free Express Delivery & COD Available!`, 'success');
+      } else {
+        showToast('Please enter a valid 6-digit Indian PIN code', 'info');
+      }
+    }
+
+    function shareWhatsApp() {
+      const text = encodeURIComponent("Turn your kitchen & almirah into luxury modular look without drilling! LumiGlow™ Wireless Motion Sensor Magnetic LED Bar at ₹649 with Free Delivery & COD: " + window.location.href);
+      window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+    }
+
+    function addToCart() {
+      const countEl = document.getElementById('cartCount');
+      countEl.innerText = parseInt(countEl.innerText) + 1;
+      showToast('LumiGlow™ Light Bar added to Cart!', 'success');
+      openCheckout();
+    }
+
+    function openCart() { openCheckout(); }
+    function openCheckout() { document.getElementById('checkoutModal').classList.remove('hidden'); }
+    function closeCheckout() { document.getElementById('checkoutModal').classList.add('hidden'); }
+    function handlePlaceOrder(e) {
+      e.preventDefault();
+      closeCheckout();
+      document.getElementById('successModal').classList.remove('hidden');
+    }
+    function closeSuccess() { document.getElementById('successModal').classList.add('hidden'); }
+  </script>
+</body>
+</html>
+
+</div>
