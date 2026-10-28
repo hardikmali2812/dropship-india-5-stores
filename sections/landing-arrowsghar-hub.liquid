@@ -1,0 +1,925 @@
+
+{% schema %}
+{
+  "name": "ArrowsGhar Master Storefront",
+  "settings": []
+}
+{% endschema %}
+
+<!-- TailWind & Lucide CDN for Standalone Dropship Section -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<div class="arrowsghar-storefront-wrapper" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ArrowsGhar™ | Smart Living for Modern Indian Homes & Commutes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .touch-target-48 { min-height: 48px; min-width: 48px; }
+    @keyframes pulseSlow { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.85; transform: scale(1.02); } }
+    .animate-pulse-slow { animation: pulseSlow 3s infinite ease-in-out; }
+    @keyframes progressAnim { 0% { width: 0%; } 100% { width: 100%; } }
+    .video-progress-bar { transition: width 0.3s linear; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden pb-28 md:pb-12">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-gradient-to-r from-indigo-900 via-slate-900 to-indigo-950 text-white text-xs font-semibold py-2 px-3 text-center tracking-wide flex items-center justify-center gap-2 shadow-sm border-b border-indigo-800/50">
+    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-extrabold bg-emerald-500 text-white">FESTIVE SALE</span>
+    <span>🇮🇳 <strong>Free Express Delivery</strong> Across 19,000+ PIN Codes • ⚡ <strong>Cash on Delivery (COD)</strong> Available • <strong>₹50 OFF on UPI</strong></span>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="#hero" class="flex items-center gap-2.5">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-700 to-sky-500 flex items-center justify-center text-white shadow-md shadow-indigo-600/30">
+            <i data-lucide="zap" class="w-6 h-6 fill-white"></i>
+          </div>
+          <div>
+            <span class="text-xl font-black tracking-tight text-slate-900">Arrows<span class="text-indigo-600">Ghar</span>™</span>
+            <span class="block text-[10px] font-bold text-slate-500 tracking-wider uppercase">Smart Living & Auto</span>
+          </div>
+        </a>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-6 text-xs font-bold text-slate-600">
+        <a href="#bento-products" class="hover:text-indigo-600 transition-colors">5 Flagship Products</a>
+        <a href="#video-showcase" class="hover:text-indigo-600 transition-colors">Video Demonstrations</a>
+        <a href="#trust-guarantee" class="hover:text-indigo-600 transition-colors">7-Day Replacement</a>
+        <a href="#customer-reviews" class="hover:text-indigo-600 transition-colors">Verified Indian Reviews</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button onclick="openCheckout('p1')" class="py-2 px-3.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 rounded-xl font-bold text-xs flex items-center gap-1.5 transition-all border border-indigo-200">
+          <i data-lucide="shopping-bag" class="w-4 h-4 text-indigo-600"></i>
+          <span class="hidden sm:inline">Order Online</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="relative bg-gradient-to-b from-white via-indigo-50/20 to-slate-50 pt-8 pb-14 border-b border-slate-200 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-100/80 border border-indigo-200 text-indigo-800 text-xs font-bold mb-4">
+        <i data-lucide="award" class="w-3.5 h-3.5 text-indigo-600"></i>
+        India's Top 5 Winning DTC Innovations • 45,000+ Happy Households
+      </div>
+      
+      <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight max-w-4xl mx-auto">
+        Upgrade Your Daily Life With <br class="hidden sm:inline"/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-sky-600 to-teal-500">ArrowsGhar™ Smart Living Innovations</span>
+      </h1>
+      
+      <p class="mt-3 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        High-performance automotive care, clinical red-light trichology, magnetic night safety, anti-tarnish waterproof jewelry, and orthopedic spine relief — built for everyday Indian lifestyles.
+      </p>
+
+      <!-- Trust Badges Strip -->
+      <div class="mt-6 flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 text-xs font-bold text-slate-700">
+        <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-sm">
+          <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i> 1-Year Official Warranty
+        </span>
+        <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-sm">
+          <i data-lucide="refresh-cw" class="w-4 h-4 text-sky-600"></i> 7-Day Doorstep Replacement
+        </span>
+        <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-sm">
+          <i data-lucide="banknote" class="w-4 h-4 text-amber-600"></i> Cash on Delivery Available
+        </span>
+        <span class="inline-flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-sm">
+          <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i> 4.8★ (32,400+ Reviews)
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5-PRODUCT BENTO SHOWCASE SECTION -->
+  <section id="bento-products" class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+      <div>
+        <span class="text-xs font-black uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-200">2026 DTC Flagships</span>
+        <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-2 tracking-tight">Our Top 5 Verified Best Sellers</h2>
+        <p class="text-sm text-slate-500 mt-1">Direct from factory to doorstep • Zero middlemen margins</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-xs font-bold text-slate-500">Live Inventory:</span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-200">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span> In Stock (Dispatches within 24 Hrs)
+        </span>
+      </div>
+    </div>
+
+    <!-- The 5 Products Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- PRODUCT 1: AeroCyclone™ Car Vacuum -->
+      <div class="bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group">
+        <div class="relative h-64 bg-slate-900 overflow-hidden">
+          <img src="{{ 'vacuum_main_unit.jpg' | asset_url }}" onerror="this.src='https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=800&q=80'" alt="AeroCyclone Auto Pro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute top-3 left-3 bg-sky-600 text-white text-xs font-black px-3 py-1 rounded-full shadow-md flex items-center gap-1">
+            <i data-lucide="car" class="w-3.5 h-3.5"></i> AeroCyclone™ Auto
+          </div>
+          <div class="absolute top-3 right-3 bg-black/75 backdrop-blur-sm text-white text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
+            <i data-lucide="star" class="w-3 h-3 text-amber-400 fill-amber-400"></i> 4.8 (8,940)
+          </div>
+          <div class="absolute bottom-3 left-3 bg-black/80 backdrop-blur-sm text-sky-300 text-xs font-bold px-2.5 py-1 rounded-lg">
+            9000Pa Cyclone + 38,000 RPM Blower
+          </div>
+        </div>
+
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-bold text-slate-400 mb-1">
+              <span>AUTOMOTIVE & DESK CARE</span>
+              <span class="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-bold">Free Delivery</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900 group-hover:text-sky-600 transition-colors">
+              AeroCyclone™ 2-in-1 Cordless Car Vacuum & Jet Air Blower
+            </h3>
+            <p class="text-xs text-slate-500 mt-2 line-clamp-2">
+              Blasts dust out of Creta/Baleno AC vents and deep vacuums seat crevices with 9000Pa copper motor. Washable HEPA filter.
+            </p>
+
+            <div class="mt-4 p-3 bg-slate-50 rounded-2xl border border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-slate-400 line-through">MRP ₹1,999</span>
+                <div class="text-xl font-black text-slate-900">₹749 <span class="text-xs font-bold text-emerald-600">62% OFF</span></div>
+              </div>
+              <span class="text-[11px] font-bold text-sky-700 bg-sky-50 px-2.5 py-1 rounded-lg border border-sky-200">
+                ⚡ UPI: ₹699 (Save ₹50)
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-slate-100 flex items-center gap-2">
+            <button onclick="openCheckout('p1')" class="flex-1 py-3 px-4 bg-sky-600 hover:bg-sky-700 text-white rounded-xl font-extrabold text-xs text-center shadow-md shadow-sky-600/20 transition-all flex items-center justify-center gap-1.5 touch-target-48">
+              <i data-lucide="zap" class="w-4 h-4 fill-white"></i> Quick Buy COD
+            </button>
+            <button onclick="switchVideoSection('vent')" class="py-3 px-3.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl font-bold text-xs touch-target-48" title="Watch Video Demo">
+              <i data-lucide="play" class="w-4 h-4 text-slate-700"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCT 2: FolliGlow™ Scalp Massager -->
+      <div class="bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group">
+        <div class="relative h-64 bg-slate-900 overflow-hidden">
+          <img src="{{ 'massager-main.jpg' | asset_url }}" onerror="this.src='https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80'" alt="FolliGlow Scalp Massager" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute top-3 left-3 bg-rose-600 text-white text-xs font-black px-3 py-1 rounded-full shadow-md flex items-center gap-1">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> FolliGlow™ Trichology
+          </div>
+          <div class="absolute top-3 right-3 bg-black/75 backdrop-blur-sm text-white text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
+            <i data-lucide="star" class="w-3 h-3 text-amber-400 fill-amber-400"></i> 4.9 (6,410)
+          </div>
+          <div class="absolute bottom-3 left-3 bg-black/80 backdrop-blur-sm text-rose-300 text-xs font-bold px-2.5 py-1 rounded-lg">
+            625nm Clinical Red Light + Oil Chamber
+          </div>
+        </div>
+
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-bold text-slate-400 mb-1">
+              <span>HAIR CARE & AYURVEDA</span>
+              <span class="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-bold">IPX7 Waterproof</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900 group-hover:text-rose-600 transition-colors">
+              FolliGlow™ Red Light Therapy Scalp Massager & Root Oil Applicator
+            </h3>
+            <p class="text-xs text-slate-500 mt-2 line-clamp-2">
+              Deep follicle reactivation with 625nm clinical diodes and leak-proof rosemary oil dispenser. 3D kneading champi nodes.
+            </p>
+
+            <div class="mt-4 p-3 bg-slate-50 rounded-2xl border border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-slate-400 line-through">MRP ₹2,499</span>
+                <div class="text-xl font-black text-slate-900">₹899 <span class="text-xs font-bold text-emerald-600">64% OFF</span></div>
+              </div>
+              <span class="text-[11px] font-bold text-rose-700 bg-rose-50 px-2.5 py-1 rounded-lg border border-rose-200">
+                ⚡ UPI: ₹849 (Save ₹50)
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-slate-100 flex items-center gap-2">
+            <button onclick="openCheckout('p2')" class="flex-1 py-3 px-4 bg-rose-600 hover:bg-rose-700 text-white rounded-xl font-extrabold text-xs text-center shadow-md shadow-rose-600/20 transition-all flex items-center justify-center gap-1.5 touch-target-48">
+              <i data-lucide="zap" class="w-4 h-4 fill-white"></i> Quick Buy COD
+            </button>
+            <button onclick="switchVideoSection('scalp')" class="py-3 px-3.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl font-bold text-xs touch-target-48" title="Watch Video Demo">
+              <i data-lucide="play" class="w-4 h-4 text-slate-700"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCT 3: LumiGlow™ Motion Light -->
+      <div class="bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group">
+        <div class="relative h-64 bg-slate-900 overflow-hidden">
+          <img src="{{ 'gallery-1.jpg' | asset_url }}" onerror="this.src='https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=800&q=80'" alt="LumiGlow Motion Light" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute top-3 left-3 bg-amber-600 text-white text-xs font-black px-3 py-1 rounded-full shadow-md flex items-center gap-1">
+            <i data-lucide="lightbulb" class="w-3.5 h-3.5"></i> LumiGlow™ Smart
+          </div>
+          <div class="absolute top-3 right-3 bg-black/75 backdrop-blur-sm text-white text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
+            <i data-lucide="star" class="w-3 h-3 text-amber-400 fill-amber-400"></i> 4.8 (7,830)
+          </div>
+          <div class="absolute bottom-3 left-3 bg-black/80 backdrop-blur-sm text-amber-300 text-xs font-bold px-2.5 py-1 rounded-lg">
+            Magnetic Mount • No Drilling
+          </div>
+        </div>
+
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-bold text-slate-400 mb-1">
+              <span>SMART HOME & SAFETY</span>
+              <span class="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-bold">Pack of 2 Lights</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900 group-hover:text-amber-600 transition-colors">
+              LumiGlow™ Wireless Magnetic LED Motion Sensor Closet & Stair Light
+            </h3>
+            <p class="text-xs text-slate-500 mt-2 line-clamp-2">
+              Instant auto-illumination when you open wardrobes or walk stairs in the dark. 3M magnetic stick anywhere, USB rechargeable.
+            </p>
+
+            <div class="mt-4 p-3 bg-slate-50 rounded-2xl border border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-slate-400 line-through">MRP ₹1,499</span>
+                <div class="text-xl font-black text-slate-900">₹649 <span class="text-xs font-bold text-emerald-600">57% OFF</span></div>
+              </div>
+              <span class="text-[11px] font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200">
+                ⚡ UPI: ₹599 (Save ₹50)
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-slate-100 flex items-center gap-2">
+            <button onclick="openCheckout('p3')" class="flex-1 py-3 px-4 bg-amber-600 hover:bg-amber-700 text-white rounded-xl font-extrabold text-xs text-center shadow-md shadow-amber-600/20 transition-all flex items-center justify-center gap-1.5 touch-target-48">
+              <i data-lucide="zap" class="w-4 h-4 fill-white"></i> Quick Buy COD
+            </button>
+            <button onclick="switchVideoSection('sensor')" class="py-3 px-3.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl font-bold text-xs touch-target-48" title="Watch Video Demo">
+              <i data-lucide="play" class="w-4 h-4 text-slate-700"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCT 4: Aurelia Luxe™ Jewelry -->
+      <div class="bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group">
+        <div class="relative h-64 bg-slate-900 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80" alt="Aurelia Luxe Jewelry" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute top-3 left-3 bg-amber-500 text-slate-950 text-xs font-black px-3 py-1 rounded-full shadow-md flex items-center gap-1">
+            <i data-lucide="gem" class="w-3.5 h-3.5"></i> Aurelia Luxe™
+          </div>
+          <div class="absolute top-3 right-3 bg-black/75 backdrop-blur-sm text-white text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
+            <i data-lucide="star" class="w-3 h-3 text-amber-400 fill-amber-400"></i> 4.9 (5,210)
+          </div>
+          <div class="absolute bottom-3 left-3 bg-black/80 backdrop-blur-sm text-amber-300 text-xs font-bold px-2.5 py-1 rounded-lg">
+            18K PVD Gold • 100% Anti-Tarnish
+          </div>
+        </div>
+
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-bold text-slate-400 mb-1">
+              <span>DEMI-FINE JEWELRY</span>
+              <span class="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-bold">Lifetime Color Warranty</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900 group-hover:text-amber-600 transition-colors">
+              Aurelia Luxe™ Waterproof Anti-Tarnish 18K Gold Plated Evil Eye & Clover Set
+            </h3>
+            <p class="text-xs text-slate-500 mt-2 line-clamp-2">
+              Swim, shower, and workout without color fading. 316L stainless steel core with vacuum PVD gold bonding. No skin greening.
+            </p>
+
+            <div class="mt-4 p-3 bg-slate-50 rounded-2xl border border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-slate-400 line-through">MRP ₹1,299</span>
+                <div class="text-xl font-black text-slate-900">₹499 <span class="text-xs font-bold text-emerald-600">61% OFF</span></div>
+              </div>
+              <span class="text-[11px] font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200">
+                ⚡ UPI: ₹449 (Save ₹50)
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-slate-100 flex items-center gap-2">
+            <button onclick="openCheckout('p4')" class="flex-1 py-3 px-4 bg-amber-700 hover:bg-amber-800 text-white rounded-xl font-extrabold text-xs text-center shadow-md shadow-amber-700/20 transition-all flex items-center justify-center gap-1.5 touch-target-48">
+              <i data-lucide="zap" class="w-4 h-4 fill-white"></i> Quick Buy COD
+            </button>
+            <button onclick="switchVideoSection('jewelry')" class="py-3 px-3.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl font-bold text-xs touch-target-48" title="Watch Video Demo">
+              <i data-lucide="play" class="w-4 h-4 text-slate-700"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCT 5: ErgoSpine™ Posture Cushion -->
+      <div class="bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group">
+        <div class="relative h-64 bg-slate-900 overflow-hidden">
+          <img src="{{ 'ortho_main.jpg' | asset_url }}" onerror="this.src='https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80'" alt="ErgoSpine Posture Cushion" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute top-3 left-3 bg-indigo-600 text-white text-xs font-black px-3 py-1 rounded-full shadow-md flex items-center gap-1">
+            <i data-lucide="activity" class="w-3.5 h-3.5"></i> ErgoSpine™ Orthopedics
+          </div>
+          <div class="absolute top-3 right-3 bg-black/75 backdrop-blur-sm text-white text-xs font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
+            <i data-lucide="star" class="w-3 h-3 text-amber-400 fill-amber-400"></i> 4.9 (9,410)
+          </div>
+          <div class="absolute bottom-3 left-3 bg-black/80 backdrop-blur-sm text-indigo-300 text-xs font-bold px-2.5 py-1 rounded-lg">
+            50D Viscoelastic Memory Foam
+          </div>
+        </div>
+
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-bold text-slate-400 mb-1">
+              <span>ORTHOPEDIC POSTURE</span>
+              <span class="text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded font-bold">Doctor Approved</span>
+            </div>
+            <h3 class="text-lg font-black text-slate-900 group-hover:text-indigo-600 transition-colors">
+              ErgoSpine™ Ergonomic Memory Foam Tailbone & Sciatica Seat Cushion
+            </h3>
+            <p class="text-xs text-slate-500 mt-2 line-clamp-2">
+              U-cutout design suspends coccyx bone, eliminating pressure during 8-hour office sitting and bumpy car commutes.
+            </p>
+
+            <div class="mt-4 p-3 bg-slate-50 rounded-2xl border border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-slate-400 line-through">MRP ₹2,199</span>
+                <div class="text-xl font-black text-slate-900">₹799 <span class="text-xs font-bold text-emerald-600">63% OFF</span></div>
+              </div>
+              <span class="text-[11px] font-bold text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-lg border border-indigo-200">
+                ⚡ UPI: ₹749 (Save ₹50)
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-slate-100 flex items-center gap-2">
+            <button onclick="openCheckout('p5')" class="flex-1 py-3 px-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-extrabold text-xs text-center shadow-md shadow-indigo-600/20 transition-all flex items-center justify-center gap-1.5 touch-target-48">
+              <i data-lucide="zap" class="w-4 h-4 fill-white"></i> Quick Buy COD
+            </button>
+            <button onclick="switchVideoSection('cushion')" class="py-3 px-3.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl font-bold text-xs touch-target-48" title="Watch Video Demo">
+              <i data-lucide="play" class="w-4 h-4 text-slate-700"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMBO BUNDLE CARD: Master Living Pack -->
+      <div class="bg-gradient-to-br from-indigo-900 via-slate-900 to-indigo-950 rounded-3xl p-6 text-white flex flex-col justify-between shadow-xl border border-indigo-700/50 relative overflow-hidden">
+        <div class="absolute -right-8 -bottom-8 w-44 h-44 bg-indigo-500/10 rounded-full blur-2xl"></div>
+        <div>
+          <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-[11px] font-black bg-amber-400 text-slate-950">
+            🔥 HIGH AOV COMBO PACK
+          </span>
+          <h3 class="text-xl font-black mt-3 leading-snug">
+            "Smart Living Master Box" (All 5 Flagships)
+          </h3>
+          <p class="text-xs text-slate-300 mt-2">
+            Get the Vacuum, Scalp Massager, Sensor Lights, 18K Jewelry Set & Cushion together. Best housewarming & family gift.
+          </p>
+
+          <div class="mt-5 p-3.5 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-slate-400 line-through">MRP ₹8,995</span>
+              <div class="text-2xl font-black text-amber-300">₹2,799</div>
+            </div>
+            <span class="text-xs font-bold text-emerald-300 bg-emerald-950/60 px-3 py-1.5 rounded-xl border border-emerald-500/30">
+              SAVE ₹6,196
+            </span>
+          </div>
+        </div>
+
+        <button onclick="openCheckout('master')" class="mt-6 w-full py-3.5 px-4 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-xs rounded-xl shadow-lg shadow-amber-500/20 transition-all flex items-center justify-center gap-2 touch-target-48">
+          <i data-lucide="sparkles" class="w-4 h-4"></i> Grab Master Box (COD / UPI)
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE CREATIVE VIDEO DEMONSTRATION SECTION -->
+  <section id="video-showcase" class="bg-slate-900 text-white py-14 border-y border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-8">
+        <span class="text-xs font-black uppercase tracking-wider text-sky-400 bg-sky-950/80 px-3 py-1 rounded-full border border-sky-800">Visual Proof Lab</span>
+        <h2 class="text-2xl sm:text-4xl font-black mt-2">Watch Real Demonstration Reels</h2>
+        <p class="text-xs sm:text-sm text-slate-400 mt-1">Select a product to inspect the torture tests and real-world results</p>
+      </div>
+
+      <!-- Demo Tabs Bar -->
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 mb-4">
+        <button onclick="switchVideoSection('vent', this)" class="demo-tab active py-2.5 px-2 rounded-xl border border-sky-500 bg-sky-600/30 text-sky-300 text-xs font-bold text-center transition-all flex items-center justify-center gap-1.5">
+          <i data-lucide="car" class="w-3.5 h-3.5"></i> Car Blower
+        </button>
+        <button onclick="switchVideoSection('scalp', this)" class="demo-tab py-2.5 px-2 rounded-xl border border-slate-800 bg-slate-800/40 text-slate-400 text-xs font-bold text-center hover:bg-slate-800 transition-all flex items-center justify-center gap-1.5">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Scalp Red Light
+        </button>
+        <button onclick="switchVideoSection('sensor', this)" class="demo-tab py-2.5 px-2 rounded-xl border border-slate-800 bg-slate-800/40 text-slate-400 text-xs font-bold text-center hover:bg-slate-800 transition-all flex items-center justify-center gap-1.5">
+          <i data-lucide="lightbulb" class="w-3.5 h-3.5"></i> Motion Sensor
+        </button>
+        <button onclick="switchVideoSection('jewelry', this)" class="demo-tab py-2.5 px-2 rounded-xl border border-slate-800 bg-slate-800/40 text-slate-400 text-xs font-bold text-center hover:bg-slate-800 transition-all flex items-center justify-center gap-1.5">
+          <i data-lucide="gem" class="w-3.5 h-3.5"></i> Water & Perfume
+        </button>
+        <button onclick="switchVideoSection('cushion', this)" class="demo-tab py-2.5 px-2 rounded-xl border border-slate-800 bg-slate-800/40 text-slate-400 text-xs font-bold text-center hover:bg-slate-800 transition-all flex items-center justify-center gap-1.5 col-span-2 sm:col-span-1">
+          <i data-lucide="activity" class="w-3.5 h-3.5"></i> Raw Egg Sit Test
+        </button>
+      </div>
+
+      <!-- Video Player Frame -->
+      <div class="relative bg-slate-950 rounded-3xl overflow-hidden aspect-video border border-slate-800 shadow-2xl flex items-center justify-center text-center">
+        <img id="demoVideoThumb" src="{{ 'vacuum_main_unit.jpg' | asset_url }}" onerror="this.src='https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=1200&q=80'" alt="Video Demo Thumbnail" class="w-full h-full object-cover opacity-60">
+        
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/60 p-4 sm:p-6 flex flex-col justify-between">
+          <div class="flex items-center justify-between text-xs">
+            <span id="demoVideoTag" class="px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/40 text-sky-300 font-extrabold uppercase tracking-wider">
+              38,000 RPM JET BLOWER REEL
+            </span>
+            <span id="demoVideoDuration" class="px-2.5 py-0.5 rounded-md bg-black/60 font-mono text-xs">00:12</span>
+          </div>
+
+          <div class="my-auto">
+            <button onclick="toggleVideoPlayback()" class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md border border-white/40 flex items-center justify-center mx-auto hover:scale-110 transition-transform shadow-2xl">
+              <i data-lucide="play" id="playIcon" class="w-7 h-7 fill-white text-white ml-1"></i>
+            </button>
+            <h4 id="demoVideoTitle" class="text-lg sm:text-2xl font-black mt-3">AC Vent High-Pressure Jet Demonstration</h4>
+            <p id="demoVideoDesc" class="text-xs text-slate-300 max-w-md mx-auto mt-1">Dust trapped for 6+ months inside Creta AC vent blasted away in 2 seconds flat.</p>
+          </div>
+
+          <div>
+            <div class="w-full bg-white/20 h-1.5 rounded-full overflow-hidden mb-2">
+              <div id="videoProgressBar" class="video-progress-bar h-full bg-sky-400 w-1/3"></div>
+            </div>
+            <div class="flex items-center justify-between text-xs text-slate-300">
+              <span id="demoStatusText">Click to Play Simulated Live Clip (60 FPS)</span>
+              <button onclick="openCurrentProductCheckout()" class="px-3 py-1 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-colors">
+                Order This Product
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PINCODE DELIVERY ESTIMATOR & RTO DEFENSE -->
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+    <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm flex flex-col md:flex-row items-center gap-6">
+      <div class="flex-1">
+        <span class="text-xs font-black uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">Express Courier Network</span>
+        <h3 class="text-xl sm:text-2xl font-black text-slate-900 mt-2">Check Delivery Time to Your City</h3>
+        <p class="text-xs text-slate-500 mt-1">Dispatched via BlueDart, Delhivery & Shadowfax with real-time SMS tracking.</p>
+      </div>
+
+      <div class="w-full md:w-auto flex flex-col sm:flex-row items-center gap-2">
+        <input type="text" id="pincodeInput" placeholder="Enter 6-Digit PIN Code" maxlength="6" class="w-full sm:w-56 h-12 px-4 rounded-xl border border-slate-300 text-base font-semibold focus:outline-none focus:border-indigo-600">
+        <button onclick="checkPincode()" class="w-full sm:w-auto h-12 px-6 bg-slate-900 hover:bg-slate-800 text-white rounded-xl font-bold text-xs shrink-0 transition-colors">
+          Check PIN
+        </button>
+      </div>
+    </div>
+    <div id="pincodeResult" class="hidden mt-3 p-3 bg-emerald-50 border border-emerald-200 text-emerald-900 rounded-xl text-xs font-bold text-center"></div>
+  </section>
+
+  <!-- VERIFIED CUSTOMER REVIEWS (INDIAN SOCIAL PROOF) -->
+  <section id="customer-reviews" class="max-w-7xl mx-auto px-4 sm:px-6 py-10 border-t border-slate-200">
+    <div class="text-center mb-8">
+      <span class="text-xs font-black uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full border border-indigo-200">Real Indian Buyers</span>
+      <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-2">Verified Customer Experiences</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm">
+        <div class="flex items-center gap-1 text-amber-400 mb-2">
+          <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+        </div>
+        <p class="text-xs text-slate-600 leading-relaxed font-medium">
+          "Ordered the AeroCyclone Car Vacuum for my Tata Nexon. AC vent blower cleared years of dust in 10 seconds! Paid via UPI and got flat ₹50 discount. Delivered in 2 days to Pune."
+        </p>
+        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+          <span class="font-bold text-slate-900">Vikram S. • Pune</span>
+          <span class="text-emerald-600 font-bold flex items-center gap-1"><i data-lucide="check" class="w-3.5 h-3.5"></i> Verified Buyer</span>
+        </div>
+      </div>
+
+      <div class="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm">
+        <div class="flex items-center gap-1 text-amber-400 mb-2">
+          <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+        </div>
+        <p class="text-xs text-slate-600 leading-relaxed font-medium">
+          "The FolliGlow red light massager is magic. Rosemary oil goes straight to roots without getting hands sticky. Soft champi feeling before sleep. 10/10 recommend!"
+        </p>
+        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+          <span class="font-bold text-slate-900">Dr. Sneha M. • Bengaluru</span>
+          <span class="text-emerald-600 font-bold flex items-center gap-1"><i data-lucide="check" class="w-3.5 h-3.5"></i> Verified Buyer</span>
+        </div>
+      </div>
+
+      <div class="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm">
+        <div class="flex items-center gap-1 text-amber-400 mb-2">
+          <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+          <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+        </div>
+        <p class="text-xs text-slate-600 leading-relaxed font-medium">
+          "The LumiGlow sensor light sticks right inside my dark almirah. When door opens, light turns on automatically! Magnet makes it so simple to recharge with phone cable."
+        </p>
+        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+          <span class="font-bold text-slate-900">Sunita Murthy • Hyderabad</span>
+          <span class="text-emerald-600 font-bold flex items-center gap-1"><i data-lucide="check" class="w-3.5 h-3.5"></i> Verified Buyer</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE STICKY ACTION BAR -->
+  <div class="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-200 p-3 shadow-2xl md:hidden flex items-center justify-between gap-3">
+    <div>
+      <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">ArrowsGhar™ Deals</div>
+      <div class="text-lg font-black text-slate-900" id="stickyPriceText">From ₹499</div>
+    </div>
+    <button onclick="openCheckout('p1')" class="flex-1 h-12 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-black text-xs shadow-lg shadow-indigo-600/30 flex items-center justify-center gap-1.5 touch-target-48">
+      <i data-lucide="zap" class="w-4 h-4 fill-white"></i> ⚡ Order Online (COD / UPI)
+    </button>
+  </div>
+
+  <!-- CHECKOUT DRAWER MODAL -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden flex items-end sm:items-center justify-center p-0 sm:p-4 transition-opacity">
+    <div class="bg-white w-full sm:max-w-lg rounded-t-3xl sm:rounded-3xl max-h-[90vh] overflow-y-auto p-5 sm:p-6 shadow-2xl border border-slate-200 animate-slide-up">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+        <div>
+          <h3 class="text-lg font-black text-slate-900">Complete Your Order</h3>
+          <p class="text-xs text-slate-500">Free Express Doorstep Delivery Across India</p>
+        </div>
+        <button onclick="closeCheckout()" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Selected Product Selector -->
+      <div class="mt-4">
+        <label class="block text-xs font-bold text-slate-700 mb-1.5">Select Product / Combo</label>
+        <select id="modalProductSelect" onchange="updateModalPricing()" class="w-full h-12 px-3 rounded-xl border border-slate-300 text-base font-semibold focus:outline-none focus:border-indigo-600">
+          <option value="p1" data-price="749">1. AeroCyclone™ 2-in-1 Car Vacuum (₹749)</option>
+          <option value="p2" data-price="899">2. FolliGlow™ Red Light Scalp Massager (₹899)</option>
+          <option value="p3" data-price="649">3. LumiGlow™ Motion Sensor Lights Pack of 2 (₹649)</option>
+          <option value="p4" data-price="499">4. Aurelia Luxe™ 18K Anti-Tarnish Jewelry (₹499)</option>
+          <option value="p5" data-price="799">5. ErgoSpine™ Orthopedic Posture Cushion (₹799)</option>
+          <option value="master" data-price="2799">🔥 Smart Living Master Box (All 5 Flagships - ₹2,799)</option>
+        </select>
+      </div>
+
+      <!-- Customer Form Fields (16px to prevent auto-zoom) -->
+      <div class="mt-4 space-y-3">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Full Name</label>
+          <input type="text" id="custName" placeholder="e.g. Rahul Sharma" class="w-full h-12 px-3.5 rounded-xl border border-slate-300 text-base focus:outline-none focus:border-indigo-600">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Mobile Number (For WhatsApp Delivery Updates)</label>
+          <div class="relative">
+            <span class="absolute left-3.5 top-3.5 text-slate-400 font-bold text-sm">+91</span>
+            <input type="tel" id="custPhone" placeholder="10-digit mobile number" maxlength="10" pattern="[6-9][0-9]{9}" class="w-full h-12 pl-12 pr-3.5 rounded-xl border border-slate-300 text-base font-semibold focus:outline-none focus:border-indigo-600">
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">6-Digit PIN Code</label>
+            <input type="text" id="custPin" placeholder="e.g. 400001" maxlength="6" class="w-full h-12 px-3.5 rounded-xl border border-slate-300 text-base font-semibold focus:outline-none focus:border-indigo-600">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">City / State</label>
+            <input type="text" id="custCity" placeholder="Auto detects" class="w-full h-12 px-3.5 rounded-xl border border-slate-300 text-base focus:outline-none focus:border-indigo-600">
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-700 mb-1">Complete House / Street Address</label>
+          <textarea id="custAddress" rows="2" placeholder="House/Flat No, Landmark, Area" class="w-full p-3 rounded-xl border border-slate-300 text-base focus:outline-none focus:border-indigo-600"></textarea>
+        </div>
+      </div>
+
+      <!-- Payment Method Selection -->
+      <div class="mt-4">
+        <label class="block text-xs font-bold text-slate-700 mb-2">Select Payment Method</label>
+        <div class="grid grid-cols-2 gap-2">
+          <label class="border-2 border-indigo-600 bg-indigo-50/50 p-3 rounded-xl cursor-pointer flex flex-col items-center text-center">
+            <input type="radio" name="payMethod" value="upi" checked onchange="toggleDiscount(true)" class="hidden">
+            <span class="text-xs font-extrabold text-indigo-900">⚡ UPI / Online</span>
+            <span class="text-[10px] text-emerald-700 font-black mt-0.5">EXTRA ₹50 OFF</span>
+          </label>
+          <label class="border border-slate-200 p-3 rounded-xl cursor-pointer flex flex-col items-center text-center hover:bg-slate-50">
+            <input type="radio" name="payMethod" value="cod" onchange="toggleDiscount(false)" class="hidden">
+            <span class="text-xs font-extrabold text-slate-800">Cash on Delivery</span>
+            <span class="text-[10px] text-slate-500 mt-0.5">Pay at Doorstep</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Total Price Summary -->
+      <div class="mt-4 p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between text-xs">
+        <div>
+          <span class="text-slate-500">Order Total:</span>
+          <div class="text-lg font-black text-slate-900" id="modalFinalPrice">₹699</div>
+        </div>
+        <span class="text-[11px] font-bold text-emerald-700 bg-emerald-100/70 px-2.5 py-1 rounded-lg" id="discountBadge">
+          ₹50 UPI Discount Applied!
+        </span>
+      </div>
+
+      <!-- Submit Order Button -->
+      <button onclick="submitOrder()" class="mt-4 w-full h-14 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-black text-sm shadow-xl shadow-emerald-600/30 flex items-center justify-center gap-2 touch-target-48">
+        <i data-lucide="check-circle" class="w-5 h-5"></i> Confirm Order Now
+      </button>
+
+      <div class="mt-3 text-[11px] text-center text-slate-400 flex items-center justify-center gap-2">
+        <i data-lucide="lock" class="w-3.5 h-3.5 text-slate-400"></i> 256-Bit Encrypted Safe Checkout
+      </div>
+    </div>
+  </div>
+
+  <!-- ORDER SUCCESS OVERLAY -->
+  <div id="orderSuccessModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full text-center shadow-2xl border border-slate-200">
+      <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+        <i data-lucide="check" class="w-8 h-8 stroke-[3]"></i>
+      </div>
+      <h3 class="text-2xl font-black text-slate-900">Order Placed Successfully!</h3>
+      <p class="text-xs text-slate-500 mt-1">Thank you for shopping with ArrowsGhar™</p>
+      
+      <div class="mt-4 p-4 bg-slate-50 rounded-2xl border border-slate-200 text-left text-xs space-y-1.5">
+        <div class="flex justify-between">
+          <span class="text-slate-500">Order ID:</span>
+          <span class="font-mono font-bold text-indigo-600" id="confOrderId">#AG-7821-4921</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-500">Item:</span>
+          <span class="font-bold text-slate-800" id="confItem">AeroCyclone™ Auto</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-500">Amount:</span>
+          <span class="font-black text-emerald-600" id="confAmount">₹699</span>
+        </div>
+      </div>
+
+      <button onclick="closeSuccess()" class="mt-6 w-full py-3.5 bg-slate-900 text-white font-bold text-xs rounded-xl hover:bg-slate-800 transition-colors">
+        Continue Shopping
+      </button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 text-xs py-10 mt-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <div class="flex items-center justify-center gap-2 mb-2">
+        <i data-lucide="zap" class="w-5 h-5 text-indigo-400 fill-indigo-400"></i>
+        <span class="text-lg font-black text-white">ArrowsGhar™</span>
+      </div>
+      <p class="text-xs text-slate-400 max-w-md mx-auto">
+        Empowering modern Indian homes with durable, useful, and verified lifestyle innovations. Official Shopify Partner Store.
+      </p>
+      <div class="mt-4 text-[11px] text-slate-500">
+        © 2026 ArrowsGhar™ (arrowsghar.myshopify.com). All rights reserved. 100% Tax Compliant GST Registered.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Video Showcase Data
+    const videoData = {
+      vent: {
+        title: "AC Vent High-Pressure Jet Demonstration",
+        desc: "Dust trapped for 6+ months inside Creta AC vent blasted away in 2 seconds flat.",
+        img: "./arrowsghar-theme/assets/vacuum_main_unit.jpg",
+        fallback: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=1200&q=80",
+        tag: "38,000 RPM JET BLOWER REEL",
+        duration: "00:08",
+        productKey: "p1"
+      },
+      scalp: {
+        title: "625nm Sub-Dermal Red Light & Oil Diffusion",
+        desc: "Precision root-level rosemary serum delivery without sticky scalp drips.",
+        img: "./arrowsghar-theme/assets/massager-main.jpg",
+        fallback: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80",
+        tag: "CLINICAL 625nm PHOTOTHERAPY",
+        duration: "00:15",
+        productKey: "p2"
+      },
+      sensor: {
+        title: "Instant 20-Second PIR Motion Auto-Glow",
+        desc: "Magnetic snap under kitchen cabinets & dark wardrobe closets.",
+        img: "./arrowsghar-theme/assets/gallery-1.jpg",
+        fallback: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=1200&q=80",
+        tag: "PIR SENSOR AUTO-GLOW",
+        duration: "00:10",
+        productKey: "p3"
+      },
+      jewelry: {
+        title: "48-Hour Saltwater & Perfume Torture Test",
+        desc: "Zero tarnish, zero discoloration, zero skin greening. 18K vacuum PVD bonded.",
+        img: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=80",
+        fallback: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1200&q=80",
+        tag: "WATERPROOF TORTURE TEST",
+        duration: "00:12",
+        productKey: "p4"
+      },
+      cushion: {
+        title: "85kg Adult Raw Egg Zero-Pressure Sit Test",
+        desc: "50D slow rebound viscoelastic foam absorbs full body weight without cracking an egg.",
+        img: "./arrowsghar-theme/assets/ortho_main.jpg",
+        fallback: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80",
+        tag: "50D VISCOELASTIC PRESSURE TEST",
+        duration: "00:14",
+        productKey: "p5"
+      }
+    };
+
+    let activeVideoKey = 'vent';
+    let isVideoPlaying = false;
+    let videoInterval = null;
+
+    function switchVideoSection(key, btn) {
+      activeVideoKey = key;
+      const data = videoData[key];
+      
+      document.querySelectorAll('.demo-tab').forEach(b => {
+        b.classList.remove('active', 'border-sky-500', 'bg-sky-600/30', 'text-sky-300');
+        b.classList.add('border-slate-800', 'bg-slate-800/40', 'text-slate-400');
+      });
+      if (btn) {
+        btn.classList.add('active', 'border-sky-500', 'bg-sky-600/30', 'text-sky-300');
+        btn.classList.remove('border-slate-800', 'bg-slate-800/40', 'text-slate-400');
+      }
+
+      document.getElementById('demoVideoTitle').textContent = data.title;
+      document.getElementById('demoVideoDesc').textContent = data.desc;
+      document.getElementById('demoVideoThumb').src = data.img;
+      document.getElementById('demoVideoTag').textContent = data.tag;
+      document.getElementById('demoVideoDuration').textContent = data.duration;
+      
+      // Reset play state
+      isVideoPlaying = false;
+      clearInterval(videoInterval);
+      document.getElementById('videoProgressBar').style.width = '33%';
+      document.getElementById('playIcon').classList.remove('hidden');
+      document.getElementById('demoStatusText').textContent = "Click to Play Simulated Live Clip (60 FPS)";
+    }
+
+    function toggleVideoPlayback() {
+      isVideoPlaying = !isVideoPlaying;
+      const bar = document.getElementById('videoProgressBar');
+      const statusText = document.getElementById('demoStatusText');
+      const icon = document.getElementById('playIcon');
+
+      if (isVideoPlaying) {
+        statusText.textContent = "▶ Playing Demonstration Reel (60 FPS)";
+        icon.classList.add('opacity-40');
+        let progress = 0;
+        clearInterval(videoInterval);
+        videoInterval = setInterval(() => {
+          progress += 5;
+          bar.style.width = progress + '%';
+          if (progress >= 100) {
+            progress = 0;
+          }
+        }, 300);
+      } else {
+        clearInterval(videoInterval);
+        statusText.textContent = "⏸ Paused";
+        icon.classList.remove('opacity-40');
+      }
+    }
+
+    function openCurrentProductCheckout() {
+      const data = videoData[activeVideoKey];
+      openCheckout(data.productKey);
+    }
+
+    // Checkout Modal Logic
+    let currentBasePrice = 749;
+    let isUpiDiscount = true;
+
+    function openCheckout(productKey) {
+      const modal = document.getElementById('checkoutModal');
+      const select = document.getElementById('modalProductSelect');
+      if (productKey) {
+        select.value = productKey;
+      }
+      updateModalPricing();
+      modal.classList.remove('hidden');
+    }
+
+    function closeCheckout() {
+      document.getElementById('checkoutModal').classList.add('hidden');
+    }
+
+    function updateModalPricing() {
+      const select = document.getElementById('modalProductSelect');
+      const selectedOption = select.options[select.selectedIndex];
+      currentBasePrice = parseInt(selectedOption.getAttribute('data-price')) || 749;
+      calculateFinalModalPrice();
+    }
+
+    function toggleDiscount(useUpi) {
+      isUpiDiscount = useUpi;
+      calculateFinalModalPrice();
+    }
+
+    function calculateFinalModalPrice() {
+      const discount = isUpiDiscount ? 50 : 0;
+      const finalPrice = Math.max(0, currentBasePrice - discount);
+      document.getElementById('modalFinalPrice').textContent = '₹' + finalPrice;
+      const badge = document.getElementById('discountBadge');
+      if (isUpiDiscount) {
+        badge.textContent = "₹50 UPI Discount Applied!";
+        badge.classList.remove('hidden');
+      } else {
+        badge.textContent = "COD Mode (No Discount)";
+        badge.classList.add('hidden');
+      }
+    }
+
+    function submitOrder() {
+      const name = document.getElementById('custName').value.trim();
+      const phone = document.getElementById('custPhone').value.trim();
+      const pin = document.getElementById('custPin').value.trim();
+
+      if (!name) {
+        alert("Please enter your Full Name.");
+        return;
+      }
+      if (!/^[6-9]\d{9}$/.test(phone)) {
+        alert("Please enter a valid 10-digit Indian Mobile Number starting with 6, 7, 8, or 9.");
+        return;
+      }
+      if (!/^\d{6}$/.test(pin)) {
+        alert("Please enter a valid 6-digit Indian PIN Code.");
+        return;
+      }
+
+      // Populate Success Modal
+      const select = document.getElementById('modalProductSelect');
+      const selectedText = select.options[select.selectedIndex].text;
+      const finalPrice = document.getElementById('modalFinalPrice').textContent;
+
+      document.getElementById('confOrderId').textContent = '#AG-' + Math.floor(1000 + Math.random() * 9000) + '-' + Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('confItem').textContent = selectedText.split('(')[0].trim();
+      document.getElementById('confAmount').textContent = finalPrice;
+
+      closeCheckout();
+      document.getElementById('orderSuccessModal').classList.remove('hidden');
+    }
+
+    function closeSuccess() {
+      document.getElementById('orderSuccessModal').classList.add('hidden');
+    }
+
+    // Pincode Checker
+    function checkPincode() {
+      const pin = document.getElementById('pincodeInput').value.trim();
+      const res = document.getElementById('pincodeResult');
+      if (!/^\d{6}$/.test(pin)) {
+        res.textContent = "⚠️ Please enter a valid 6-digit Indian Postal PIN Code.";
+        res.className = "mt-3 p-3 bg-rose-50 border border-rose-200 text-rose-900 rounded-xl text-xs font-bold text-center block";
+        return;
+      }
+
+      res.textContent = "✓ ⚡ PIN Code " + pin + " is Serviceable! Express 2-3 Day Delivery & Cash on Delivery (COD) Available.";
+      res.className = "mt-3 p-3 bg-emerald-50 border border-emerald-200 text-emerald-900 rounded-xl text-xs font-bold text-center block";
+
+      // Auto populate city in checkout if open
+      const firstDigit = pin.charAt(0);
+      let city = "Metro Zone";
+      if (firstDigit === '1') city = "Delhi NCR / North India";
+      else if (firstDigit === '2') city = "UP / Uttarakhand";
+      else if (firstDigit === '4') city = "Maharashtra / Mumbai / Pune";
+      else if (firstDigit === '5') city = "Karnataka / Bengaluru";
+      else if (firstDigit === '6') city = "Tamil Nadu / Chennai";
+      else if (firstDigit === '7') city = "West Bengal / Kolkata";
+      document.getElementById('custCity').value = city;
+    }
+  </script>
+</body>
+</html>
+
+</div>
