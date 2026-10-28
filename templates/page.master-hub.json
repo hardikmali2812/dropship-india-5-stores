@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "main": {
+      "type": "landing-master-hub"
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

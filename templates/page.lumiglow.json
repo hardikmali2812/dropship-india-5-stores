@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "main": {
+      "type": "landing-lumiglow"
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
