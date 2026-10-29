@@ -7,8 +7,8 @@
 {% endschema %}
 
 <!-- TailWind & Lucide CDN for Standalone Dropship Section -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdn.tailwindcss.com" defer></script>
+<script src="https://unpkg.com/lucide@latest" defer></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <div class="shopify-dropship-landing" style="font-family: 'Plus Jakarta Sans', sans-serif;">
@@ -18,8 +18,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>ErgoSpine™ Orthopedic Memory Foam Lumbar Support & Tailbone Seat Cushion | Official Store</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
@@ -88,7 +88,7 @@
       <div class="md:col-span-6 lg:col-span-5">
         <div class="bg-white rounded-2xl p-4 border border-blue-100 sticky top-20 shadow-sm">
           <div class="relative rounded-xl overflow-hidden bg-slate-100 aspect-square flex items-center justify-center border border-slate-100 group">
-            <img id="mainImage" src="{{ 'ortho_main.jpg' | asset_url }}" alt="ErgoSpine Cushion" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <img id="mainImage" src="{{ 'ortho_main.jpg' | asset_url }}" alt="ErgoSpine Cushion" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" width="800" height="800" loading="lazy">
             
             <div class="absolute top-3 left-3 bg-gradient-to-r from-blue-700 to-indigo-600 text-white text-[11px] font-black px-2.5 py-1 rounded-full shadow-md">
               63% OFF • Doctor Approved
@@ -109,20 +109,20 @@
 
           <!-- 5-Thumb Gallery (100% Verified Local Assets) -->
           <div class="grid grid-cols-5 gap-2 mt-3">
-            <button onclick="changeImage('./assets/images/ortho_main.jpg', 'Dual Set', this)" class="thumb-btn border-2 border-blue-700 rounded-xl overflow-hidden aspect-square bg-slate-50 min-h-[48px] min-w-[48px] transition-all" title="Dual Orthopedic Cushion Set" aria-label="Dual Orthopedic Cushion Set">
-              <img src="{{ 'ortho_main.jpg' | asset_url }}" alt="Dual Set" class="w-full h-full object-cover">
+            <button onclick="changeImage('{{ 'ortho_main.jpg' | asset_url }}', 'Dual Set', this)" class="thumb-btn border-2 border-blue-700 rounded-xl overflow-hidden aspect-square bg-slate-50 min-h-[48px] min-w-[48px] transition-all" title="Dual Orthopedic Cushion Set" aria-label="Dual Orthopedic Cushion Set">
+              <img src="{{ 'ortho_main.jpg' | asset_url }}" alt="Dual Set" class="w-full h-full object-cover" width="800" height="800" loading="lazy">
             </button>
-            <button onclick="changeImage('./assets/images/ortho_office.jpg', 'Office Desk Chair', this)" class="thumb-btn border border-slate-200 rounded-xl overflow-hidden aspect-square bg-slate-50 opacity-75 hover:opacity-100 min-h-[48px] min-w-[48px] transition-all" title="Office Chair Setup" aria-label="Office Chair Setup">
-              <img src="{{ 'ortho_office.jpg' | asset_url }}" alt="Office Setup" class="w-full h-full object-cover">
+            <button onclick="changeImage('{{ 'ortho_office.jpg' | asset_url }}', 'Office Desk Chair', this)" class="thumb-btn border border-slate-200 rounded-xl overflow-hidden aspect-square bg-slate-50 opacity-75 hover:opacity-100 min-h-[48px] min-w-[48px] transition-all" title="Office Chair Setup" aria-label="Office Chair Setup">
+              <img src="{{ 'ortho_office.jpg' | asset_url }}" alt="Office Setup" class="w-full h-full object-cover" width="800" height="800" loading="lazy">
             </button>
-            <button onclick="changeImage('./assets/images/ortho_car.jpg', 'Car Driver Seat', this)" class="thumb-btn border border-slate-200 rounded-xl overflow-hidden aspect-square bg-slate-50 opacity-75 hover:opacity-100 min-h-[48px] min-w-[48px] transition-all" title="Car Driver Seat Setup" aria-label="Car Driver Seat Setup">
-              <img src="{{ 'ortho_car.jpg' | asset_url }}" alt="Car Setup" class="w-full h-full object-cover">
+            <button onclick="changeImage('{{ 'ortho_car.jpg' | asset_url }}', 'Car Driver Seat', this)" class="thumb-btn border border-slate-200 rounded-xl overflow-hidden aspect-square bg-slate-50 opacity-75 hover:opacity-100 min-h-[48px] min-w-[48px] transition-all" title="Car Driver Seat Setup" aria-label="Car Driver Seat Setup">
+              <img src="{{ 'ortho_car.jpg' | asset_url }}" alt="Car Setup" class="w-full h-full object-cover" width="800" height="800" loading="lazy">
             </button>
-            <button onclick="changeImage('./assets/images/ortho_foam.jpg', 'Slow Rebound Test', this)" class="thumb-btn border border-slate-200 rounded-xl overflow-hidden aspect-square bg-slate-50 opacity-75 hover:opacity-100 min-h-[48px] min-w-[48px] transition-all" title="Slow Rebound Memory Foam" aria-label="Slow Rebound Memory Foam">
-              <img src="{{ 'ortho_foam.jpg' | asset_url }}" alt="Foam Core" class="w-full h-full object-cover">
+            <button onclick="changeImage('{{ 'ortho_foam.jpg' | asset_url }}', 'Slow Rebound Test', this)" class="thumb-btn border border-slate-200 rounded-xl overflow-hidden aspect-square bg-slate-50 opacity-75 hover:opacity-100 min-h-[48px] min-w-[48px] transition-all" title="Slow Rebound Memory Foam" aria-label="Slow Rebound Memory Foam">
+              <img src="{{ 'ortho_foam.jpg' | asset_url }}" alt="Foam Core" class="w-full h-full object-cover" width="800" height="800" loading="lazy">
             </button>
-            <button onclick="changeImage('./assets/images/ortho_cover.jpg', 'Washable 3D Mesh Cover', this)" class="thumb-btn border border-slate-200 rounded-xl overflow-hidden aspect-square bg-slate-50 opacity-75 hover:opacity-100 min-h-[48px] min-w-[48px] transition-all" title="Washable Zippered Mesh Cover" aria-label="Washable Zippered Mesh Cover">
-              <img src="{{ 'ortho_cover.jpg' | asset_url }}" alt="Washable Mesh Cover" class="w-full h-full object-cover">
+            <button onclick="changeImage('{{ 'ortho_cover.jpg' | asset_url }}', 'Washable 3D Mesh Cover', this)" class="thumb-btn border border-slate-200 rounded-xl overflow-hidden aspect-square bg-slate-50 opacity-75 hover:opacity-100 min-h-[48px] min-w-[48px] transition-all" title="Washable Zippered Mesh Cover" aria-label="Washable Zippered Mesh Cover">
+              <img src="{{ 'ortho_cover.jpg' | asset_url }}" alt="Washable Mesh Cover" class="w-full h-full object-cover" width="800" height="800" loading="lazy">
             </button>
           </div>
 
@@ -208,7 +208,7 @@
 
           <!-- Video Canvas / Demonstration Player -->
           <div class="relative bg-slate-950 rounded-xl overflow-hidden aspect-video flex items-center justify-center text-white border border-slate-800 shadow-inner group">
-            <img id="demoVideoThumb" src="{{ 'ortho_foam.jpg' | asset_url }}" alt="Clinical Demonstration Video" class="w-full h-full object-cover opacity-60 transition-transform duration-700">
+            <img id="demoVideoThumb" src="{{ 'ortho_foam.jpg' | asset_url }}" alt="Clinical Demonstration Video" class="w-full h-full object-cover opacity-60 transition-transform duration-700" width="800" height="800" loading="lazy">
             
             <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/40 flex flex-col justify-between p-3 sm:p-4">
               <!-- Top Bar -->
@@ -373,19 +373,19 @@
             </div>
             <div class="grid grid-cols-4 gap-2">
               <div class="group relative rounded-xl overflow-hidden aspect-square border border-slate-200 cursor-pointer shadow-xs hover:border-blue-600 transition-all" onclick="changeImage('./assets/images/ortho_office.jpg', 'Office WFH Setup', this)">
-                <img src="{{ 'ortho_office.jpg' | asset_url }}" alt="Office desk setup" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                <img src="{{ 'ortho_office.jpg' | asset_url }}" alt="Office desk setup" class="w-full h-full object-cover group-hover:scale-105 transition-transform" width="800" height="800" loading="lazy">
                 <span class="absolute bottom-1 left-1 bg-black/70 text-white text-[9px] font-bold px-1.5 py-0.5 rounded backdrop-blur-xs">Office WFH</span>
               </div>
               <div class="group relative rounded-xl overflow-hidden aspect-square border border-slate-200 cursor-pointer shadow-xs hover:border-blue-600 transition-all" onclick="changeImage('./assets/images/ortho_car.jpg', 'Car Driver Setup', this)">
-                <img src="{{ 'ortho_car.jpg' | asset_url }}" alt="Car driver seat setup" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                <img src="{{ 'ortho_car.jpg' | asset_url }}" alt="Car driver seat setup" class="w-full h-full object-cover group-hover:scale-105 transition-transform" width="800" height="800" loading="lazy">
                 <span class="absolute bottom-1 left-1 bg-black/70 text-white text-[9px] font-bold px-1.5 py-0.5 rounded backdrop-blur-xs">Car Driver</span>
               </div>
               <div class="group relative rounded-xl overflow-hidden aspect-square border border-slate-200 cursor-pointer shadow-xs hover:border-blue-600 transition-all" onclick="changeImage('./assets/images/ortho_foam.jpg', 'Slow Rebound Test', this)">
-                <img src="{{ 'ortho_foam.jpg' | asset_url }}" alt="Memory foam test" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                <img src="{{ 'ortho_foam.jpg' | asset_url }}" alt="Memory foam test" class="w-full h-full object-cover group-hover:scale-105 transition-transform" width="800" height="800" loading="lazy">
                 <span class="absolute bottom-1 left-1 bg-black/70 text-white text-[9px] font-bold px-1.5 py-0.5 rounded backdrop-blur-xs">50D Rebound</span>
               </div>
               <div class="group relative rounded-xl overflow-hidden aspect-square border border-slate-200 cursor-pointer shadow-xs hover:border-blue-600 transition-all" onclick="changeImage('./assets/images/ortho_cover.jpg', 'Mesh Zipper Cover', this)">
-                <img src="{{ 'ortho_cover.jpg' | asset_url }}" alt="Washable 3D cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                <img src="{{ 'ortho_cover.jpg' | asset_url }}" alt="Washable 3D cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform" width="800" height="800" loading="lazy">
                 <span class="absolute bottom-1 left-1 bg-black/70 text-white text-[9px] font-bold px-1.5 py-0.5 rounded backdrop-blur-xs">3D Air Mesh</span>
               </div>
             </div>
@@ -589,7 +589,7 @@
         title: "Raw Egg Zero-Pressure Dispersion Test",
         desc: "An 85kg adult sits directly on a raw egg placed on ErgoSpine™. The egg does NOT crack due to uniform 50D pressure displacement.",
         highlight: "Zero Pressure Spike",
-        img: "./assets/images/ortho_foam.jpg",
+        img: "{{ 'ortho_foam.jpg' | asset_url }}",
         duration: 15
       },
       wfh: {
@@ -597,7 +597,7 @@
         title: "8-Hour Workday Spinal Alignment & Decompression",
         desc: "Restores the natural inward lordotic lumbar curve, eliminating lower back fatigue and sciatica numbness during work shifts.",
         highlight: "Lordotic Curve Restored",
-        img: "./assets/images/ortho_office.jpg",
+        img: "{{ 'ortho_office.jpg' | asset_url }}",
         duration: 18
       },
       car: {
@@ -605,7 +605,7 @@
         title: "Automotive Pothole Road Shock & Vibration Damping",
         desc: "Absorbs harsh pothole jolts and engine vibrations during daily driving, protecting your tailbone from spine compression.",
         highlight: "Tailbone Shock Absorbed",
-        img: "./assets/images/ortho_car.jpg",
+        img: "{{ 'ortho_car.jpg' | asset_url }}",
         duration: 12
       }
     };
