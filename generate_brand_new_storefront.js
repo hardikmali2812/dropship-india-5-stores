@@ -1,0 +1,1865 @@
+const fs = require('fs');
+
+const storefrontHtml = `<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArrowsGhar™ Flagship Ultra | Modern DTC Living & Lifestyle Store</title>
+  
+  <!-- Tailwind CSS & Lucide Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- 3D Model Viewer & Confetti Engine -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f5f7ff',
+              100: '#ebf0fe',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#1e1b4b',
+            }
+          },
+          animation: {
+            'marquee': 'marquee 25s linear infinite',
+            'float': 'float 3.5s ease-in-out infinite',
+            'pulse-subtle': 'pulseSubtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'glow': 'glow 3s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-8px)' },
+            },
+            pulseSubtle: {
+              '0%, 100%': { opacity: 1, transform: 'scale(1)' },
+              '50%': { opacity: 0.88, transform: 'scale(1.05)' },
+            },
+            glow: {
+              '0%': { opacity: 0.4 },
+              '100%': { opacity: 0.8 },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; -webkit-tap-highlight-color: transparent; }
+    input, select, textarea { font-size: 16px !important; }
+    .hero-slide { transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .glass-card {
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-nav {
+      background: rgba(10, 15, 29, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-brand-600 selection:text-white">
+
+  <!-- ========================================================================= -->
+  <!-- 1. TOP MARQUEE TICKER (CLICKABLE COUPON COPY) -->
+  <!-- ========================================================================= -->
+  <div class="relative bg-black text-white overflow-hidden py-2 text-xs font-semibold tracking-wider border-b border-white/10 z-50">
+    <div class="flex whitespace-nowrap animate-marquee">
+      <div class="flex items-center gap-8 mx-4">
+        <button onclick="copyCouponCode('ARROWS10')" class="inline-flex items-center gap-1.5 text-amber-400 hover:text-amber-300 transition-colors cursor-pointer">
+          <i data-lucide="tag" class="w-3.5 h-3.5"></i> USE CODE <span class="underline font-black bg-amber-400/20 px-1.5 py-0.5 rounded text-white">'ARROWS10'</span> FOR EXTRA 10% OFF (CLICK TO COPY)
+        </button>
+        <span class="text-slate-600">•</span>
+        <span class="inline-flex items-center gap-1.5 text-emerald-400"><i data-lucide="truck" class="w-3.5 h-3.5"></i> FREE EXPRESS AIR SHIPPING PAN-INDIA TODAY</span>
+        <span class="text-slate-600">•</span>
+        <span class="inline-flex items-center gap-1.5 text-sky-400"><i data-lucide="shield-check" class="w-3.5 h-3.5"></i> 7-DAY ZERO RISK DOORSTEP REPLACEMENT</span>
+        <span class="text-slate-600">•</span>
+        <span class="inline-flex items-center gap-1.5 text-indigo-400"><i data-lucide="badge-check" class="w-3.5 h-3.5"></i> 100% VERIFIED CASH ON DELIVERY (COD)</span>
+        <span class="text-slate-600">•</span>
+        <span class="inline-flex items-center gap-1.5 text-rose-400"><i data-lucide="zap" class="w-3.5 h-3.5"></i> EXTRA ₹50 OFF ON PREPAID UPI</span>
+      </div>
+      <div class="flex items-center gap-8 mx-4">
+        <button onclick="copyCouponCode('ARROWS10')" class="inline-flex items-center gap-1.5 text-amber-400 hover:text-amber-300 transition-colors cursor-pointer">
+          <i data-lucide="tag" class="w-3.5 h-3.5"></i> USE CODE <span class="underline font-black bg-amber-400/20 px-1.5 py-0.5 rounded text-white">'ARROWS10'</span> FOR EXTRA 10% OFF (CLICK TO COPY)
+        </button>
+        <span class="text-slate-600">•</span>
+        <span class="inline-flex items-center gap-1.5 text-emerald-400"><i data-lucide="truck" class="w-3.5 h-3.5"></i> FREE EXPRESS AIR SHIPPING PAN-INDIA TODAY</span>
+        <span class="text-slate-600">•</span>
+        <span class="inline-flex items-center gap-1.5 text-sky-400"><i data-lucide="shield-check" class="w-3.5 h-3.5"></i> 7-DAY ZERO RISK DOORSTEP REPLACEMENT</span>
+        <span class="text-slate-600">•</span>
+        <span class="inline-flex items-center gap-1.5 text-indigo-400"><i data-lucide="badge-check" class="w-3.5 h-3.5"></i> 100% VERIFIED CASH ON DELIVERY (COD)</span>
+        <span class="text-slate-600">•</span>
+        <span class="inline-flex items-center gap-1.5 text-rose-400"><i data-lucide="zap" class="w-3.5 h-3.5"></i> EXTRA ₹50 OFF ON PREPAID UPI</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 2. MASTER FLOATING HEADER DOCK (APPLE / LINEAR STYLE) -->
+  <!-- ========================================================================= -->
+  <header class="sticky top-0 z-40 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        
+        <!-- Brand Logo -->
+        <a href="#hero" class="group flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-brand-600 via-indigo-600 to-purple-600 flex items-center justify-center text-white shadow-lg shadow-brand-600/30 group-hover:scale-105 transition-all">
+            <i data-lucide="compass" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="text-xl font-black tracking-tight text-white flex items-center gap-1.5">
+              ArrowsGhar<span class="text-brand-500 text-xs uppercase font-extrabold px-1.5 py-0.5 rounded-md bg-brand-500/10 border border-brand-500/20">Ultra</span>
+            </span>
+            <p class="text-[10px] text-slate-400 font-semibold tracking-wider uppercase">Living & Lifestyle</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8 text-xs font-bold tracking-wide text-slate-300">
+          <a href="#hero" class="hover:text-white transition-colors">Home</a>
+          <a href="#studio-3d" class="hover:text-cyan-400 transition-colors flex items-center gap-1">
+            <span>3D Studio</span>
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+          </a>
+          <a href="#categories" class="hover:text-white transition-colors">Categories</a>
+          <a href="#lookbook" class="hover:text-white transition-colors">Lookbook</a>
+          <a href="#video-reels" class="hover:text-rose-400 transition-colors flex items-center gap-1">
+            <span>Live Reels</span>
+            <span class="text-[9px] bg-rose-500 text-white px-1.5 py-0.2 rounded font-black">HD</span>
+          </a>
+          <a href="#featured-products" class="hover:text-white transition-colors">Catalog</a>
+        </nav>
+
+        <!-- Right Action Controls -->
+        <div class="flex items-center gap-3">
+          <button onclick="openModal('searchModal')" class="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white transition-colors border border-white/10" title="Search">
+            <i data-lucide="search" class="w-4 h-4"></i>
+          </button>
+          
+          <button onclick="openModal('trackOrderModal')" class="hidden sm:flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white text-xs font-bold border border-white/10 transition-colors">
+            <i data-lucide="truck" class="w-4 h-4 text-emerald-400"></i>
+            <span>Track Order</span>
+          </button>
+
+          <!-- Cart Drawer Trigger Button -->
+          <button onclick="toggleCartDrawer(true)" class="relative flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white font-bold text-xs shadow-lg shadow-brand-600/30 transition-all active:scale-95 cursor-pointer">
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+            <span>Bag</span>
+            <span id="headerCartBadge" class="bg-white text-brand-900 text-[10px] font-black px-1.5 py-0.2 rounded-full ml-1">1</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- 3. LIVE COUNTDOWN URGENCY STRIP -->
+  <!-- ========================================================================= -->
+  <div class="bg-gradient-to-r from-indigo-950 via-slate-900 to-indigo-950 text-white py-2.5 px-4 text-xs font-bold border-b border-indigo-900/50">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center">
+      <div class="flex items-center gap-2 justify-center">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+        <span class="text-amber-300 font-extrabold uppercase tracking-wide">LIMITED TIME FLASH DROP</span>
+        <span class="text-slate-400">• Extra 10% Off Sitewide</span>
+      </div>
+      <div class="flex items-center gap-3 justify-center">
+        <span class="text-slate-400">Offer Closes In:</span>
+        <div class="flex items-center gap-1 font-mono text-sm font-black text-amber-400" id="saleTimer">
+          <span id="timerHours" class="bg-slate-800 px-2 py-0.5 rounded border border-slate-700">04</span> :
+          <span id="timerMins" class="bg-slate-800 px-2 py-0.5 rounded border border-slate-700">28</span> :
+          <span id="timerSecs" class="bg-slate-800 px-2 py-0.5 rounded border border-slate-700">19</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 4. CINEMATIC HERO SLIDER SECTION -->
+  <!-- ========================================================================= -->
+  <section id="hero" class="relative w-full bg-slate-950 text-white overflow-hidden min-h-[580px] lg:min-h-[660px] flex items-center">
+    
+    <!-- Hero Slide 1: Modern Living & Interiors -->
+    <div id="heroSlide1" class="hero-slide absolute inset-0 opacity-100 scale-100">
+      <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1920&q=80" alt="Modern Living" class="w-full h-full object-cover opacity-40">
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
+      
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-20">
+        <div class="max-w-2xl space-y-6">
+          
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-black tracking-widest uppercase animate-float">
+              ⚡ 2026 DTC EXCLUSIVE DROP
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-bold">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              148 Shoppers Browsing Right Now
+            </span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">
+            Elevate Your Everyday Space With Smart Comfort.
+          </h1>
+          <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
+            Meticulously engineered lifestyle essentials, designed to seamlessly blend aesthetics, functional utility, and effortless living.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-3">
+            <a href="#categories" class="px-8 py-4 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white font-extrabold text-sm shadow-xl shadow-brand-600/30 text-center flex items-center justify-center gap-2 transition-all active:scale-95">
+              <span>Explore Collections</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <button onclick="openVideoModal('https://vjs.zencdn.net/v/oceans.mp4', 'Smart Living Cinematic Experience', 'Universal 4K Demo')" class="px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-sm text-center backdrop-blur-md transition-all flex items-center justify-center gap-2 cursor-pointer group">
+              <i data-lucide="play" class="w-4 h-4 text-rose-500 fill-rose-500 group-hover:scale-125 transition-transform"></i>
+              <span>Watch 60s Live Reel</span>
+            </button>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-6 pt-4 text-xs font-semibold text-slate-300">
+            <span class="flex items-center gap-2"><i data-lucide="truck" class="w-4 h-4 text-emerald-400"></i> Free Pan-India Delivery</span>
+            <span class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-sky-400"></i> 7-Day Doorstep Replacement</span>
+            <span class="flex items-center gap-2"><i data-lucide="banknote" class="w-4 h-4 text-amber-400"></i> Cash On Delivery Available</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Slide 2: Luxury Wellness -->
+    <div id="heroSlide2" class="hero-slide absolute inset-0 opacity-0 scale-105 pointer-events-none">
+      <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1920&q=80" alt="Luxury Wellness" class="w-full h-full object-cover opacity-40">
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
+      
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-20">
+        <div class="max-w-2xl space-y-6">
+          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/20 border border-rose-400/30 text-rose-300 text-xs font-black tracking-widest uppercase animate-float">
+            ✨ PERSONAL CARE & REJUVENATION
+          </span>
+          <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">
+            Daily Self-Care Designed For Modern Routines.
+          </h2>
+          <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
+            From red light therapeutic care to ergonomic rest solutions, upgrade your physical well-being with precision-crafted essentials.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-3">
+            <a href="#featured-products" class="px-8 py-4 rounded-xl bg-gradient-to-r from-rose-600 to-indigo-600 hover:from-rose-500 hover:to-indigo-500 text-white font-extrabold text-sm shadow-xl text-center flex items-center justify-center gap-2 transition-all active:scale-95">
+              <span>Shop Wellness Essentials</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <button onclick="openVideoModal('https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4', 'Wellness & Rejuvenation Demo', 'Self-Care Innovation')" class="px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-sm text-center backdrop-blur-md transition-all flex items-center justify-center gap-2 cursor-pointer group">
+              <i data-lucide="play" class="w-4 h-4 text-rose-500 fill-rose-500 group-hover:scale-125 transition-transform"></i>
+              <span>Watch Wellness Reel</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Slide 3: Smart Tech -->
+    <div id="heroSlide3" class="hero-slide absolute inset-0 opacity-0 scale-105 pointer-events-none">
+      <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&w=1920&q=80" alt="Smart Tech" class="w-full h-full object-cover opacity-40">
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
+      
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-20">
+        <div class="max-w-2xl space-y-6">
+          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-black tracking-widest uppercase animate-float">
+            🔋 TECH FOR COMMUTE & COMMERCE
+          </span>
+          <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">
+            Ultra-Compact Power. Zero Hassle Performance.
+          </h2>
+          <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
+            High-output cordless cyclone cleaning, magnetic sensing lights, and daily essentials ready for home, office, and travels.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-3">
+            <a href="#featured-products" class="px-8 py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold text-sm shadow-xl text-center flex items-center justify-center gap-2 transition-all active:scale-95">
+              <span>Discover Tech Essentials</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <button onclick="openVideoModal('https://media.w3.org/2010/05/sintel/trailer.mp4', 'Cordless Power In Action', '4K Cyclone Turbo Clean')" class="px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-sm text-center backdrop-blur-md transition-all flex items-center justify-center gap-2 cursor-pointer group">
+              <i data-lucide="play" class="w-4 h-4 text-rose-500 fill-rose-500 group-hover:scale-125 transition-transform"></i>
+              <span>Watch Power Demo</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Banner Slide Indicators & Controls -->
+    <div class="absolute bottom-6 inset-x-0 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <button onclick="goToSlide(1)" id="slideDot1" class="w-8 h-2 rounded-full bg-brand-500 transition-all"></button>
+        <button onclick="goToSlide(2)" id="slideDot2" class="w-2.5 h-2 rounded-full bg-white/40 hover:bg-white transition-all"></button>
+        <button onclick="goToSlide(3)" id="slideDot3" class="w-2.5 h-2 rounded-full bg-white/40 hover:bg-white transition-all"></button>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button onclick="prevSlide()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white backdrop-blur-md transition-all active:scale-90 cursor-pointer">
+          <i data-lucide="chevron-left" class="w-5 h-5"></i>
+        </button>
+        <button onclick="nextSlide()" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white backdrop-blur-md transition-all active:scale-90 cursor-pointer">
+          <i data-lucide="chevron-right" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 5. INTERACTIVE 3D & AR SPATIAL PRODUCT STUDIO (NEW 100x FEATURE) -->
+  <!-- ========================================================================= -->
+  <section id="studio-3d" class="py-20 bg-slate-900 border-t border-b border-white/10 relative overflow-hidden">
+    <div class="absolute -top-40 -right-40 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-black text-cyan-400 uppercase tracking-widest flex items-center justify-center gap-1.5">
+          <i data-lucide="box" class="w-4 h-4"></i> SPATIAL COMPUTING & 3D STUDIO
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mt-2">
+          Inspect In 360° Real-Time 3D
+        </h2>
+        <p class="text-sm text-slate-400 mt-2">
+          Drag to rotate, pinch to zoom, or tap AR to view live in your space with Apple Vision & WebXR.
+        </p>
+      </div>
+
+      <!-- 3D Viewer Container -->
+      <div class="glass-card rounded-3xl p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-2xl">
+        
+        <!-- 3D Canvas Box -->
+        <div class="lg:col-span-8 relative aspect-video sm:aspect-[16/10] bg-black/50 rounded-2xl overflow-hidden border border-white/10 flex items-center justify-center">
+          <model-viewer id="embeddedModelViewer"
+            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+            poster="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=800&q=80"
+            alt="3D Interactive Product Model"
+            auto-rotate
+            camera-controls
+            shadow-intensity="1.5"
+            exposure="1.2"
+            ar
+            ar-modes="webxr scene-viewer quick-look"
+            class="w-full h-full">
+          </model-viewer>
+
+          <div class="absolute bottom-4 left-4 bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/10 text-[11px] text-slate-300 font-semibold flex items-center gap-2 pointer-events-none">
+            <i data-lucide="rotate-3d" class="w-4 h-4 text-cyan-400"></i>
+            <span>Interactive 3D Active • Drag to Rotate</span>
+          </div>
+        </div>
+
+        <!-- 3D Controls & SKU Switcher -->
+        <div class="lg:col-span-4 space-y-5">
+          <div>
+            <span class="text-[10px] font-black uppercase tracking-wider text-cyan-400 bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-800">
+              FEATURED 3D INSPECTION
+            </span>
+            <h3 id="studio3dName" class="text-2xl font-black text-white mt-2">AeroCyclone™ Cordless Turbo Unit</h3>
+            <p id="studio3dDesc" class="text-xs text-slate-400 mt-1 leading-relaxed">
+              Precision 9000Pa cyclone suction engineered for vehicle cockpits, workstation electronics, and tight crevices.
+            </p>
+          </div>
+
+          <!-- Product Switchers -->
+          <div class="space-y-2">
+            <p class="text-xs font-bold text-slate-400">Select Item To Inspect:</p>
+            <div class="grid grid-cols-3 gap-2">
+              <button onclick="switchStudio3d(0)" class="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 border border-cyan-500/40 text-center transition-all cursor-pointer">
+                <span class="text-[11px] font-black block text-white">Cyclone</span>
+                <span class="text-[10px] text-cyan-300">₹1,299</span>
+              </button>
+              <button onclick="switchStudio3d(1)" class="p-2.5 rounded-xl bg-white/5 hover:bg-white/20 border border-white/10 text-center transition-all cursor-pointer">
+                <span class="text-[11px] font-black block text-white">Sensor</span>
+                <span class="text-[10px] text-cyan-300">₹799</span>
+              </button>
+              <button onclick="switchStudio3d(2)" class="p-2.5 rounded-xl bg-white/5 hover:bg-white/20 border border-white/10 text-center transition-all cursor-pointer">
+                <span class="text-[11px] font-black block text-white">Cushion</span>
+                <span class="text-[10px] text-cyan-300">₹999</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-slate-400">Total Price:</span>
+              <div id="studio3dPrice" class="text-2xl font-black text-white">₹1,299</div>
+            </div>
+            <button onclick="addCurrentStudioItem()" class="px-6 py-3 bg-gradient-to-r from-cyan-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white font-extrabold text-xs rounded-xl shadow-lg transition-all active:scale-95 flex items-center gap-2 cursor-pointer">
+              <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+              <span>Add to Bag</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 6. VALUE PROPOSITION PILLARS (CLICKABLE TRUST GRID) -->
+  <!-- ========================================================================= -->
+  <section class="bg-slate-950 border-b border-white/10 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        
+        <div onclick="openModal('shippingModal')" class="flex items-start gap-3.5 p-3 rounded-2xl glass-card hover:border-brand-500/50 transition-all cursor-pointer group">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-brand-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <i data-lucide="truck" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-sm flex items-center gap-1">Free Express Air <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i></h4>
+            <p class="text-xs text-slate-400 mt-0.5">2-4 days dispatch across 26,000+ Indian pincodes.</p>
+          </div>
+        </div>
+
+        <div onclick="openModal('returnModal')" class="flex items-start gap-3.5 p-3 rounded-2xl glass-card hover:border-emerald-500/50 transition-all cursor-pointer group">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-sm flex items-center gap-1">7-Day Replacement <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i></h4>
+            <p class="text-xs text-slate-400 mt-0.5">Zero hassle doorstep pickup on defective parcels.</p>
+          </div>
+        </div>
+
+        <div onclick="toggleCartDrawer(true)" class="flex items-start gap-3.5 p-3 rounded-2xl glass-card hover:border-amber-500/50 transition-all cursor-pointer group">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <i data-lucide="banknote" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-sm flex items-center gap-1">Cash On Delivery <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i></h4>
+            <p class="text-xs text-slate-400 mt-0.5">100% verified COD with zero prepayment mandatory.</p>
+          </div>
+        </div>
+
+        <div onclick="openModal('whatsappModal')" class="flex items-start gap-3.5 p-3 rounded-2xl glass-card hover:border-sky-500/50 transition-all cursor-pointer group">
+          <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-sm flex items-center gap-1">WhatsApp VIP Desk <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-500"></i></h4>
+            <p class="text-xs text-slate-400 mt-0.5">Direct chat with live human specialists 9am-8pm.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 7. CURATED CATEGORY BENTO SHOWCASE (CLICKABLE CARDS) -->
+  <!-- ========================================================================= -->
+  <section id="categories" class="py-20 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+        <div>
+          <span class="text-xs font-black text-brand-400 uppercase tracking-widest">CURATED TIERS</span>
+          <h2 class="text-3xl font-black text-white tracking-tight mt-1">Explore By Lifestyle Category</h2>
+          <p class="text-sm text-slate-400 mt-1">Thoughtfully grouped innovations tailored to specific daily needs.</p>
+        </div>
+        <a href="#featured-products" class="text-xs font-extrabold text-brand-400 hover:text-brand-300 flex items-center gap-1 group">
+          <span>View All Catalog Items</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Category 1 -->
+        <div onclick="filterCatalog('featured')" class="group relative rounded-3xl overflow-hidden aspect-[4/5] bg-slate-900 shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer border border-white/10 hover:border-brand-500">
+          <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80" alt="Smart Living" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-end p-6 text-white">
+            <span class="text-xs font-extrabold text-sky-400 uppercase tracking-wider">MODERN LIVING</span>
+            <h3 class="text-2xl font-black mt-1">Smart Home Tech</h3>
+            <p class="text-xs text-slate-300 mt-1">Automated sensors, cleaning gadgets, and organizers.</p>
+            <div class="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-white bg-white/20 group-hover:bg-white group-hover:text-slate-950 px-4 py-2 rounded-xl backdrop-blur-md transition-all self-start">
+              <span>View Category</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2 -->
+        <div onclick="filterCatalog('bestseller')" class="group relative rounded-3xl overflow-hidden aspect-[4/5] bg-slate-900 shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer border border-white/10 hover:border-rose-500">
+          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" alt="Self-Care" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-end p-6 text-white">
+            <span class="text-xs font-extrabold text-rose-400 uppercase tracking-wider">WELLNESS CARE</span>
+            <h3 class="text-2xl font-black mt-1">Personal Care</h3>
+            <p class="text-xs text-slate-300 mt-1">Therapeutic scalp tech, glow massagers, and relaxation tools.</p>
+            <div class="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-white bg-white/20 group-hover:bg-white group-hover:text-slate-950 px-4 py-2 rounded-xl backdrop-blur-md transition-all self-start">
+              <span>View Category</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3 -->
+        <div onclick="filterCatalog('featured')" class="group relative rounded-3xl overflow-hidden aspect-[4/5] bg-slate-900 shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer border border-white/10 hover:border-amber-500">
+          <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80" alt="Travel & Commute" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-end p-6 text-white">
+            <span class="text-xs font-extrabold text-amber-400 uppercase tracking-wider">EVERYDAY TRAVEL</span>
+            <h3 class="text-2xl font-black mt-1">Car & Commute</h3>
+            <p class="text-xs text-slate-300 mt-1">Cyclone vacuums, seat cushions, and in-car organizers.</p>
+            <div class="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-white bg-white/20 group-hover:bg-white group-hover:text-slate-950 px-4 py-2 rounded-xl backdrop-blur-md transition-all self-start">
+              <span>View Category</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 4 -->
+        <div onclick="filterCatalog('bestseller')" class="group relative rounded-3xl overflow-hidden aspect-[4/5] bg-slate-900 shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer border border-white/10 hover:border-emerald-500">
+          <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80" alt="Home Decor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent flex flex-col justify-end p-6 text-white">
+            <span class="text-xs font-extrabold text-emerald-400 uppercase tracking-wider">AESTHETIC LIVING</span>
+            <h3 class="text-2xl font-black mt-1">Ambience & Decor</h3>
+            <p class="text-xs text-slate-300 mt-1">Night bars, anti-tarnish accents, and modern lighting.</p>
+            <div class="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-white bg-white/20 group-hover:bg-white group-hover:text-slate-950 px-4 py-2 rounded-xl backdrop-blur-md transition-all self-start">
+              <span>View Category</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 8. INTERACTIVE LOOKBOOK ("SHOP THE SPACE" WITH HOVER TOOLTIPS) -->
+  <!-- ========================================================================= -->
+  <section id="lookbook" class="py-20 bg-slate-900 border-t border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-black text-brand-400 uppercase tracking-widest">INTERACTIVE LOOKBOOK</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mt-1">Shop The Modern Indian Living Space</h2>
+        <p class="text-sm text-slate-400 mt-2">Hover over or click any pulsing hotspot pin to preview item details and add straight to bag.</p>
+      </div>
+
+      <div class="relative rounded-3xl overflow-hidden aspect-[16/9] sm:aspect-[21/9] bg-slate-950 shadow-2xl border border-white/10">
+        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&q=80" alt="Modern Living Room Space" class="w-full h-full object-cover opacity-85">
+
+        <!-- Hotspot Pin 1: Smart Lighting with Live Hover Tooltip -->
+        <div class="absolute top-[35%] left-[25%] -translate-x-1/2 -translate-y-1/2 group z-20">
+          <button onclick="openHotspotModal('Ambient Motion Sensor Light', 799, 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=500&q=80', 'Zero wiring magnetic night bar with instant infrared sensor.')" class="relative flex items-center justify-center w-10 h-10 rounded-full bg-brand-600 hover:bg-brand-500 text-white shadow-2xl hover:scale-110 transition-transform duration-300 animate-pulse-subtle cursor-pointer">
+            <span class="absolute w-full h-full rounded-full bg-brand-400 animate-ping opacity-75"></span>
+            <i data-lucide="plus" class="w-5 h-5"></i>
+          </button>
+
+          <div class="absolute bottom-12 left-1/2 -translate-x-1/2 w-48 bg-slate-900/95 backdrop-blur-md rounded-2xl p-2.5 shadow-2xl border border-white/20 pointer-events-none opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 -translate-y-2 group-hover:translate-y-0 z-30 text-white">
+            <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=300&q=80" alt="Sensor Light" class="w-full h-20 rounded-xl object-cover mb-2 border border-white/10">
+            <p class="font-extrabold text-xs text-white truncate">Ambient Sensor Bar</p>
+            <div class="flex items-center justify-between mt-1">
+              <span class="text-xs font-black text-cyan-400">₹799</span>
+              <button onclick="addToBag('Ambient Motion Sensor Light', 799, 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=500&q=80')" class="px-2 py-1 bg-brand-600 hover:bg-brand-700 text-white text-[10px] font-bold rounded-lg transition-all active:scale-95 shadow-sm cursor-pointer">
+                + Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hotspot Pin 2: Ergonomic Cushion with Live Hover Tooltip -->
+        <div class="absolute top-[65%] left-[55%] -translate-x-1/2 -translate-y-1/2 group z-20">
+          <button onclick="openHotspotModal('Honeycomb Orthopedic Cushion', 999, 'https://images.unsplash.com/photo-1580481077195-c32e921e1e47?auto=format&fit=crop&w=500&q=80', 'Ergonomic pressure-relief cooling gel cushion for office & car.')" class="relative flex items-center justify-center w-10 h-10 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-2xl hover:scale-110 transition-transform duration-300 animate-pulse-subtle cursor-pointer">
+            <span class="absolute w-full h-full rounded-full bg-emerald-400 animate-ping opacity-75"></span>
+            <i data-lucide="plus" class="w-5 h-5"></i>
+          </button>
+
+          <div class="absolute bottom-12 left-1/2 -translate-x-1/2 w-48 bg-slate-900/95 backdrop-blur-md rounded-2xl p-2.5 shadow-2xl border border-white/20 pointer-events-none opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 -translate-y-2 group-hover:translate-y-0 z-30 text-white">
+            <img src="https://images.unsplash.com/photo-1580481077195-c32e921e1e47?auto=format&fit=crop&w=300&q=80" alt="Cushion" class="w-full h-20 rounded-xl object-cover mb-2 border border-white/10">
+            <p class="font-extrabold text-xs text-white truncate">Tailbone Gel Cushion</p>
+            <div class="flex items-center justify-between mt-1">
+              <span class="text-xs font-black text-emerald-400">₹999</span>
+              <button onclick="addToBag('Honeycomb Orthopedic Cushion', 999, 'https://images.unsplash.com/photo-1580481077195-c32e921e1e47?auto=format&fit=crop&w=500&q=80')" class="px-2 py-1 bg-emerald-600 hover:bg-emerald-700 text-white text-[10px] font-bold rounded-lg transition-all active:scale-95 shadow-sm cursor-pointer">
+                + Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hotspot Pin 3: Cordless Clean Tech with Live Hover Tooltip -->
+        <div class="absolute top-[75%] left-[80%] -translate-x-1/2 -translate-y-1/2 group z-20">
+          <button onclick="openHotspotModal('Cordless Cyclone Turbo Cleaner', 1299, 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=500&q=80', '9000Pa cyclone suction with USB-C fast charging.')" class="relative flex items-center justify-center w-10 h-10 rounded-full bg-amber-600 hover:bg-amber-500 text-white shadow-2xl hover:scale-110 transition-transform duration-300 animate-pulse-subtle cursor-pointer">
+            <span class="absolute w-full h-full rounded-full bg-amber-400 animate-ping opacity-75"></span>
+            <i data-lucide="plus" class="w-5 h-5"></i>
+          </button>
+
+          <div class="absolute bottom-12 left-1/2 -translate-x-1/2 w-48 bg-slate-900/95 backdrop-blur-md rounded-2xl p-2.5 shadow-2xl border border-white/20 pointer-events-none opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 -translate-y-2 group-hover:translate-y-0 z-30 text-white">
+            <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=300&q=80" alt="Cleaner" class="w-full h-20 rounded-xl object-cover mb-2 border border-white/10">
+            <p class="font-extrabold text-xs text-white truncate">AeroCyclone™ Vac</p>
+            <div class="flex items-center justify-between mt-1">
+              <span class="text-xs font-black text-amber-400">₹1,299</span>
+              <button onclick="addToBag('Cordless Cyclone Turbo Cleaner', 1299, 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=500&q=80')" class="px-2 py-1 bg-amber-600 hover:bg-amber-700 text-white text-[10px] font-bold rounded-lg transition-all active:scale-95 shadow-sm cursor-pointer">
+                + Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 9. 100% WORKING VIDEO REELS SHOWCASE -->
+  <!-- ========================================================================= -->
+  <section id="video-reels" class="py-20 bg-slate-950 text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-black text-rose-400 uppercase tracking-widest flex items-center justify-center gap-1.5">
+          <i data-lucide="video" class="w-4 h-4"></i> 100% REAL VIDEO REELS
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mt-2">
+          Watch Before You Buy
+        </h2>
+        <p class="text-sm text-slate-400 mt-2">
+          Click any reel below to launch the HD video demonstration with live product quick-order overlay!
+        </p>
+      </div>
+
+      <!-- Video Reels Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Reel 1 -->
+        <div class="glass-card rounded-2xl overflow-hidden hover:border-brand-500 transition-all duration-300 group flex flex-col justify-between shadow-xl">
+          <div class="relative aspect-[9/16] bg-slate-950 overflow-hidden cursor-pointer" onclick="openVideoModal('https://vjs.zencdn.net/v/oceans.mp4', 'Cordless Cyclone Power Demonstration', 'Clean Tech')">
+            <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=400&q=80" alt="Cyclone Reel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80">
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/40 p-4 flex flex-col justify-between">
+              <span class="self-start bg-rose-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">0:45 Reel</span>
+              
+              <div class="w-14 h-14 rounded-full bg-brand-600 text-white self-center flex items-center justify-center shadow-lg group-hover:scale-125 transition-transform duration-300 animate-pulse-subtle">
+                <i data-lucide="play" class="w-6 h-6 fill-white ml-0.5"></i>
+              </div>
+
+              <div>
+                <p class="text-xs font-bold text-white">9000Pa Live Car Dirt Suction Test</p>
+                <p class="text-[10px] text-slate-400 mt-0.5">Click to Open Video Player</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-3.5 bg-slate-900 border-t border-white/10 flex items-center justify-between">
+            <div>
+              <span class="text-sm font-black text-white">₹1,299</span>
+              <span class="text-[10px] text-emerald-400 block font-bold">In Stock</span>
+            </div>
+            <button onclick="addToBag('AeroCyclone™ Cordless Turbo Unit', 1299, 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=400&q=80')" class="px-3.5 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold transition-all active:scale-95 flex items-center gap-1.5 shadow-md cursor-pointer">
+              <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <!-- Reel 2 -->
+        <div class="glass-card rounded-2xl overflow-hidden hover:border-brand-500 transition-all duration-300 group flex flex-col justify-between shadow-xl">
+          <div class="relative aspect-[9/16] bg-slate-950 overflow-hidden cursor-pointer" onclick="openVideoModal('https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4', 'Red Light Follicle Rejuvenation', 'Self Care')">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=80" alt="FolliGlow Reel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80">
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/40 p-4 flex flex-col justify-between">
+              <span class="self-start bg-brand-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">0:32 Reel</span>
+              
+              <div class="w-14 h-14 rounded-full bg-brand-600 text-white self-center flex items-center justify-center shadow-lg group-hover:scale-125 transition-transform duration-300 animate-pulse-subtle">
+                <i data-lucide="play" class="w-6 h-6 fill-white ml-0.5"></i>
+              </div>
+
+              <div>
+                <p class="text-xs font-bold text-white">650nm Red Light Scalp Session</p>
+                <p class="text-[10px] text-slate-400 mt-0.5">Click to Open Video Player</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-3.5 bg-slate-900 border-t border-white/10 flex items-center justify-between">
+            <div>
+              <span class="text-sm font-black text-white">₹1,499</span>
+              <span class="text-[10px] text-emerald-400 block font-bold">In Stock</span>
+            </div>
+            <button onclick="addToBag('Red Light Scalp Therapy Unit', 1499, 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=80')" class="px-3.5 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold transition-all active:scale-95 flex items-center gap-1.5 shadow-md cursor-pointer">
+              <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <!-- Reel 3 -->
+        <div class="glass-card rounded-2xl overflow-hidden hover:border-brand-500 transition-all duration-300 group flex flex-col justify-between shadow-xl">
+          <div class="relative aspect-[9/16] bg-slate-950 overflow-hidden cursor-pointer" onclick="openVideoModal('https://media.w3.org/2010/05/sintel/trailer.mp4', 'Magnetic Infrared Sensor Bar Night Test', 'Smart Home')">
+            <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=400&q=80" alt="Sensor Light Reel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80">
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/40 p-4 flex flex-col justify-between">
+              <span class="self-start bg-amber-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">0:28 Reel</span>
+              
+              <div class="w-14 h-14 rounded-full bg-brand-600 text-white self-center flex items-center justify-center shadow-lg group-hover:scale-125 transition-transform duration-300 animate-pulse-subtle">
+                <i data-lucide="play" class="w-6 h-6 fill-white ml-0.5"></i>
+              </div>
+
+              <div>
+                <p class="text-xs font-bold text-white">Motion Detection in Complete Darkness</p>
+                <p class="text-[10px] text-slate-400 mt-0.5">Click to Open Video Player</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-3.5 bg-slate-900 border-t border-white/10 flex items-center justify-between">
+            <div>
+              <span class="text-sm font-black text-white">₹799</span>
+              <span class="text-[10px] text-emerald-400 block font-bold">In Stock</span>
+            </div>
+            <button onclick="addToBag('Magnetic Night Motion Bar', 799, 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=400&q=80')" class="px-3.5 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold transition-all active:scale-95 flex items-center gap-1.5 shadow-md cursor-pointer">
+              <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i> Add
+            </button>
+          </div>
+        </div>
+
+        <!-- Reel 4 -->
+        <div class="glass-card rounded-2xl overflow-hidden hover:border-brand-500 transition-all duration-300 group flex flex-col justify-between shadow-xl">
+          <div class="relative aspect-[9/16] bg-slate-950 overflow-hidden cursor-pointer" onclick="openVideoModal('https://www.w3schools.com/html/mov_bbb.mp4', 'Honeycomb Tailbone Pressure Redistribution', 'Posture & Ergonomics')">
+            <img src="https://images.unsplash.com/photo-1580481077195-c32e921e1e47?auto=format&fit=crop&w=400&q=80" alt="Cushion Reel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80">
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/40 p-4 flex flex-col justify-between">
+              <span class="self-start bg-emerald-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase tracking-wider">0:36 Reel</span>
+              
+              <div class="w-14 h-14 rounded-full bg-brand-600 text-white self-center flex items-center justify-center shadow-lg group-hover:scale-125 transition-transform duration-300 animate-pulse-subtle">
+                <i data-lucide="play" class="w-6 h-6 fill-white ml-0.5"></i>
+              </div>
+
+              <div>
+                <p class="text-xs font-bold text-white">Raw Egg 80kg Sitting Pressure Test</p>
+                <p class="text-[10px] text-slate-400 mt-0.5">Click to Open Video Player</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-3.5 bg-slate-900 border-t border-white/10 flex items-center justify-between">
+            <div>
+              <span class="text-sm font-black text-white">₹999</span>
+              <span class="text-[10px] text-emerald-400 block font-bold">In Stock</span>
+            </div>
+            <button onclick="addToBag('Honeycomb Orthopedic Cushion', 999, 'https://images.unsplash.com/photo-1580481077195-c32e921e1e47?auto=format&fit=crop&w=400&q=80')" class="px-3.5 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-bold transition-all active:scale-95 flex items-center gap-1.5 shadow-md cursor-pointer">
+              <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i> Add
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 10. PRODUCT SHOWCASE GRID WITH 3D TRIGGERS & QUICK VIEW -->
+  <!-- ========================================================================= -->
+  <section id="featured-products" class="py-20 bg-slate-900 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+        <div>
+          <span class="text-xs font-black text-brand-400 uppercase tracking-widest">PRODUCT FRAMEWORK</span>
+          <h2 class="text-3xl font-black text-white tracking-tight mt-1">Featured Showcase Grid</h2>
+          <p class="text-sm text-slate-400 mt-1">Modular high-converting cards ready for your products.</p>
+        </div>
+
+        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+          <button onclick="filterCatalog('all')" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold bg-brand-600 text-white shadow-sm cursor-pointer" data-category="all">All Showcase</button>
+          <button onclick="filterCatalog('featured')" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold bg-white/10 text-slate-300 hover:bg-white/20 cursor-pointer" data-category="featured">Featured Drops</button>
+          <button onclick="filterCatalog('bestseller')" class="cat-pill px-4 py-2 rounded-xl text-xs font-bold bg-white/10 text-slate-300 hover:bg-white/20 cursor-pointer" data-category="bestseller">Top Bestsellers</button>
+        </div>
+      </div>
+
+      <!-- 4-Card Responsive Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Card Slot 1 -->
+        <div class="catalog-card glass-card rounded-3xl p-4 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 hover:border-brand-500/50" data-category="featured">
+          <div>
+            <div class="relative rounded-2xl overflow-hidden aspect-square bg-slate-950 mb-3 cursor-pointer" onclick="openQuickView('AeroCyclone™ Cordless Turbo Unit', 1299, 2499, 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=600&q=80', 'SMART HOME', 'Dual-action 9000Pa cyclone suction for car, home, laptops, and keyboards. USB-C rechargeable with washable HEPA.')">
+              <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=600&q=80" alt="Showcase Item 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-2 left-2 bg-rose-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase">48% OFF</span>
+              <span class="absolute top-2 right-2 bg-black/70 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 border border-white/10">
+                <i data-lucide="star" class="w-3 h-3 fill-amber-400 text-amber-400"></i> 4.9
+              </span>
+            </div>
+            <span class="text-[10px] font-bold text-brand-400 uppercase tracking-wider">SMART HOME</span>
+            <h3 class="font-extrabold text-sm text-white mt-0.5 group-hover:text-brand-400 transition-colors">AeroCyclone™ Cordless Turbo Unit</h3>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-2">Precision cyclone suction with washable HEPA filtration.</p>
+            <div class="flex items-baseline gap-2 mt-3">
+              <span class="text-lg font-black text-white">₹1,299</span>
+              <span class="text-xs text-slate-500 line-through">₹2,499</span>
+            </div>
+          </div>
+          <div class="mt-4 flex gap-2">
+            <button onclick="open3dModal('AeroCyclone™ Cordless Turbo Unit', 1299, 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=600&q=80')" class="px-2.5 py-2.5 rounded-xl bg-cyan-950/80 hover:bg-cyan-900 border border-cyan-700/50 text-cyan-300 font-black text-xs transition-colors flex items-center gap-1 cursor-pointer" title="Inspect in 3D">
+              <i data-lucide="box" class="w-3.5 h-3.5"></i> 3D
+            </button>
+            <button onclick="openQuickView('AeroCyclone™ Cordless Turbo Unit', 1299, 2499, 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=600&q=80', 'SMART HOME', 'Dual-action 9000Pa cyclone suction for car, home, laptops, and keyboards. USB-C rechargeable with washable HEPA.')" class="flex-1 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs transition-colors cursor-pointer">Quick View</button>
+            <button onclick="addToBag('AeroCyclone™ Cordless Turbo Unit', 1299, 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=600&q=80')" class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs transition-all active:scale-95 shadow-md flex items-center justify-center cursor-pointer">
+              <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card Slot 2 -->
+        <div class="catalog-card glass-card rounded-3xl p-4 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 hover:border-brand-500/50" data-category="bestseller">
+          <div>
+            <div class="relative rounded-2xl overflow-hidden aspect-square bg-slate-950 mb-3 cursor-pointer" onclick="openQuickView('FolliGlow™ Red Light Therapy Massager', 1499, 2999, 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80', 'WELLNESS', '650nm low-level red light therapy with micro-current vibrations for root activation and deep relaxation.')">
+              <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" alt="Showcase Item 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-2 left-2 bg-rose-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase">50% OFF</span>
+              <span class="absolute top-2 right-2 bg-black/70 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 border border-white/10">
+                <i data-lucide="star" class="w-3 h-3 fill-amber-400 text-amber-400"></i> 4.8
+              </span>
+            </div>
+            <span class="text-[10px] font-bold text-rose-400 uppercase tracking-wider">WELLNESS</span>
+            <h3 class="font-extrabold text-sm text-white mt-0.5 group-hover:text-rose-400 transition-colors">FolliGlow™ Scalp Therapy Unit</h3>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-2">650nm red light phototherapy with IPX7 waterproof silicone.</p>
+            <div class="flex items-baseline gap-2 mt-3">
+              <span class="text-lg font-black text-white">₹1,499</span>
+              <span class="text-xs text-slate-500 line-through">₹2,999</span>
+            </div>
+          </div>
+          <div class="mt-4 flex gap-2">
+            <button onclick="openQuickView('FolliGlow™ Red Light Therapy Massager', 1499, 2999, 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80', 'WELLNESS', '650nm low-level red light therapy with micro-current vibrations for root activation and deep relaxation.')" class="flex-1 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs transition-colors cursor-pointer">Quick View</button>
+            <button onclick="addToBag('FolliGlow™ Red Light Therapy Massager', 1499, 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80')" class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs transition-all active:scale-95 shadow-md flex items-center justify-center cursor-pointer">
+              <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card Slot 3 -->
+        <div class="catalog-card glass-card rounded-3xl p-4 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 hover:border-brand-500/50" data-category="featured">
+          <div>
+            <div class="relative rounded-2xl overflow-hidden aspect-square bg-slate-950 mb-3 cursor-pointer" onclick="openQuickView('Ambient Infrared Magnetic Night Bar', 799, 1499, 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=600&q=80', 'LIGHTING', 'Smart infrared body motion detector with magnetic 3M wall mount and dual warm ambient glow modes.')">
+              <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=600&q=80" alt="Showcase Item 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-2 left-2 bg-rose-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase">46% OFF</span>
+              <span class="absolute top-2 right-2 bg-black/70 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 border border-white/10">
+                <i data-lucide="star" class="w-3 h-3 fill-amber-400 text-amber-400"></i> 4.9
+              </span>
+            </div>
+            <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">SMART LIGHTING</span>
+            <h3 class="font-extrabold text-sm text-white mt-0.5 group-hover:text-amber-400 transition-colors">Ambient Motion Sensor Light Bar</h3>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-2">Magnetic adhesive dock with rechargeable 120-day battery.</p>
+            <div class="flex items-baseline gap-2 mt-3">
+              <span class="text-lg font-black text-white">₹799</span>
+              <span class="text-xs text-slate-500 line-through">₹1,499</span>
+            </div>
+          </div>
+          <div class="mt-4 flex gap-2">
+            <button onclick="openQuickView('Ambient Infrared Magnetic Night Bar', 799, 1499, 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=600&q=80', 'LIGHTING', 'Smart infrared body motion detector with magnetic 3M wall mount and dual warm ambient glow modes.')" class="flex-1 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs transition-colors cursor-pointer">Quick View</button>
+            <button onclick="addToBag('Ambient Infrared Magnetic Night Bar', 799, 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=600&q=80')" class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs transition-all active:scale-95 shadow-md flex items-center justify-center cursor-pointer">
+              <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card Slot 4 -->
+        <div class="catalog-card glass-card rounded-3xl p-4 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1 hover:border-brand-500/50" data-category="bestseller">
+          <div>
+            <div class="relative rounded-2xl overflow-hidden aspect-square bg-slate-950 mb-3 cursor-pointer" onclick="openQuickView('Honeycomb Tailbone Orthopedic Cushion', 999, 1999, 'https://images.unsplash.com/photo-1580481077195-c32e921e1e47?auto=format&fit=crop&w=600&q=80', 'ERGONOMICS', 'Medical-grade hyper-elastic gel honeycomb mesh for zero tailbone pressure and sciatica relief.')">
+              <img src="https://images.unsplash.com/photo-1580481077195-c32e921e1e47?auto=format&fit=crop&w=600&q=80" alt="Showcase Item 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span class="absolute top-2 left-2 bg-rose-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase">50% OFF</span>
+              <span class="absolute top-2 right-2 bg-black/70 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 border border-white/10">
+                <i data-lucide="star" class="w-3 h-3 fill-amber-400 text-amber-400"></i> 4.7
+              </span>
+            </div>
+            <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">ERGONOMICS</span>
+            <h3 class="font-extrabold text-sm text-white mt-0.5 group-hover:text-emerald-400 transition-colors">Honeycomb Orthopedic Gel Cushion</h3>
+            <p class="text-xs text-slate-400 mt-1 line-clamp-2">Zero pressure tailbone support with breathable 3D mesh cover.</p>
+            <div class="flex items-baseline gap-2 mt-3">
+              <span class="text-lg font-black text-white">₹999</span>
+              <span class="text-xs text-slate-500 line-through">₹1,999</span>
+            </div>
+          </div>
+          <div class="mt-4 flex gap-2">
+            <button onclick="openQuickView('Honeycomb Tailbone Orthopedic Cushion', 999, 1999, 'https://images.unsplash.com/photo-1580481077195-c32e921e1e47?auto=format&fit=crop&w=600&q=80', 'ERGONOMICS', 'Medical-grade hyper-elastic gel honeycomb mesh for zero tailbone pressure and sciatica relief.')" class="flex-1 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs transition-colors cursor-pointer">Quick View</button>
+            <button onclick="addToBag('Honeycomb Tailbone Orthopedic Cushion', 999, 'https://images.unsplash.com/photo-1580481077195-c32e921e1e47?auto=format&fit=crop&w=600&q=80')" class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs transition-all active:scale-95 shadow-md flex items-center justify-center cursor-pointer">
+              <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 11. FOOTER & COMPREHENSIVE LEGAL DIRECTORY -->
+  <!-- ========================================================================= -->
+  <footer class="bg-black text-white border-t border-white/10 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-600 flex items-center justify-center text-white font-black text-sm">
+              🏹
+            </div>
+            <span class="text-lg font-black tracking-tight text-white">ArrowsGhar™</span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Curating modern, problem-solving lifestyle and home essentials across India. Verified Cash On Delivery (COD) and doorstep replacement guarantee.
+          </p>
+          <div class="flex items-center gap-3 text-slate-400">
+            <span class="text-xs font-semibold text-emerald-400 flex items-center gap-1">
+              <i data-lucide="shield-check" class="w-4 h-4"></i> 100% Secure Checkout
+            </span>
+          </div>
+        </div>
+
+        <!-- Col 2: Customer Care -->
+        <div class="space-y-3">
+          <h4 class="font-extrabold text-sm text-white">Customer Support</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><button onclick="openModal('whatsappModal')" class="hover:text-emerald-400 transition-colors flex items-center gap-1.5"><i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp VIP Helpdesk</button></li>
+            <li><button onclick="openModal('trackOrderModal')" class="hover:text-white transition-colors flex items-center gap-1.5"><i data-lucide="truck" class="w-3.5 h-3.5"></i> Track Your Order</button></li>
+            <li><button onclick="openModal('returnModal')" class="hover:text-white transition-colors flex items-center gap-1.5"><i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> 7-Day Replacement Policy</button></li>
+            <li><button onclick="openModal('shippingModal')" class="hover:text-white transition-colors flex items-center gap-1.5"><i data-lucide="box" class="w-3.5 h-3.5"></i> Shipping & Delivery Details</button></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Company & Policies -->
+        <div class="space-y-3">
+          <h4 class="font-extrabold text-sm text-white">Legal & Policies</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><button onclick="openModal('privacyModal')" class="hover:text-white transition-colors">Privacy Policy</button></li>
+            <li><button onclick="openModal('termsModal')" class="hover:text-white transition-colors">Terms & Conditions</button></li>
+            <li><button onclick="openModal('shippingModal')" class="hover:text-white transition-colors">COD Verification Rules</button></li>
+            <li><a href="https://arrowsghar.myshopify.com" class="hover:text-white transition-colors">Store URL (arrowsghar.myshopify.com)</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: VIP Newsletter Club -->
+        <div class="space-y-3">
+          <h4 class="font-extrabold text-sm text-white">Join The VIP Club</h4>
+          <p class="text-xs text-slate-400">Get secret flash discounts and ₹100 welcome credit for your first order.</p>
+          <div class="space-y-2">
+            <div class="flex gap-2">
+              <input id="footerNewsletterEmail" type="email" placeholder="Enter your email" class="flex-1 px-3 py-2 bg-slate-900 border border-white/20 rounded-xl text-xs text-white focus:outline-none focus:ring-2 focus:ring-brand-500">
+              <button onclick="claimVipCoupon()" class="px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs rounded-xl shadow transition-all cursor-pointer">Join</button>
+            </div>
+            <div id="footerCouponSuccess" class="hidden p-2 rounded-xl bg-emerald-950/80 border border-emerald-500 text-[11px] text-emerald-300">
+              🎉 Welcome code: <strong>VIPWELCOME100</strong> applied!
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 text-center">
+        <p>© 2026 ArrowsGhar™ Flagship Ultra. All rights reserved. Powered by Universal Shopify Architecture.</p>
+        <div class="flex items-center gap-4">
+          <span class="flex items-center gap-1 text-slate-400"><i data-lucide="lock" class="w-3.5 h-3.5 text-emerald-400"></i> 256-Bit SSL Encrypted</span>
+          <span class="flex items-center gap-1 text-slate-400"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400"></i> Verified Merchant</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- 12. DYNAMIC SLIDE-OUT AJAX CART DRAWER WITH PINCODE & CONFETTI CHECKOUT -->
+  <!-- ========================================================================= -->
+  <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-all duration-300 opacity-0">
+    <div onclick="toggleCartDrawer(false)" class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm transition-opacity"></div>
+    <div class="absolute inset-y-0 right-0 max-w-full flex pl-10 pointer-events-auto">
+      <div class="w-screen max-w-md bg-slate-900 text-white shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out border-l border-white/10" id="cartDrawerPanel">
+        
+        <!-- Drawer Header -->
+        <div class="p-4 bg-slate-950 border-b border-white/10 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-400"></i>
+            <h3 class="font-black text-sm text-white">Your Shopping Bag</h3>
+            <span id="drawerCountBadge" class="bg-brand-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">1</span>
+          </div>
+          <button onclick="toggleCartDrawer(false)" class="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 cursor-pointer">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <!-- Free Shipping & VIP Gift Meter -->
+        <div class="p-3 bg-brand-950/80 border-b border-brand-800/40 text-xs">
+          <div class="flex items-center justify-between font-bold text-white mb-1">
+            <span id="drawerShippingText" class="flex items-center gap-1 text-cyan-300">
+              <i data-lucide="truck" class="w-3.5 h-3.5"></i> Free Express Shipping Unlocked!
+            </span>
+          </div>
+          <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+            <div id="drawerShippingBar" class="h-full bg-gradient-to-r from-brand-600 to-cyan-400 transition-all duration-500" style="width: 100%;"></div>
+          </div>
+        </div>
+
+        <!-- Cart Items Container -->
+        <div class="flex-1 overflow-y-auto p-4 space-y-3" id="drawerItemsList">
+          <!-- Dynamic Items Injected by JS -->
+        </div>
+
+        <!-- Live Indian Pincode Delivery Estimator -->
+        <div class="px-4 py-2.5 bg-slate-950 border-t border-white/10 text-xs">
+          <div class="flex items-center justify-between mb-1.5">
+            <span class="font-bold text-slate-300 flex items-center gap-1.5">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-cyan-400"></i> Delivery Pincode:
+            </span>
+            <span class="text-[10px] font-extrabold text-emerald-400">PAN-INDIA COD</span>
+          </div>
+          <div class="flex gap-2">
+            <input id="drawerPincodeInput" type="text" maxlength="6" value="400001" placeholder="Enter Pincode" class="flex-1 px-3 py-2 bg-slate-800 border border-slate-700 rounded-xl text-xs font-semibold text-white focus:outline-none focus:ring-2 focus:ring-brand-500">
+            <button onclick="checkCartPincode()" class="px-3.5 py-2 bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs rounded-xl transition-all cursor-pointer">Check</button>
+          </div>
+          <div id="drawerPincodeResult" class="mt-2 p-2 bg-emerald-950/80 border border-emerald-500/40 rounded-xl text-[11px] text-emerald-300 font-semibold flex items-center gap-1.5">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400 shrink-0"></i>
+            <span id="drawerPincodeText">Verified: BlueDart Air Express delivery by Tomorrow 4 PM!</span>
+          </div>
+        </div>
+
+        <!-- Payment Mode Selector: UPI vs COD -->
+        <div class="px-4 py-2 border-t border-white/10 bg-slate-900">
+          <p class="text-xs font-bold text-slate-400 mb-1.5">Select Payment Method:</p>
+          <div class="grid grid-cols-2 gap-2">
+            <label class="cursor-pointer border-2 border-brand-500 bg-brand-950/60 rounded-xl p-2.5 flex flex-col items-center text-center">
+              <input type="radio" name="drawerPayMode" value="upi" checked onchange="toggleCartUpi(true)" class="hidden">
+              <span class="text-xs font-extrabold text-white flex items-center gap-1">
+                <i data-lucide="zap" class="w-3.5 h-3.5 text-brand-400"></i> Pre-paid UPI
+              </span>
+              <span class="text-[10px] font-black text-rose-400 bg-rose-950/80 px-1.5 rounded mt-0.5 border border-rose-800">EXTRA ₹50 OFF</span>
+            </label>
+            <label class="cursor-pointer border border-white/10 bg-white/5 rounded-xl p-2.5 flex flex-col items-center text-center hover:bg-white/10">
+              <input type="radio" name="drawerPayMode" value="cod" onchange="toggleCartUpi(false)" class="hidden">
+              <span class="text-xs font-bold text-slate-200">Cash On Delivery</span>
+              <span class="text-[10px] text-slate-400 mt-0.5">Doorstep Pay</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Summary & Checkout Button -->
+        <div class="p-4 bg-slate-950 border-t border-white/10 space-y-3">
+          <div class="space-y-1 text-xs">
+            <div class="flex justify-between text-slate-400">
+              <span>Subtotal</span>
+              <span class="font-bold text-white" id="cartSubtotalText">₹1,299</span>
+            </div>
+            <div class="flex justify-between text-emerald-400 font-bold" id="cartUpiRow">
+              <span>Pre-paid UPI Instant Discount</span>
+              <span>-₹50</span>
+            </div>
+            <div class="flex justify-between text-slate-400">
+              <span>Express Air Delivery</span>
+              <span class="text-emerald-400 font-bold">FREE</span>
+            </div>
+            <div class="flex justify-between text-base font-black text-white pt-2 border-t border-white/10">
+              <span>Total Payable</span>
+              <span id="cartTotalText" class="text-xl text-cyan-400 font-black">₹1,249</span>
+            </div>
+          </div>
+
+          <button onclick="triggerOrderCheckout()" class="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-600 via-teal-600 to-brand-600 hover:from-emerald-500 hover:to-brand-500 text-white font-black text-sm uppercase tracking-wider shadow-xl shadow-emerald-600/30 active:scale-98 transition-all flex items-center justify-center gap-2 cursor-pointer">
+            <i data-lucide="lock" class="w-4 h-4"></i>
+            <span>Proceed to 1-Tap Checkout</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 13. REAL WORKING VIDEO PLAYER MODAL -->
+  <!-- ========================================================================= -->
+  <div id="videoPlayerModal" onclick="if(event.target === this) closeVideoModal()" class="hidden fixed inset-0 z-[100] overflow-y-auto bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="bg-slate-900 rounded-3xl max-w-2xl w-full p-6 text-white shadow-2xl border border-slate-800 relative">
+      <button onclick="closeVideoModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white p-1 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors z-20 cursor-pointer">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <!-- Video Header -->
+      <div class="flex items-center gap-2 mb-3">
+        <span id="videoModalTag" class="text-xs font-black text-rose-400 uppercase tracking-widest bg-rose-950/80 px-2.5 py-0.5 rounded-full border border-rose-800">
+          HD VIDEO DEMONSTRATION
+        </span>
+        <h3 id="videoModalTitle" class="text-base font-black truncate">Live Product Test</h3>
+      </div>
+
+      <!-- Real HTML5 Video Frame -->
+      <div class="relative rounded-2xl overflow-hidden aspect-video bg-black flex items-center justify-center border border-slate-800 shadow-2xl">
+        <video id="modalVideoElement" class="w-full h-full object-cover" controls autoplay playsinline loop>
+          <source id="modalVideoSource" src="" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <!-- Video Action Footer -->
+      <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between">
+        <div>
+          <span class="text-xs text-slate-400">Featured Item Offer:</span>
+          <div class="text-lg font-black text-white">₹1,299 <span class="text-xs text-emerald-400">(Save 48%)</span></div>
+        </div>
+        <button onclick="closeVideoModal(); addToBag('AeroCyclone™ Cordless Turbo Unit', 1299, 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=400&q=80')" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs rounded-xl shadow-md transition-all active:scale-95 flex items-center gap-2 cursor-pointer">
+          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+          <span>Order This Item (COD)</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 14. 3D & AR PRODUCT VIEWER MODAL -->
+  <!-- ========================================================================= -->
+  <div id="modelViewerModal" onclick="if(event.target === this) close3dModal()" class="hidden fixed inset-0 z-[110] overflow-y-auto bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="bg-slate-900 rounded-3xl max-w-2xl w-full p-6 text-white shadow-2xl border border-slate-800 relative">
+      <button onclick="close3dModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white p-1 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors z-20 cursor-pointer">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-xs font-black text-cyan-400 uppercase tracking-widest bg-cyan-950/80 px-2.5 py-0.5 rounded-full border border-cyan-800 flex items-center gap-1">
+          <i data-lucide="box" class="w-3.5 h-3.5"></i> REAL-TIME 3D / AR INSPECTION
+        </span>
+        <h3 id="modal3dTitle" class="text-base font-black truncate">360° Inspection</h3>
+      </div>
+
+      <div class="relative rounded-2xl overflow-hidden aspect-video bg-gradient-to-b from-slate-950 to-slate-900 flex items-center justify-center border border-slate-800 shadow-2xl">
+        <model-viewer id="activeModelViewer"
+          src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+          poster="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=600&q=80"
+          alt="3D Product Model"
+          auto-rotate
+          camera-controls
+          shadow-intensity="1.5"
+          exposure="1.2"
+          ar
+          ar-modes="webxr scene-viewer quick-look"
+          class="w-full h-full">
+        </model-viewer>
+      </div>
+
+      <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between">
+        <div>
+          <span class="text-xs text-slate-400">Instant Doorstep Order:</span>
+          <div class="text-lg font-black text-white" id="modal3dPrice">₹1,299 <span class="text-xs text-emerald-400">(COD Available)</span></div>
+        </div>
+        <button id="modal3dAddBtn" class="px-5 py-2.5 bg-gradient-to-r from-cyan-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white font-bold text-xs rounded-xl shadow-md transition-all active:scale-95 flex items-center gap-2 cursor-pointer">
+          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+          <span>Add 3D Item to Bag</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 15. QUICK VIEW MODAL FOR CATALOG ITEMS -->
+  <!-- ========================================================================= -->
+  <div id="quickViewModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-slate-900 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative text-white border border-white/10">
+      <button onclick="closeModal('quickViewModal')" class="absolute top-5 right-5 text-slate-400 hover:text-white p-1 cursor-pointer">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="space-y-4">
+        <img id="qvImage" src="" alt="Product" class="w-full h-64 rounded-2xl object-cover bg-slate-950 border border-white/10">
+        <div>
+          <span id="qvTag" class="text-[10px] font-black text-brand-400 uppercase tracking-widest bg-brand-950/80 px-2 py-0.5 rounded border border-brand-800">TAG</span>
+          <h3 id="qvTitle" class="text-xl font-black text-white mt-1.5 leading-snug">Product Title</h3>
+          <p id="qvDesc" class="text-xs text-slate-300 mt-2 leading-relaxed">Description text goes here.</p>
+        </div>
+
+        <div class="flex items-baseline gap-2 pt-2 border-t border-white/10">
+          <span id="qvPrice" class="text-2xl font-black text-white">₹1,299</span>
+          <span id="qvOldPrice" class="text-sm text-slate-500 line-through">₹2,499</span>
+          <span class="text-xs font-bold text-emerald-400 ml-2">Verified COD Available</span>
+        </div>
+
+        <button id="qvAddBtn" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white font-black text-sm uppercase tracking-wider shadow-lg shadow-brand-600/30 transition-all active:scale-95 flex items-center justify-center gap-2 cursor-pointer">
+          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+          <span>Add To Bag & Checkout</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 16. HOTSPOT POPUP MODAL -->
+  <!-- ========================================================================= -->
+  <div id="hotspotModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-slate-900 rounded-3xl max-w-md w-full p-6 shadow-2xl relative text-white border border-white/10">
+      <button onclick="closeModal('hotspotModal')" class="absolute top-5 right-5 text-slate-400 hover:text-white p-1 cursor-pointer">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex gap-4 items-center">
+        <img id="hsImage" src="" alt="Hotspot" class="w-20 h-20 rounded-2xl object-cover border border-white/10 shrink-0">
+        <div>
+          <span class="text-[10px] font-black text-brand-400 uppercase">Lookbook Selection</span>
+          <h4 id="hsTitle" class="text-base font-black text-white leading-snug">Item Title</h4>
+          <p id="hsPrice" class="text-lg font-black text-cyan-400 mt-1">₹999</p>
+        </div>
+      </div>
+
+      <p id="hsDesc" class="text-xs text-slate-300 mt-3 leading-relaxed">Description goes here.</p>
+
+      <div class="mt-4 pt-3 border-t border-white/10 flex gap-2">
+        <button id="hsAddBtn" class="flex-1 py-3 bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs rounded-xl shadow transition-all active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer">
+          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+          <span>Add To Bag</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Track Order Modal -->
+  <div id="trackOrderModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-slate-900 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative text-white border border-white/10">
+      <button onclick="closeModal('trackOrderModal')" class="absolute top-5 right-5 text-slate-400 hover:text-white cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold"><i data-lucide="truck" class="w-5 h-5"></i></div>
+        <div>
+          <h3 class="text-xl font-black text-white">Track Shipment Status</h3>
+          <p class="text-xs text-slate-400">BlueDart, Delhivery & Xpressbees tracking portal</p>
+        </div>
+      </div>
+      <div class="space-y-3 mt-4">
+        <input id="trackingNoInput" type="text" placeholder="Enter AWB or Phone Number" class="w-full px-3 py-2.5 text-xs bg-slate-800 border border-slate-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-brand-500">
+        <button onclick="lookupOrder()" class="w-full py-3 bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs rounded-xl shadow cursor-pointer">Search Order</button>
+      </div>
+      <div id="trackingInfoBox" class="hidden mt-4 p-4 bg-slate-800/80 rounded-2xl border border-white/10 text-xs text-slate-300 space-y-1">
+        <p class="font-bold text-emerald-400">✓ Shipment Status: Out For Delivery</p>
+        <p>Carrier: BlueDart Air Express</p>
+        <p>Estimated Doorstep Delivery: Tomorrow by 4:00 PM</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp VIP Modal -->
+  <div id="whatsappModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-slate-900 rounded-3xl max-w-md w-full p-6 shadow-2xl relative text-white border border-white/10">
+      <button onclick="closeModal('whatsappModal')" class="absolute top-5 right-5 text-slate-400 hover:text-white cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
+      <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold mb-3"><i data-lucide="message-circle" class="w-6 h-6"></i></div>
+      <h3 class="text-xl font-black text-white">ArrowsGhar™ VIP Helpdesk</h3>
+      <p class="text-xs text-slate-300 mt-1">Live human support for order tracking, product guidance, and 7-day replacement claims.</p>
+      <a href="https://wa.me/919876543210?text=Hello%20ArrowsGhar%20Team" target="_blank" class="w-full mt-4 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs uppercase tracking-wider rounded-xl shadow flex items-center justify-center gap-2">
+        <i data-lucide="message-circle" class="w-4 h-4"></i> Chat on WhatsApp (+91 98765 43210)
+      </a>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div id="searchModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-sm flex items-start justify-center p-4 pt-20">
+    <div class="bg-slate-900 rounded-3xl max-w-xl w-full p-6 shadow-2xl relative text-white border border-white/10">
+      <button onclick="closeModal('searchModal')" class="absolute top-5 right-5 text-slate-400 hover:text-white cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
+      <div class="relative">
+        <i data-lucide="search" class="w-5 h-5 text-slate-400 absolute top-3.5 left-3.5"></i>
+        <input type="text" placeholder="Search catalog collections..." class="w-full pl-11 pr-4 py-3 bg-slate-800 border border-slate-700 rounded-2xl text-sm text-white focus:outline-none focus:ring-2 focus:ring-brand-500">
+      </div>
+    </div>
+  </div>
+
+  <!-- Shipping Policy Modal -->
+  <div id="shippingModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-slate-900 rounded-3xl max-w-lg w-full p-6 shadow-2xl relative text-white border border-white/10 space-y-3 text-xs leading-relaxed">
+      <button onclick="closeModal('shippingModal')" class="absolute top-5 right-5 text-slate-400 hover:text-white cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
+      <h3 class="text-lg font-black text-white">Shipping & Express Delivery Terms</h3>
+      <p>All orders placed before 3:00 PM are dispatched same-day via BlueDart Air, Delhivery, or Xpressbees. Average transit time is 2-4 business days.</p>
+      <p>Prepaid orders receive priority air manifest tagging with zero shipping charges.</p>
+    </div>
+  </div>
+
+  <!-- 7-Day Replacement Policy Modal -->
+  <div id="returnModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-slate-900 rounded-3xl max-w-lg w-full p-6 shadow-2xl relative text-white border border-white/10 space-y-3 text-xs leading-relaxed">
+      <button onclick="closeModal('returnModal')" class="absolute top-5 right-5 text-slate-400 hover:text-white cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
+      <h3 class="text-lg font-black text-white">7-Day Zero Hassle Replacement</h3>
+      <p>Every product is covered by our 7-day doorstep replacement warranty. If you receive an item with manufacturing damage, we arrange reverse pickup within 24 hours.</p>
+    </div>
+  </div>
+
+  <!-- Privacy Policy Modal -->
+  <div id="privacyModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-slate-900 rounded-3xl max-w-lg w-full p-6 shadow-2xl relative text-white border border-white/10 space-y-3 text-xs leading-relaxed">
+      <button onclick="closeModal('privacyModal')" class="absolute top-5 right-5 text-slate-400 hover:text-white cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
+      <h3 class="text-lg font-black text-white">Privacy Policy</h3>
+      <p>We respect customer privacy. Address and telephone information are used solely for shipping fulfillment and WhatsApp tracking notifications.</p>
+    </div>
+  </div>
+
+  <!-- Terms Modal -->
+  <div id="termsModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-slate-900 rounded-3xl max-w-lg w-full p-6 shadow-2xl relative text-white border border-white/10 space-y-3 text-xs leading-relaxed">
+      <button onclick="closeModal('termsModal')" class="absolute top-5 right-5 text-slate-400 hover:text-white cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
+      <h3 class="text-lg font-black text-white">Terms & Conditions</h3>
+      <p>By placing an order on ArrowsGhar™ (arrowsghar.myshopify.com), you agree to our terms of verified delivery. All COD orders receive an automated confirmation check prior to warehouse dispatch.</p>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 17. LIVE SOCIAL PROOF CRO TOAST -->
+  <!-- ========================================================================= -->
+  <div id="liveProofToast" class="fixed bottom-6 left-6 z-40 max-w-sm glass-card rounded-2xl p-3.5 shadow-2xl border border-white/10 flex items-center gap-3.5 transition-all duration-500 translate-y-24 opacity-0 pointer-events-none text-white">
+    <img id="toastImg" src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=150&q=80" alt="Verified Purchase" class="w-12 h-12 rounded-xl object-cover border border-white/10 shrink-0">
+    <div class="flex-1 min-w-0">
+      <div class="flex items-center gap-1.5 text-[11px] font-bold text-emerald-400">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span>VERIFIED ORDER (COD)</span>
+      </div>
+      <p id="toastText" class="text-xs font-bold text-white truncate">Rahul from Mumbai ordered AeroCyclone™</p>
+      <p id="toastTime" class="text-[10px] text-slate-400">2 minutes ago • Free Express Air</p>
+    </div>
+    <button onclick="dismissToast()" class="p-1 text-slate-400 hover:text-white self-start pointer-events-auto cursor-pointer">
+      <i data-lucide="x" class="w-3.5 h-3.5"></i>
+    </button>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 18. JAVASCRIPT CONTROLLERS (SLIDER, CART, 3D, VIDEO, MODALS, PINCODE) -->
+  <!-- ========================================================================= -->
+  <script>
+    // Cart Data Store
+    let cart = [
+      { name: 'AeroCyclone™ Cordless Turbo Unit', price: 1299, qty: 1, image: 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=150&q=80' }
+    ];
+    let isUpiMode = true;
+
+    // Slider Controller
+    let currentSlide = 1;
+    const totalSlides = 3;
+    let sliderTimer;
+
+    function goToSlide(n) {
+      currentSlide = n;
+      for (let i = 1; i <= totalSlides; i++) {
+        const slide = document.getElementById(\`heroSlide\${i}\`);
+        const dot = document.getElementById(\`slideDot\${i}\`);
+        if (i === n) {
+          slide.classList.remove('opacity-0', 'scale-105', 'pointer-events-none');
+          slide.classList.add('opacity-100', 'scale-100');
+          dot.classList.remove('w-2.5', 'bg-white/40');
+          dot.classList.add('w-8', 'bg-brand-500');
+        } else {
+          slide.classList.add('opacity-0', 'scale-105', 'pointer-events-none');
+          slide.classList.remove('opacity-100', 'scale-100');
+          dot.classList.add('w-2.5', 'bg-white/40');
+          dot.classList.remove('w-8', 'bg-brand-500');
+        }
+      }
+      resetSliderTimer();
+    }
+
+    function nextSlide() {
+      currentSlide = currentSlide >= totalSlides ? 1 : currentSlide + 1;
+      goToSlide(currentSlide);
+    }
+    function prevSlide() {
+      currentSlide = currentSlide <= 1 ? totalSlides : currentSlide - 1;
+      goToSlide(currentSlide);
+    }
+
+    function resetSliderTimer() {
+      clearInterval(sliderTimer);
+      sliderTimer = setInterval(nextSlide, 5000);
+    }
+
+    // 3D Spatial Studio Controller
+    const studioItems = [
+      {
+        name: "AeroCyclone™ Cordless Turbo Unit",
+        desc: "Precision 9000Pa cyclone suction engineered for vehicle cockpits, workstation electronics, and tight crevices.",
+        price: 1299,
+        poster: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        name: "Ambient Infrared Magnetic Night Bar",
+        desc: "Zero-wiring magnetic wall dock with dual warm LED temperature and intelligent 120-degree body motion detection.",
+        price: 799,
+        poster: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        name: "Honeycomb Tailbone Orthopedic Cushion",
+        desc: "Hyper-elastic cooling gel column array designed to redistribute tailbone pressure and protect lumbar spine.",
+        price: 999,
+        poster: "https://images.unsplash.com/photo-1580481077195-c32e921e1e47?auto=format&fit=crop&w=800&q=80"
+      }
+    ];
+    let currentStudioIdx = 0;
+
+    function switchStudio3d(idx) {
+      currentStudioIdx = idx;
+      const item = studioItems[idx];
+      document.getElementById('studio3dName').innerText = item.name;
+      document.getElementById('studio3dDesc').innerText = item.desc;
+      document.getElementById('studio3dPrice').innerText = '₹' + item.price;
+      const mv = document.getElementById('embeddedModelViewer');
+      if (mv) mv.setAttribute('poster', item.poster);
+    }
+
+    function addCurrentStudioItem() {
+      const item = studioItems[currentStudioIdx];
+      addToBag(item.name, item.price, item.poster);
+    }
+
+    // Real Working Video Modal Controller
+    function openVideoModal(videoSrc, title, tag) {
+      const modal = document.getElementById('videoPlayerModal');
+      const vid = document.getElementById('modalVideoElement');
+      const src = document.getElementById('modalVideoSource');
+      const titleEl = document.getElementById('videoModalTitle');
+      const tagEl = document.getElementById('videoModalTag');
+
+      if (titleEl) titleEl.innerText = title;
+      if (tagEl) tagEl.innerText = tag || 'HD VIDEO DEMO';
+
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.style.display = 'flex';
+      }
+
+      if (vid && src) {
+        src.src = videoSrc;
+        vid.src = videoSrc;
+        vid.load();
+        const p = vid.play();
+        if (p !== undefined) {
+          p.catch(() => {
+            vid.muted = true;
+            vid.play().catch(e => console.log('Muted autoplay active:', e));
+          });
+        }
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function closeVideoModal() {
+      const modal = document.getElementById('videoPlayerModal');
+      const vid = document.getElementById('modalVideoElement');
+      if (vid) {
+        vid.pause();
+        vid.currentTime = 0;
+      }
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.style.display = 'none';
+      }
+    }
+
+    // 3D Modal Controller
+    function open3dModal(title, price, poster) {
+      const modal = document.getElementById('modelViewerModal');
+      const titleEl = document.getElementById('modal3dTitle');
+      const priceEl = document.getElementById('modal3dPrice');
+      const mv = document.getElementById('activeModelViewer');
+      const btn = document.getElementById('modal3dAddBtn');
+
+      if (titleEl) titleEl.innerText = title + ' 360° Inspection';
+      if (priceEl) priceEl.innerHTML = '₹' + price + ' <span class="text-xs text-emerald-400">(COD Available)</span>';
+      if (mv) mv.setAttribute('poster', poster);
+
+      if (btn) {
+        btn.onclick = () => {
+          close3dModal();
+          addToBag(title, price, poster);
+        };
+      }
+
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.style.display = 'flex';
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function close3dModal() {
+      const modal = document.getElementById('modelViewerModal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.style.display = 'none';
+      }
+    }
+
+    // Modal Managers
+    function openModal(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.remove('hidden');
+        el.style.display = 'flex';
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+    function closeModal(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.add('hidden');
+        el.style.display = 'none';
+      }
+    }
+
+    // Cart Drawer Manager
+    function toggleCartDrawer(open) {
+      const drawer = document.getElementById('cartDrawer');
+      const panel = document.getElementById('cartDrawerPanel');
+      if (open) {
+        drawer.classList.remove('pointer-events-none', 'opacity-0');
+        panel.classList.remove('translate-x-full');
+      } else {
+        drawer.classList.add('pointer-events-none', 'opacity-0');
+        panel.classList.add('translate-x-full');
+      }
+      renderCart();
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function addToBag(name, price, image) {
+      const existing = cart.find(i => i.name === name);
+      if (existing) {
+        existing.qty++;
+      } else {
+        cart.push({ name, price, qty: 1, image });
+      }
+      toggleCartDrawer(true);
+    }
+
+    function changeCartQty(idx, delta) {
+      if (cart[idx]) {
+        cart[idx].qty += delta;
+        if (cart[idx].qty <= 0) {
+          cart.splice(idx, 1);
+        }
+      }
+      renderCart();
+    }
+
+    function removeCartItem(idx) {
+      cart.splice(idx, 1);
+      renderCart();
+    }
+
+    function toggleCartUpi(enable) {
+      isUpiMode = enable;
+      renderCart();
+    }
+
+    function renderCart() {
+      const list = document.getElementById('drawerItemsList');
+      const countBadge = document.getElementById('drawerCountBadge');
+      const headerBadge = document.getElementById('headerCartBadge');
+      const subtotalEl = document.getElementById('cartSubtotalText');
+      const totalEl = document.getElementById('cartTotalText');
+      const upiRow = document.getElementById('cartUpiRow');
+
+      let count = 0;
+      let subtotal = 0;
+
+      list.innerHTML = '';
+      if (cart.length === 0) {
+        list.innerHTML = \`
+          <div class="text-center py-12 text-slate-500">
+            <i data-lucide="shopping-bag" class="w-12 h-12 mx-auto text-slate-600 stroke-1 mb-2"></i>
+            <p class="text-sm font-bold text-slate-300">Your bag is empty</p>
+            <p class="text-xs text-slate-500 mt-1">Explore collections above and add your favorite items!</p>
+          </div>
+        \`;
+      } else {
+        cart.forEach((item, idx) => {
+          count += item.qty;
+          subtotal += (item.price * item.qty);
+
+          const div = document.createElement('div');
+          div.className = 'flex gap-3 p-3 bg-slate-950/80 rounded-2xl border border-white/10 items-center';
+          div.innerHTML = \`
+            <img src="\${item.image}" alt="\${item.name}" class="w-14 h-14 rounded-xl object-cover bg-slate-900 border border-white/10 shrink-0">
+            <div class="flex-1 min-w-0">
+              <h4 class="font-bold text-xs text-white truncate">\${item.name}</h4>
+              <p class="text-xs font-black text-cyan-400 mt-0.5">₹\${item.price}</p>
+            </div>
+            <div class="flex items-center gap-1.5 border border-white/20 rounded-lg bg-slate-900 px-1">
+              <button onclick="changeCartQty(\${idx}, -1)" class="px-1.5 py-0.5 text-xs text-slate-400 hover:text-white font-bold cursor-pointer">-</button>
+              <span class="text-xs font-bold text-white px-1">\${item.qty}</span>
+              <button onclick="changeCartQty(\${idx}, 1)" class="px-1.5 py-0.5 text-xs text-slate-400 hover:text-white font-bold cursor-pointer">+</button>
+            </div>
+            <button onclick="removeCartItem(\${idx})" class="p-1.5 text-slate-500 hover:text-rose-400 transition-colors cursor-pointer">
+              <i data-lucide="trash-2" class="w-4 h-4"></i>
+            </button>
+          \`;
+          list.appendChild(div);
+        });
+      }
+
+      countBadge.innerText = count;
+      if (headerBadge) headerBadge.innerText = count;
+
+      let discount = (isUpiMode && subtotal > 0) ? 50 : 0;
+      let total = Math.max(0, subtotal - discount);
+
+      subtotalEl.innerText = '₹' + subtotal;
+      totalEl.innerText = '₹' + total;
+
+      if (isUpiMode && subtotal > 0) upiRow.classList.remove('hidden');
+      else upiRow.classList.add('hidden');
+
+      if (window.lucide) lucide.createIcons();
+    }
+
+    // Pincode Checker Simulator
+    function checkCartPincode() {
+      const pin = document.getElementById('drawerPincodeInput').value.trim();
+      const res = document.getElementById('drawerPincodeResult');
+      const text = document.getElementById('drawerPincodeText');
+
+      if (pin.length === 6 && /^\\d+$/.test(pin)) {
+        res.classList.remove('hidden');
+        text.innerText = \`✓ Verified for Pincode \${pin}: BlueDart Air Express delivery by Tomorrow 4 PM! (COD Available)\`;
+      } else {
+        alert('Please enter a valid 6-digit Indian Pincode (e.g. 400001 or 110001).');
+      }
+    }
+
+    // Enhanced Checkout with Celebration Confetti
+    function triggerOrderCheckout() {
+      const total = document.getElementById('cartTotalText').innerText;
+      if (window.confetti) {
+        confetti({
+          particleCount: 140,
+          spread: 80,
+          origin: { y: 0.6 }
+        });
+      }
+      setTimeout(() => {
+        alert(\`🎉 Order Initiated Successfully!\\nTotal: \${total}\\nDoorstep Delivery: 2-3 Days via BlueDart Air Express (COD Pan-India)\`);
+      }, 350);
+    }
+
+    // Quick View Modal Controller
+    function openQuickView(title, price, oldPrice, img, tag, desc) {
+      document.getElementById('qvTitle').innerText = title;
+      document.getElementById('qvPrice').innerText = '₹' + price;
+      document.getElementById('qvOldPrice').innerText = '₹' + oldPrice;
+      document.getElementById('qvImage').src = img;
+      document.getElementById('qvTag').innerText = tag;
+      document.getElementById('qvDesc').innerText = desc;
+      
+      const btn = document.getElementById('qvAddBtn');
+      btn.onclick = () => {
+        closeModal('quickViewModal');
+        addToBag(title, price, img);
+      };
+
+      openModal('quickViewModal');
+    }
+
+    // Hotspot Modal Controller
+    function openHotspotModal(title, price, img, desc) {
+      document.getElementById('hsTitle').innerText = title;
+      document.getElementById('hsPrice').innerText = '₹' + price;
+      document.getElementById('hsImage').src = img;
+      document.getElementById('hsDesc').innerText = desc;
+
+      const btn = document.getElementById('hsAddBtn');
+      btn.onclick = () => {
+        closeModal('hotspotModal');
+        addToBag(title, price, img);
+      };
+
+      openModal('hotspotModal');
+    }
+
+    // Copy Coupon Code
+    function copyCouponCode(code) {
+      navigator.clipboard.writeText(code).then(() => {
+        alert(\`🎉 Coupon code '\${code}' copied to clipboard!\\nPaste at checkout for an instant 10% discount.\`);
+      });
+    }
+
+    // Order Lookup Simulator
+    function lookupOrder() {
+      const val = document.getElementById('trackingNoInput').value.trim();
+      const box = document.getElementById('trackingInfoBox');
+      if (val.length > 2) box.classList.remove('hidden');
+      else alert('Please enter tracking number or phone number.');
+    }
+
+    function claimVipCoupon() {
+      const email = document.getElementById('footerNewsletterEmail').value.trim();
+      if (email.includes('@')) {
+        document.getElementById('footerCouponSuccess').classList.remove('hidden');
+      } else {
+        alert('Please enter a valid email address.');
+      }
+    }
+
+    function filterCatalog(cat) {
+      document.querySelectorAll('.cat-pill').forEach(btn => {
+        if (btn.dataset.category === cat) {
+          btn.classList.add('bg-brand-600', 'text-white');
+          btn.classList.remove('bg-white/10', 'text-slate-300');
+        } else {
+          btn.classList.remove('bg-brand-600', 'text-white');
+          btn.classList.add('bg-white/10', 'text-slate-300');
+        }
+      });
+      document.querySelectorAll('.catalog-card').forEach(card => {
+        if (cat === 'all' || card.dataset.category === cat) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // Live Urgency Countdown Timer (Ticks every second)
+    function initCountdown() {
+      let seconds = 19;
+      let minutes = 28;
+      let hours = 4;
+
+      setInterval(() => {
+        seconds--;
+        if (seconds < 0) {
+          seconds = 59;
+          minutes--;
+          if (minutes < 0) {
+            minutes = 59;
+            hours--;
+            if (hours < 0) hours = 6;
+          }
+        }
+        document.getElementById('timerHours').innerText = String(hours).padStart(2, '0');
+        document.getElementById('timerMins').innerText = String(minutes).padStart(2, '0');
+        document.getElementById('timerSecs').innerText = String(seconds).padStart(2, '0');
+      }, 1000);
+    }
+
+    // Live Social Proof Notification Controller
+    const livePurchases = [
+      { buyer: 'Rahul S.', city: 'Mumbai', item: 'AeroCyclone™ Cordless Turbo Unit', time: '2 mins ago', img: 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=150&q=80' },
+      { buyer: 'Priya N.', city: 'Bengaluru', item: 'FolliGlow™ Red Light Therapy Massager', time: '5 mins ago', img: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=150&q=80' },
+      { buyer: 'Amit K.', city: 'New Delhi', item: 'Ambient Infrared Magnetic Night Bar', time: '7 mins ago', img: 'https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=150&q=80' },
+      { buyer: 'Sneha P.', city: 'Pune', item: 'Honeycomb Tailbone Orthopedic Cushion', time: '11 mins ago', img: 'https://images.unsplash.com/photo-1580481077195-c32e921e1e47?auto=format&fit=crop&w=150&q=80' }
+    ];
+    let purchaseIdx = 0;
+
+    function showNextPurchaseToast() {
+      const toast = document.getElementById('liveProofToast');
+      if (!toast) return;
+      const data = livePurchases[purchaseIdx % livePurchases.length];
+      document.getElementById('toastImg').src = data.img;
+      document.getElementById('toastText').innerText = \`\${data.buyer} from \${data.city} ordered \${data.item}\`;
+      document.getElementById('toastTime').innerText = \`\${data.time} • 100% Verified COD\`;
+
+      toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        purchaseIdx++;
+      }, 4500);
+    }
+
+    function dismissToast() {
+      const toast = document.getElementById('liveProofToast');
+      if (toast) {
+        toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }
+    }
+
+    // Global Keydown Handler (Esc key closes all modals)
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeVideoModal();
+        close3dModal();
+        toggleCartDrawer(false);
+        closeModal('quickViewModal');
+        closeModal('hotspotModal');
+        closeModal('trackOrderModal');
+        closeModal('whatsappModal');
+        closeModal('searchModal');
+        closeModal('shippingModal');
+        closeModal('returnModal');
+        closeModal('privacyModal');
+        closeModal('termsModal');
+      }
+    });
+
+    // Init on Load
+    document.addEventListener("DOMContentLoaded", () => {
+      if (window.lucide) lucide.createIcons();
+      resetSliderTimer();
+      renderCart();
+      initCountdown();
+      setTimeout(showNextPurchaseToast, 3000);
+      setInterval(showNextPurchaseToast, 9000);
+    });
+  </script>
+
+</body>
+</html>
+`;
+
+// Save pure HTML
+fs.writeFileSync('E:/Dropshiping/arrowsghar-theme-pure.html', storefrontHtml, 'utf8');
+fs.writeFileSync('D:/Dropshiping/arrowsghar-theme-pure.html', storefrontHtml, 'utf8');
+
+// Build Liquid section
+const schema = `
+{% schema %}
+{
+  "name": "Pure Theme Master Hub",
+  "tag": "section",
+  "class": "pure-theme-hub-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "brand_title",
+      "label": "Brand Title",
+      "default": "ArrowsGhar™"
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_support",
+      "label": "WhatsApp VIP Number",
+      "default": "+919876543210"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pure Theme Master Hub"
+    }
+  ]
+}
+{% endschema %}
+`;
+
+const liquidContent = schema + '\n' + storefrontHtml;
+fs.writeFileSync('E:/Dropshiping/arrowsghar-theme/sections/pure-theme-hub.liquid', liquidContent, 'utf8');
+
+console.log('Brand new storefront re-created successfully! Size:', storefrontHtml.length);
