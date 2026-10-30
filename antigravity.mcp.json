@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "shopify-dev": {
+      "command": "npx",
+      "args": ["-y", "@shopify/dev-mcp@latest"]
+    },
+    "lucide-icons": {
+      "command": "npx",
+      "args": ["-y", "lucide-icons-mcp"]
+    }
+  }
+}
