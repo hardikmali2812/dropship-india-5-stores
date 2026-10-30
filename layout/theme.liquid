@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title }} | ArrowsGhar™ Flagship Ultra</title>
 
     <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,31 +14,76 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    {% # Inlined CSS Variables %}
-    {% render 'css-variables' %}
+    <!-- 3D Model Viewer & Confetti Engine -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 
-    {% # Load and preload the critical CSS %}
-    {{ 'critical.css' | asset_url | stylesheet_tag: preload: true }}
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                50: '#f5f7ff',
+                100: '#ebf0fe',
+                500: '#6366f1',
+                600: '#4f46e5',
+                700: '#4338ca',
+                800: '#3730a3',
+                900: '#1e1b4b',
+              }
+            },
+            animation: {
+              'marquee': 'marquee 25s linear infinite',
+              'float': 'float 3.5s ease-in-out infinite',
+              'pulse-subtle': 'pulseSubtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              marquee: {
+                '0%': { transform: 'translateX(0%)' },
+                '100%': { transform: 'translateX(-50%)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-8px)' },
+              },
+              pulseSubtle: {
+                '0%, 100%': { opacity: 1 },
+                '50%': { opacity: 0.88, transform: 'scale(1.05)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
 
-    {% # Social, title, etc. %}
-    {% render 'meta-tags' %}
+    <style>
+      body { font-family: 'Plus Jakarta Sans', sans-serif; -webkit-tap-highlight-color: transparent; }
+      input, select, textarea { font-size: 16px !important; }
+      .hero-slide { transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      .glass-card {
+        background: rgba(17, 24, 39, 0.75);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .glass-nav {
+        background: rgba(10, 15, 29, 0.9);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+    </style>
 
     {{ content_for_header }}
   </head>
 
-  <body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-600 selection:text-white" style="font-family: 'Plus Jakarta Sans', sans-serif;">
-    {% sections 'header-group' %}
-
+  <body class="bg-slate-950 text-slate-100 antialiased selection:bg-brand-600 selection:text-white">
     {{ content_for_layout }}
-
-    {% sections 'footer-group' %}
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        if (window.lucide) {
-          window.lucide.createIcons();
-        }
-      });
-    </script>
   </body>
 </html>
